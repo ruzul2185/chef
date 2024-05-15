@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Header.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookSquare, faInstagram} from "@fortawesome/free-brands-svg-icons";
-import {faPhoneAlt, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass, faPhoneAlt, faXmark} from "@fortawesome/free-solid-svg-icons";
 import HamburgerMenu from "./HamburgerMenu";
 import LoginMenu from "./LoginMenu";
 import Cart from "./Cart";
@@ -11,9 +11,19 @@ import Cart from "./Cart";
 const Header = () => {
 
     const [loginIsOpen, setLoginIsOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const toggleLoginDropdown = () => {
         setLoginIsOpen(!loginIsOpen);
+    };
+
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event.target.value);
     };
 
     return(
@@ -146,11 +156,51 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="header-top">
-                header
+            <div className="header-middle">
+                <div className="header-Mobile-item text-center">
+                    <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
+                        <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
+                            <img itemProp="logo"
+                                 src="//www.wonderchef.com/cdn/shop/files/New-Website-Logo.png?v=1704047470"
+                                 alt="Wonderchef"/>
+                        </a>
+                    </div>
+                </div>
+                <div className="search-box-container">
+                    <form className="search-box" onSubmit={handleSubmit}>
+                        <div style={{boxShadow:"0 0 4px #0003"}}>
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Search..."
+                                value={searchTerm}
+                                onChange={handleChange}
+                            />
+                            <button type="submit" className="search-button">
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </div>
+                    </form>
+                    <Cart/>
+                </div>
             </div>
-            <div className="header-top">
-                header
+            <div className="header-bottom">
+                <div className="bottom-container">
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                    <div className="header-bottom-item">COOKWARE</div>
+                </div>
             </div>
         </React.Fragment>
     )

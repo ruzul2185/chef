@@ -343,11 +343,94 @@ html * {
     margin-top: 20px;
 }
 
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-input {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 443px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #1b0606;
+    border-right: none;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    /*border-radius: 4px;*/
+    /*margin-right: 8px;*/
+}
+
+.search-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    color: #1b0606;
+    border: 1px solid #1b0606;
+    border-left: none;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    /*border-radius: 4px;*/
+    cursor: pointer;
+    height: 44px;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.header-middle {
+    display: none;
+    border-bottom: 1px solid #e2e4e8;
+    background-color: #00FFFF00;
+    font-size: small;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header-bottom {
+    background-color: #be2c3f;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottom-container {
+    display: none;
+}
+
+.header-bottom-item {
+    padding: 12px 0 9px;
+    font-size: 14px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+}
+
 @media (min-width: 1200px) {
     .headerMediaQuery {
         display: block;
     }
     .hamburgerMediaQuery {
         display: none;
+    }
+    .header-middle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .bottom-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: #f7f7f7;
+        min-width: 1200px;
     }
 }
