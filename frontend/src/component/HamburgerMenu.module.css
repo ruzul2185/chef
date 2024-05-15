@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.hamburgerMenu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100vh;
+    background-color: #FFF;
+    /*background-color: #000;*/
+    transition: left 0.3s ease;
+}
+
+.open {
+    left: 0;
+}
+
+.hamburgerIcon {
+    cursor: pointer;
+    padding: 1px 20px;
+}
+
+.closeIcon {
+    color: white; /* Change the color to match your design */
+    font-size: 20px; /* Adjust the font size as needed */
+    padding: 10px; /* Add padding for spacing */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    background-color: #B0241F;
+    position: absolute; /* Position the close button relative to its closest positioned ancestor */
+    top: 0; /* Adjust top position as needed */
+    right: -40px; /* Move the close button outside the sidebar */
+    z-index: 1000; /* Ensure the close button appears above other content */
+    display: flex;
+    flex-direction: column;
+    width: 19px;
+}
+
+
+.closeIcon:hover {
+    color: #ddd; /* Change color on hover for visual feedback */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+.closedBar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+.menuItems {
+    /*margin-top: 50px;*/
+    padding: 0 20px;
+}
+
+.menuItems a {
+    display: block;
+    /*color: white;*/
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.menuItems a:hover {
+    background-color: #555;
+}
+
+.menuContent {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 14px;
+    padding: 12px 20px 10px;
+    font-weight: bold;
+    color: #383E47;
+}
