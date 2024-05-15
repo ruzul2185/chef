@@ -63,6 +63,27 @@
     font-weight: 400;
     line-height: 1;
     text-transform: capitalize;
+    position: relative; /* Required for pseudo-element positioning */
+    text-decoration: none; /* Remove default underline */
+}
+
+.navUser-action::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust as needed */
+    width: 0; /* Initial width */
+    height: 2px; /* Underline thickness */
+    background-color: #be2c3f; /* Underline color */
+    transition: width 0.3s; /* Transition width */
+}
+
+.navUser-action:hover::before {
+    width: 100%; /* Expand underline on hover */
+}
+
+.navUser-action:hover {
+    color: #be2c3f; /* Change color on hover */
 }
 
 .header-top .navUser-item--account {
@@ -154,7 +175,7 @@ a {
 
 @media (min-width: 799px) {
     .container {
-        position: relative;
+        /*position: relative;*/
         margin: 0 auto;
         width: 90% !important;
         max-width: 1700px !important;
@@ -193,4 +214,140 @@ html * {
 
 .icon-text {
     margin-left: 5px;
+}
+
+.headerMediaQuery {
+    display: none;
+}
+
+.hamburgerMediaQuery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-right {
+    display: flex;
+    flex-direction: row;
+}
+
+.items {
+    padding:10px;
+}
+
+.sidebar-menu {
+    top: 0;
+    left: 0;
+    z-index: 999; /* Ensure it's above other elements */
+}
+
+.logo-wrapper {
+    position: relative; /* Make sure it's a positioned element */
+    z-index: 1; /* Ensure it's behind the sidebar menu */
+}
+
+.dropdown-content {
+    z-index: 1;
+    box-shadow: 0 0 4px #0003;
+    position: fixed;
+    background-color: #ffffff;
+    margin-top: 8px;
+    max-width: 300px;
+    color:#000000;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #1B060680;
+}
+
+.headerText {
+    font-family: "Rajdhani", sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+.hamburgerIcon {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.menuItems {
+    padding: 20px;
+    border-bottom: 1px solid #1b0606;
+}
+
+.loginText {
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+.inputContainer {
+    margin-bottom: 10px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.inputField {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.forgotPassword {
+    color: #be2c3f;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.loginButton {
+    background-color: #FFFFFF;
+    color: #be2c3f;
+    padding: 10px 20px;
+    border: 1px solid #be2c3f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.loginButton:hover {
+    background-color: #0056b3;
+}
+
+.createButton {
+    background-color: #be2c3f;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #be2c3f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (min-width: 1200px) {
+    .headerMediaQuery {
+        display: block;
+    }
+    .hamburgerMediaQuery {
+        display: none;
+    }
 }
