@@ -6,9 +6,14 @@
 }
 
 .haloContainer{
-    /*display: flex;*/
-    /*flex-direction: row;*/
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: auto;
+}
+
+@media (max-width: 1200px) {
+    .haloContainer{
+        width: 100%;
+    }
 }
