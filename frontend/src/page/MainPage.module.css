@@ -1,0 +1,14 @@
+.haloSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.haloContainer{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
