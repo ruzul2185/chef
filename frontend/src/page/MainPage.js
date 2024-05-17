@@ -3,6 +3,7 @@ import Header from "../component/Header";
 import HaloSection from "../component/HaloSection";
 
 import classes from './MainPage.module.css';
+import SlideShow from "../component/SlideShow";
 
 const MainPage = () => {
     return(
@@ -22,7 +23,9 @@ const MainPage = () => {
                 </div>
             </div>
 
-
+            <div className={classes.slideShowContainer}>
+                <SlideShow />
+            </div>
         </div>
     )
 }
