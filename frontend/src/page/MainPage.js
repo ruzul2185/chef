@@ -26,6 +26,10 @@ const MainPage = () => {
             <div className={classes.slideShowContainer}>
                 <SlideShow />
             </div>
+
+            <div>
+
+            </div>
         </div>
     )
 }
