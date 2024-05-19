@@ -4,6 +4,7 @@ import HaloSection from "../component/HaloSection";
 
 import classes from './MainPage.module.css';
 import SlideShow from "../component/SlideShow";
+import Product from "../component/Product";
 
 const MainPage = () => {
     return(
@@ -27,8 +28,8 @@ const MainPage = () => {
                 <SlideShow />
             </div>
 
-            <div>
-
+            <div className={classes.productCarouselConatiner}>
+                <Product />
             </div>
         </div>
     )
