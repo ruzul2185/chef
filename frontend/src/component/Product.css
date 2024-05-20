@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    /*height: 600px;*/
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-indicator {
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding:30px;
+}
+
+/* Transition classes for product items */
+.product-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.product-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms, transform 500ms;
+}
+.product-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+.product-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.product-carousel-title {
+    font-size: 40px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+}
+
+.indicator-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.indicator-styling {
+    background-color: #1b0606;
+    width:10px;
+    height: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 !important;
+}
+
+.cart-button {
+    background-color: #be2c3f !important;
+    border-radius: 0;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.cart-button:hover {
+    background-color: #004b05 !important;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #999999;
+    text-decoration: line-through;
+    font-family: "Arimo",serif;
+    font-weight: bold;
+}
+
+.card-offer {
+    font-size: 14px;
+    color: #be2c3f;
+    font-family: "Arimo",serif;
+    font-weight: bold;
+}
+
+.card-discount {
+    font-size: 14px;
+    color: white;
+    background: linear-gradient(to right, red, yellow);
+    width:180px;
+    text-align: center;
+}
+
+.card-body-text {
+    margin-left: 20px;
+}
+
+.view-all-button {
+    text-align: center;
+    margin-top: 30px;
+    color: #be2c3f;
+    border: 1px solid #be2c3f;
+    padding: 10px;
+    border-radius: 4px;;
+}
+
+.view-all-button:hover {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    background-color: #be2c3f;
+    border: 1px solid #be2c3f;
+    padding: 10px;
+    border-radius: 4px;;
+}
