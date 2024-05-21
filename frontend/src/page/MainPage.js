@@ -10,6 +10,7 @@ import Cart from "../component/Cart";
 import CategoryComponent from "../component/CategoryComponent";
 import Review from "../component/Review";
 import OutletBanner from "../component/OutletBanner";
+import Footer from "../component/Footer";
 
 const MainPage = () => {
     return(
@@ -59,6 +60,10 @@ const MainPage = () => {
 
             <div>
                 <OutletBanner title={"AVAILABLE AT OVER 10,000 OUTLETS INCLUDING ALL DEPARTMENT STORES"}/>
+            </div>
+
+            <div>
+                <Footer />
             </div>
         </div>
     )
