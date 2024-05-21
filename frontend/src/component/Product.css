@@ -151,3 +151,9 @@
 .indicator.active {
     background-color: grey; /* Highlight active indicator */
 }
+
+@media (min-width: 980px){
+    .card {
+        width:30%;
+    }
+}

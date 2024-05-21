@@ -5,6 +5,7 @@ import HaloSection from "../component/HaloSection";
 import classes from './MainPage.module.css';
 import SlideShow from "../component/SlideShow";
 import Product from "../component/Product";
+import Jumbotron from "../component/Jumbotron";
 
 const MainPage = () => {
     return(
@@ -30,6 +31,10 @@ const MainPage = () => {
 
             <div className={classes.productCarouselConatiner}>
                 <Product />
+            </div>
+
+            <div>
+                <Jumbotron />
             </div>
         </div>
     )

@@ -127,7 +127,7 @@ const Product = () => {
                             timeout={500}
                             classNames="product"
                         >
-                            <div className="card" style={{ width: "34rem" }}>
+                            <div className="card">
                                 <img src={item.image} className="card-img-top" alt={item.title} />
                                 <div className="card-body">
                                     <div className="card-body-text">

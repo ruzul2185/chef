@@ -1,0 +1,11 @@
+.jumbotron {
+    width: 100%;
+    overflow: hidden; /* Optional: to ensure the container does not exceed its bounds */
+}
+
+.jumbotron img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures there is no gap under the image */
+}
+
