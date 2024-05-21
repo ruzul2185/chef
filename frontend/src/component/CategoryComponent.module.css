@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px; /* Increase spacing between items */
+    padding: 20px 50px;
+}
+
+@media (max-width: 900px) {
+    .gridContainer {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .card {
+        min-width: 200px;
+        margin-right: 20px; /* Spacing between items in scrollable view */
+    }
+}
+
+.card {
+    background-color: #fff;
+    border: none; /* Remove outside border */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:hover > .titleContainer {
+    background-color: #004b05;
+}
+
+.imageContainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.image {
+    width: 100%; /* Ensure image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+}
+
+.titleContainer {
+    background-color: #be2c3f; /* Red background color for title container */
+    padding: 10px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Rajdhani", sans-serif;
+    color: white; /* White text color for title */
+}
+
+.listContainer {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 40px;
+    color:#000000;
+    font-weight: bold;
+}

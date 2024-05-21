@@ -6,6 +6,8 @@ import classes from './MainPage.module.css';
 import SlideShow from "../component/SlideShow";
 import Product from "../component/Product";
 import Jumbotron from "../component/Jumbotron";
+import Cart from "../component/Cart";
+import CategoryComponent from "../component/CategoryComponent";
 
 const MainPage = () => {
     return(
@@ -35,6 +37,10 @@ const MainPage = () => {
 
             <div>
                 <Jumbotron />
+            </div>
+
+            <div>
+                <CategoryComponent />
             </div>
         </div>
     )
