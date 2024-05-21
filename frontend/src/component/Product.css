@@ -27,7 +27,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
-    padding:30px;
+    padding:30px !important;
 }
 
 /* Transition classes for product items */
@@ -131,4 +131,23 @@
     border: 1px solid #be2c3f;
     padding: 10px;
     border-radius: 4px;;
+}
+
+.indicator {
+    background-color: #282c34;
+    width: 10px;
+    height: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: darkgray;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: grey; /* Highlight active indicator */
 }

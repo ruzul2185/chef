@@ -96,6 +96,10 @@ const Product = () => {
         }
     };
 
+    const handleIndicatorClick = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = list.slice(indexOfFirstItem, indexOfLastItem);
@@ -138,6 +142,15 @@ const Product = () => {
                         </CSSTransition>
                     ))}
                 </TransitionGroup>
+            </div>
+            <div style={{display:'flex',flexDirection:'row',justifyContent:'center',marginTop:"10px"}}>
+                {Array.from({ length: totalPages }, (_, index) => (
+                    <div
+                        key={index + 1}
+                        className={`indicator ${currentPage === index + 1 ? 'active' : ''}`}
+                        onClick={() => handleIndicatorClick(index + 1)}
+                    />
+                ))}
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
                 <div className="view-all-button">
