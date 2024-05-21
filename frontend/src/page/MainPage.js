@@ -8,6 +8,7 @@ import Product from "../component/Product";
 import Jumbotron from "../component/Jumbotron";
 import Cart from "../component/Cart";
 import CategoryComponent from "../component/CategoryComponent";
+import Review from "../component/Review";
 
 const MainPage = () => {
     return(
@@ -32,7 +33,7 @@ const MainPage = () => {
             </div>
 
             <div className={classes.productCarouselConatiner}>
-                <Product />
+                <Product title={"NEW ARRIVALS"}/>
             </div>
 
             <div>
@@ -41,6 +42,14 @@ const MainPage = () => {
 
             <div>
                 <CategoryComponent />
+            </div>
+
+            <div className={classes.productCarouselConatiner}>
+                <Product title={"SUMMERTIME SELECTION"}/>
+            </div>
+
+            <div>
+                <Review title={"HAPPY CUSTOMERS"}/>
             </div>
         </div>
     )

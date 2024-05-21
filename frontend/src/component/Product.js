@@ -4,7 +4,7 @@ import './Product.css';
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-const Product = () => {
+const Product = (props) => {
     const list = [
         {
             id: 1,
@@ -112,7 +112,7 @@ const Product = () => {
                 </button>
                 <div className="indicator-container">
                     <p className="product-carousel-title">
-                        NEW ARRIVALS
+                        {props.title}
                     </p>
                 </div>
                 <button onClick={handleNextPage} disabled={currentPage === totalPages} className="btn btn-secondary">
