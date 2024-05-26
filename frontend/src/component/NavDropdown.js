@@ -43,7 +43,7 @@ const NavDropdown = (props) => {
             {isOpen && (
                 <div ref={dropdownRef} className={styles.dropdownContent}>
                     {props.list.map((item) => (
-                        <a key={item.id} className={styles.item} href="#" id={item.id}>{item.name}</a>
+                        <a key={item.id} className={styles.item} href={"/collection/" + `${item.href}`} id={item.id}>{item.name}</a>
                     ))}
                 </div>
             )}

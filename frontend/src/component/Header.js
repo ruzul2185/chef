@@ -162,11 +162,11 @@ const Header = () => {
                                 <span className="navUser-text">
                                     <a href="https://www.facebook.com/WonderchefLife/" target="_blank"
                                        aria-describedby="a11y-new-window-external-message" rel="noopener">
-                                        <FontAwesomeIcon icon={faFacebookSquare} />
+                                        <FontAwesomeIcon icon={faFacebookSquare} color={"#383e47"}/>
                                         <b className="icon-text">1.16M</b> </a>&nbsp;<a
                                     href="https://www.instagram.com/wondercheflife/" target="_blank"
                                     aria-describedby="a11y-new-window-external-message" rel="noopener">&nbsp;
-                                    <FontAwesomeIcon icon={faInstagram} />
+                                    <FontAwesomeIcon icon={faInstagram} color={"#383e47"}/>
                                     <b className="icon-text">510k</b></a>
                                 </span>
                             </li>
