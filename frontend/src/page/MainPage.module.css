@@ -17,6 +17,11 @@
     height: 35%;
 }
 
+.productCarouselConatiner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 @media (max-width: 1200px) {
     .haloContainer{
         width: 100%;

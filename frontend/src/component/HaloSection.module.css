@@ -8,3 +8,8 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.title {
+    text-decoration: none;
+    color: #1b0606;
+}

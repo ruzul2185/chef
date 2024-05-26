@@ -1,0 +1,30 @@
+.sliderContainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sliderContainer button {
+    background-color: #333333;
+    border-radius: 15px;
+}
+
+.sliderContainer button:hover {
+    background-color: #1b0606;
+    border-radius: 15px;
+}
+
+.imageContainer {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleContainer {
+    text-align: center;
+    font-size: 40px;
+    color:#000000;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+}

@@ -4,6 +4,13 @@ import HaloSection from "../component/HaloSection";
 
 import classes from './MainPage.module.css';
 import SlideShow from "../component/SlideShow";
+import Product from "../component/Product";
+import Jumbotron from "../component/Jumbotron";
+import Cart from "../component/Cart";
+import CategoryComponent from "../component/CategoryComponent";
+import Review from "../component/Review";
+import OutletBanner from "../component/OutletBanner";
+import Footer from "../component/Footer";
 
 const MainPage = () => {
     return(
@@ -25,6 +32,38 @@ const MainPage = () => {
 
             <div className={classes.slideShowContainer}>
                 <SlideShow />
+            </div>
+
+            <div className={classes.productCarouselConatiner}>
+                <Product title={"NEW ARRIVALS"}/>
+            </div>
+
+            <div>
+                <Jumbotron />
+            </div>
+
+            <div>
+                <CategoryComponent />
+            </div>
+
+            <div className={classes.productCarouselConatiner}>
+                <Product title={"SUMMERTIME SELECTION"}/>
+            </div>
+
+            <div>
+                <Review title={"HAPPY CUSTOMERS"}/>
+            </div>
+
+            <div className={classes.productCarouselConatiner}>
+                <Product title={"OUR BEST SELLERS"}/>
+            </div>
+
+            <div>
+                <OutletBanner title={"AVAILABLE AT OVER 10,000 OUTLETS INCLUDING ALL DEPARTMENT STORES"}/>
+            </div>
+
+            <div>
+                <Footer />
             </div>
         </div>
     )

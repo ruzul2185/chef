@@ -14,7 +14,7 @@ const HaloSection = (props) => {
 
                             </span>
                 </a>
-                <a href={props.link} className="title" tabIndex="0">
+                <a href={props.link} className={classes.title} tabIndex="0">
                     {props.title}
                 </a>
             </div>
