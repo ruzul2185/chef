@@ -7,6 +7,13 @@ import HamburgerMenu from "./HamburgerMenu";
 import LoginMenu from "./LoginMenu";
 import Cart from "./Cart";
 import NavDropdown from "./NavDropdown";
+import {
+    DropDownListFive,
+    DropDownListFour,
+    DropDownListOne, DropDownListSeven, DropDownListSix,
+    DropDownListThree,
+    DropDownListTwo
+} from "../constants/WebConstant";
 
 
 const Header = () => {
@@ -207,20 +214,20 @@ const Header = () => {
         </div>
             <div className="header-bottom">
                 <div className="bottom-container">
-                    <NavDropdown className="header-bottom-item" title="COOKWARE"/>
-                    <NavDropdown className="header-bottom-item" title="APPLIANCES"/>
-                    <NavDropdown className="header-bottom-item" title="COFFEE MACHINES"/>
-                    <NavDropdown className="header-bottom-item" title="NUTRI-BLEND"/>
-                    <NavDropdown className="header-bottom-item" title="MIXER GRINDERS"/>
-                    <NavDropdown className="header-bottom-item" title="FLASKS & BOTTLES"/>
-                    <NavDropdown className="header-bottom-item" title="HOME & LIVING"/>
-                    <NavDropdown className="header-bottom-item" title="COOKERS"/>
-                    <NavDropdown className="header-bottom-item" title="COOKTOPS"/>
-                    <NavDropdown className="header-bottom-item" title="CHIMNEYS"/>
-                    <NavDropdown className="header-bottom-item" title="KITCHEN TOOLS"/>
-                    <NavDropdown className="header-bottom-item" title="GIFTING"/>
-                    <NavDropdown className="header-bottom-item" title="SPARE PARTS"/>
-                    <NavDropdown className="header-bottom-item" title="WONDERENT"/>
+                    <NavDropdown className="header-bottom-item" title="COOKWARE" list={DropDownListOne}/>
+                    <NavDropdown className="header-bottom-item" title="APPLIANCES" list={DropDownListTwo}/>
+                    <NavDropdown className="header-bottom-item" title="COFFEE MACHINES" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="NUTRI-BLEND" list={DropDownListThree}/>
+                    <NavDropdown className="header-bottom-item" title="MIXER GRINDERS" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="FLASKS & BOTTLES" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="HOME & LIVING" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKERS" list={DropDownListFour}/>
+                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={DropDownListFive}/>
+                    <NavDropdown className="header-bottom-item" title="CHIMNEYS" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="KITCHEN TOOLS" list={DropDownListSix}/>
+                    <NavDropdown className="header-bottom-item" title="GIFTING" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="SPARE PARTS" list={DropDownListSeven}/>
+                    <NavDropdown className="header-bottom-item" title="WONDERENT" list={[]}/>
                 </div>
             </div>
         </React.Fragment>
