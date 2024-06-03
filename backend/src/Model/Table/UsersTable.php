@@ -24,8 +24,6 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface saveManyOrFail(iterable $entities, $options = [])
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
- *
- * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class UsersTable extends Table
 {
@@ -42,8 +40,6 @@ class UsersTable extends Table
         $this->setTable('users');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -55,37 +51,43 @@ class UsersTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+            ->allowEmptyString('id');
 
         $validator
             ->scalar('username')
-            ->maxLength('username', 50)
-            ->requirePresence('username', 'create')
-            ->notEmptyString('username');
+            ->maxLength('username', 255)
+            ->allowEmptyString('username');
+
+        $validator
+            ->email('email')
+            ->allowEmptyString('email');
+
+        $validator
+            ->scalar('role')
+            ->maxLength('role', 255)
+            ->allowEmptyString('role');
+
+        $validator
+            ->dateTime('email_verified_at')
+            ->allowEmptyDateTime('email_verified_at');
 
         $validator
             ->scalar('password')
             ->maxLength('password', 255)
-            ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->allowEmptyString('password');
 
         $validator
-            ->scalar('first_name')
-            ->maxLength('first_name', 50)
-            ->requirePresence('first_name', 'create')
-            ->notEmptyString('first_name');
+            ->scalar('remember_token')
+            ->maxLength('remember_token', 100)
+            ->allowEmptyString('remember_token');
 
         $validator
-            ->scalar('last_name')
-            ->maxLength('last_name', 50)
-            ->requirePresence('last_name', 'create')
-            ->notEmptyString('last_name');
+            ->dateTime('created_at')
+            ->allowEmptyDateTime('created_at');
 
         $validator
-            ->email('email')
-            ->requirePresence('email', 'create')
-            ->notEmptyString('email');
+            ->dateTime('updated_at')
+            ->allowEmptyDateTime('updated_at');
 
         return $validator;
     }

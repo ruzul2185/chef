@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
+ * @var \App\Model\Entity\Item $item
  */
 ?>
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      User
+      Item
       <small><?php echo __('Add'); ?></small>
     </h1>
     <ol class="breadcrumb">
@@ -26,17 +26,16 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <?php echo $this->Form->create($user, ['role' => 'form']); ?>
+          <?php echo $this->Form->create($item, ['role' => 'form','type'=>'file']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('username');
-                echo $this->Form->control('email');
-                echo $this->Form->control('role');
-                echo $this->Form->control('email_verified_at');
-                echo $this->Form->control('password');
-                echo $this->Form->control('remember_token');
-                echo $this->Form->control('created_at');
-                echo $this->Form->control('updated_at');
+                echo $this->Form->control('name');
+                echo $this->Form->control('image',['type' => 'file']);
+                echo $this->Form->control('color');
+                echo $this->Form->control('size');
+                echo $this->Form->control('description');
+                // echo $this->Form->control('created_at');
+                // echo $this->Form->control('updated_at');
               ?>
             </div>
             <!-- /.box-body -->

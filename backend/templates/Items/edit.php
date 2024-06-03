@@ -1,14 +1,14 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
+ * @var \App\Model\Entity\Item $item
  */
 ?>
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      User
-      <small><?php echo __('Add'); ?></small>
+      Item
+      <small><?php echo __('Edit'); ?></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
@@ -26,15 +26,14 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <?php echo $this->Form->create($user, ['role' => 'form']); ?>
+          <?php echo $this->Form->create($item, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('username');
-                echo $this->Form->control('email');
-                echo $this->Form->control('role');
-                echo $this->Form->control('email_verified_at');
-                echo $this->Form->control('password');
-                echo $this->Form->control('remember_token');
+                echo $this->Form->control('name');
+                echo $this->Form->control('image');
+                echo $this->Form->control('color');
+                echo $this->Form->control('size');
+                echo $this->Form->control('description');
                 echo $this->Form->control('created_at');
                 echo $this->Form->control('updated_at');
               ?>
@@ -50,4 +49,3 @@
   </div>
   <!-- /.row -->
 </section>
-

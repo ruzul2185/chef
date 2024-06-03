@@ -16,33 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `items`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` bigint(20) unsigned DEFAULT NULL,
+CREATE TABLE `items` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `role` varchar(255) DEFAULT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `size` varchar(255) DEFAULT NULL,
+  `description` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `items`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@test.com','admin',NULL,'$2y$10$1bVXW6JzAhUsWgF.ezM6/uBVCGA.hIZu0/L8wrpWoCLMQC2HlrRPC',NULL,NULL,NULL);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `items` WRITE;
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` VALUES (5,'Soup Maker','home front scroll soup maker.png','white','100','Soup Maker with eay and performed way',NULL,NULL),(6,'Air Fryer','home  front scroll airfryer.png','Black','50','To protect your life with colestroll and other diseases we present \"Air Fryper\" with premium quality',NULL,NULL),(7,'Mixer','home front scroll mixer.png','Yellow-white','55','The quality and best product to properly grind your daily needs with best.',NULL,NULL);
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-23 15:37:07
+-- Dump completed on 2024-06-04  0:07:28

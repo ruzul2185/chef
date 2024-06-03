@@ -15,14 +15,14 @@
 
     <li class="treeview">
         <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Jobs</span>
+            <i class="fa fa-dashboard"></i> <span>Items</span>
             <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href="<?php echo $this->Url->build('/jobs/add'); ?>"><i class="fa fa-circle-o"></i> New Job</a></li>
-            <li><a href="<?php echo $this->Url->build('/jobs'); ?>"><i class="fa fa-circle-o"></i>List of Jobss</a></li>
+            <li><a href="<?php echo $this->Url->build('/items/add'); ?>"><i class="fa fa-circle-o"></i> New Item</a></li>
+            <li><a href="<?php echo $this->Url->build('/items'); ?>"><i class="fa fa-circle-o"></i>List of Items</a></li>
         </ul>
     </li>
 

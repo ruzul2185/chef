@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\UsersController;
+use App\Controller\ItemsController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\UsersController Test Case
+ * App\Controller\ItemsController Test Case
  *
- * @uses \App\Controller\UsersController
+ * @uses \App\Controller\ItemsController
  */
-class UsersControllerTest extends TestCase
+class ItemsControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,14 +22,14 @@ class UsersControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Users',
+        'app.Items',
     ];
 
     /**
      * Test index method
      *
      * @return void
-     * @uses \App\Controller\UsersController::index()
+     * @uses \App\Controller\ItemsController::index()
      */
     public function testIndex(): void
     {
@@ -40,7 +40,7 @@ class UsersControllerTest extends TestCase
      * Test view method
      *
      * @return void
-     * @uses \App\Controller\UsersController::view()
+     * @uses \App\Controller\ItemsController::view()
      */
     public function testView(): void
     {
@@ -51,7 +51,7 @@ class UsersControllerTest extends TestCase
      * Test add method
      *
      * @return void
-     * @uses \App\Controller\UsersController::add()
+     * @uses \App\Controller\ItemsController::add()
      */
     public function testAdd(): void
     {
@@ -62,7 +62,7 @@ class UsersControllerTest extends TestCase
      * Test edit method
      *
      * @return void
-     * @uses \App\Controller\UsersController::edit()
+     * @uses \App\Controller\ItemsController::edit()
      */
     public function testEdit(): void
     {
@@ -73,7 +73,7 @@ class UsersControllerTest extends TestCase
      * Test delete method
      *
      * @return void
-     * @uses \App\Controller\UsersController::delete()
+     * @uses \App\Controller\ItemsController::delete()
      */
     public function testDelete(): void
     {

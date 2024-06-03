@@ -17,20 +17,18 @@ class UsersFixture extends TestFixture
      */
     // phpcs:disable
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'username' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null],
-        'password' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null],
-        'first_name' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null],
-        'last_name' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null],
-        'created' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => false, 'default' => 'CURRENT_TIMESTAMP', 'comment' => ''],
-        'modified' => ['type' => 'date', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
-        'email' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'utf8_unicode_ci', 'comment' => '', 'precision' => null],
-        '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-        ],
+        'id' => ['type' => 'biginteger', 'length' => null, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'username' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'email' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'role' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'email_verified_at' => ['type' => 'timestamp', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
+        'password' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'remember_token' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'created_at' => ['type' => 'timestamp', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
+        'updated_at' => ['type' => 'timestamp', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'utf8_unicode_ci'
+            'collation' => 'utf8mb4_general_ci'
         ],
     ];
     // phpcs:enable
@@ -45,12 +43,13 @@ class UsersFixture extends TestFixture
             [
                 'id' => 1,
                 'username' => 'Lorem ipsum dolor sit amet',
-                'password' => 'Lorem ipsum dolor sit amet',
-                'first_name' => 'Lorem ipsum dolor sit amet',
-                'last_name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2021-01-02 18:46:45',
-                'modified' => '2021-01-02',
                 'email' => 'Lorem ipsum dolor sit amet',
+                'role' => 'Lorem ipsum dolor sit amet',
+                'email_verified_at' => 1717437629,
+                'password' => 'Lorem ipsum dolor sit amet',
+                'remember_token' => 'Lorem ipsum dolor sit amet',
+                'created_at' => 1717437629,
+                'updated_at' => 1717437629,
             ],
         ];
         parent::init();

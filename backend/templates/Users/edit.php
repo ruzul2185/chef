@@ -30,9 +30,13 @@
             <div class="box-body">
               <?php
                 echo $this->Form->control('username');
+                echo $this->Form->control('email');
+                echo $this->Form->control('role');
+                echo $this->Form->control('email_verified_at');
                 echo $this->Form->control('password');
-                echo $this->Form->control('first_name');
-                echo $this->Form->control('last_name');
+                echo $this->Form->control('remember_token');
+                echo $this->Form->control('created_at');
+                echo $this->Form->control('updated_at');
               ?>
             </div>
             <!-- /.box-body -->

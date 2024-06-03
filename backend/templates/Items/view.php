@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    User
+    Item
     <small><?php echo __('View'); ?></small>
   </h1>
   <ol class="breadcrumb">
@@ -20,24 +20,26 @@
         <!-- /.box-header -->
         <div class="box-body">
           <dl class="dl-horizontal">
-            <dt scope="row"><?= __('Username') ?></dt>
-            <dd><?= h($user->username) ?></dd>
-            <dt scope="row"><?= __('Email') ?></dt>
-            <dd><?= h($user->email) ?></dd>
-            <dt scope="row"><?= __('Role') ?></dt>
-            <dd><?= h($user->role) ?></dd>
-            <dt scope="row"><?= __('Password') ?></dt>
-            <dd><?= h($user->password) ?></dd>
-            <dt scope="row"><?= __('Remember Token') ?></dt>
-            <dd><?= h($user->remember_token) ?></dd>
+            <dt scope="row"><?= __('Name') ?></dt>
+            <dd><?= h($item->name) ?></dd>
+            <!-- <dt scope="row"><?= __('Photo') ?></dt>
+            <dd><?= h($item->photo) ?></dd> -->
+            <dd>
+                  <?= $this->Html->image($item->image, ['width' => '200', 'height' => '200']) ?>
+              </dd>
+
+            <dt scope="row"><?= __('Color') ?></dt>
+            <dd><?= h($item->color) ?></dd>
+            <dt scope="row"><?= __('Size') ?></dt>
+            <dd><?= h($item->size) ?></dd>
+            <dt scope="row"><?= __('Description') ?></dt>
+            <dd><?= h($item->description) ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
-            <dd><?= $this->Number->format($user->id) ?></dd>
-            <dt scope="row"><?= __('Email Verified At') ?></dt>
-            <dd><?= h($user->email_verified_at) ?></dd>
+            <dd><?= $this->Number->format($item->id) ?></dd>
             <dt scope="row"><?= __('Created At') ?></dt>
-            <dd><?= h($user->created_at) ?></dd>
+            <dd><?= h($item->created_at) ?></dd>
             <dt scope="row"><?= __('Updated At') ?></dt>
-            <dd><?= h($user->updated_at) ?></dd>
+            <dd><?= h($item->updated_at) ?></dd>
           </dl>
         </div>
       </div>

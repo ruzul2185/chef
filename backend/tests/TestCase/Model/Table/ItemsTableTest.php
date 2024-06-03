@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\UsersTable;
+use App\Model\Table\ItemsTable;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\UsersTable Test Case
+ * App\Model\Table\ItemsTable Test Case
  */
-class UsersTableTest extends TestCase
+class ItemsTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\UsersTable
+     * @var \App\Model\Table\ItemsTable
      */
-    protected $Users;
+    protected $Items;
 
     /**
      * Fixtures
@@ -24,7 +24,7 @@ class UsersTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Users',
+        'app.Items',
     ];
 
     /**
@@ -35,8 +35,8 @@ class UsersTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Users') ? [] : ['className' => UsersTable::class];
-        $this->Users = $this->getTableLocator()->get('Users', $config);
+        $config = $this->getTableLocator()->exists('Items') ? [] : ['className' => ItemsTable::class];
+        $this->Items = $this->getTableLocator()->get('Items', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class UsersTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Users);
+        unset($this->Items);
 
         parent::tearDown();
     }
@@ -55,20 +55,9 @@ class UsersTableTest extends TestCase
      * Test validationDefault method
      *
      * @return void
-     * @uses \App\Model\Table\UsersTable::validationDefault()
+     * @uses \App\Model\Table\ItemsTable::validationDefault()
      */
     public function testValidationDefault(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     * @uses \App\Model\Table\UsersTable::buildRules()
-     */
-    public function testBuildRules(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
