@@ -150,177 +150,177 @@ export const DropDownListTwo = [
     {
       id:1,
       name:"Kitchen Cooling Fan",
-        href:"",
+        href:"symphony-duet-i-kitchen-cooling-fan",
     },
     {
         id:2,
         name:"Magneto",
-        href:"",
+        href:"magneto",
     },
     {
         id:3,
         name:"Roti-Magic",
-        href:"",
+        href:"roti-magic",
     },
     {
         id:4,
         name:"Crimson Edge Collection",
-        href:"",
+        href:"crimson-edge-premium-collection",
     },
     {
         id:5,
         name:"Baking Essentials",
-        href:"",
+        href:"baking-essentials",
     },
     {
         id:6,
         name:"Microwave",
-        href:"",
+        href:"microwave",
     },
     {
         id:7,
         name:"OTGs",
-        href:"",
+        href:"otgs",
     },
     {
         id:8,
         name:"Hand Mixers & Blenders",
-        href:"",
+        href:"mixers-blenders",
     },
     {
         id:9,
         name:"Sandwich Makers",
-        href:"",
+        href:"sandwich-makers",
     },
     {
         id:10,
         name:"Kettles",
-        href:"",
+        href:"electric-kettles",
     },
     {
         id:11,
         name:"Coffee Machines",
-        href:"",
+        href:"coffee-machine",
     },
     {
         id:12,
         name:"Toasters",
-        href:"",
+        href:"pop-up-toasters",
     },
     {
         id:13,
         name:"Sanjeev Kapoor Tandoor",
-        href:"",
+        href:"sanjeev-kapoor-tandoor",
     },
     {
         id:14,
         name:"Grills",
-        href:"",
+        href:"grills-barbeque-tandoor",
     },
     {
         id:15,
         name:"Egg Boiler",
-        href:"",
+        href:"egg-boiler",
     },
     {
         id:16,
         name:"Air Fryers",
-        href:"",
+        href:"air-fryers",
     },
     {
         id:17,
         name:"BBQ",
-        href:"",
+        href:"smoky-grill-electric-barbeque-1650w-1-year-warranty",
     },
     {
         id:18,
         name:"Waffle Maker",
-        href:"",
+        href:"waffle-maker",
     },
     {
         id:19,
         name:"Electric Dosa Tawa",
-        href:"",
+        href:"electric-dosa-tawa",
     },
     {
         id:20,
         name:"Cold Press Juicer",
-        href:"",
+        href:"cold-press-juicer",
     },
     {
         id:21,
         name:"Juicers",
-        href:"",
+        href:"juicers",
     },
     {
         id:22,
         name:"Soup Maker",
-        href:"",
+        href:"soup-maker",
     },
     {
         id:23,
         name:"Mixer Grinders",
-        href:"",
+        href:"mixers-grinder",
     },
     {
         id:24,
         name:"Nutri-Blend",
-        href:"",
+        href:"nutri-blends-all",
     },
     {
         id:25,
         name:"Nutri-Pot",
-        href:"",
+        href:"nutripot",
     },
     {
         id:26,
         name:"Electric Choppers",
-        href:"",
+        href:"electric-choppers",
     },
     {
         id:27,
         name:"Stand Mixers",
-        href:"",
+        href:"stand-mixers",
     },
     {
         id:28,
         name:"Rice Cookers",
-        href:"",
+        href:"nutri-cook-rice-cooker-with-single-bowl-1-8-litres-2-years-warranty",
     },
     {
         id:29,
         name:"Induction Cooktops",
-        href:"",
+        href:"induction-cooktops",
     },
     {
         id:30,
         name:"Wet Grinder",
-        href:"",
+        href:"wonderchef-maxima-wet-grinder-2-l",
     },
     {
         id:31,
         name:"Water Heaters",
-        href:"",
+        href:"water-heaters",
     },
     {
         id:32,
         name:"Irons",
-        href:"",
+        href:"irons",
     },
     {
         id:33,
         name:"Combos",
-        href:"",
+        href:"combos",
     },
     {
         id:34,
         name:"Bread Maker",
-        href:"",
+        href:"regalia-atta-kneader-bread-maker",
     },
     {
         id:35,
         name:"Nutri-Cup",
-        href:"",
+        href:"nutri-cup",
     },
 ];
 
@@ -328,52 +328,52 @@ export const DropDownListThree = [
     {
       id:1,
       name:"Nutri-Blend Smart",
-        href:"",
+        href:"nutri-blend-smart",
     },
     {
         id:2,
         name:"Nutri-Blend Go",
-        href:"",
+        href:"nutri-blend-go",
     },
     {
         id:3,
         name:"Nutri-Blend BOLT",
-        href:"",
+        href:"nutri-blend-bolt",
     },
     {
         id:4,
         name:"Nutri-Blend 2 Jars",
-        href:"",
+        href:"nutriblend-mixer-grinder-2-jar",
     },
     {
         id:5,
         name:"Nutri-Blend 3 Jars",
-        href:"",
+        href:"nutriblend-mixer-grinder-3-jar",
     },
     {
         id:6,
         name:"Nutri-Blend Complete Kitchen Machine",
-        href:"",
+        href:"nutriblend-complete-kitchen-machine",
     },
     {
         id:7,
         name:"Nutri-Blend Compact Food Processor",
-        href:"",
+        href:"nutriblend-food-processor",
     },
     {
         id:8,
         name:"Nutri-Blend Thunder",
-        href:"",
+        href:"nutri-blend-thunder-1000w",
     },
     {
         id:9,
         name:"Nutri-Blend Personal",
-        href:"",
+        href:"wonderchef-nutri-blend-personal",
     },
     {
         id:10,
         name:"Nutri-Blend Spare Parts",
-        href:"",
+        href:"wonderchef-nutri-blend-personal",
     },
 ];
 
@@ -381,22 +381,22 @@ export const DropDownListFour = [
     {
       id:1,
       name:"Inner Lid",
-        href:"",
+        href:"inner-lid",
     },
     {
         id:2,
         name:"Outer Lid",
-        href:"",
+        href:"outer-lid",
     },
     {
         id:3,
         name:"Specialty Cookers",
-        href:"",
+        href:"specialty-cookers",
     },
     {
         id:4,
         name:"Combo",
-        href:"",
+        href:"combo",
     },
 ];
 
@@ -404,17 +404,17 @@ export const DropDownListFive = [
     {
       id:1,
       name:"Gas Cooktops",
-        href:"",
+        href:"gas-cooktops",
     },
     {
         id:2,
         name:"Induction Cooktops",
-        href:"",
+        href:"induction-cooktops",
     },
     {
         id:3,
         name:"Infrared Cooktops",
-        href:"",
+        href:"infrared-cooktop",
     },
 ];
 
@@ -422,47 +422,47 @@ export const DropDownListSix = [
     {
       id:1,
       name:"Choppers",
-        href:"",
+        href:"chopper",
     },
     {
         id:2,
         name:"Graters",
-        href:"",
+        href:"graters",
     },
     {
         id:3,
         name:"Oil Pourer",
-        href:"",
+        href:"oil-pourer-1",
     },
     {
         id:4,
         name:"Knives & Peelers",
-        href:"",
+        href:"knives-peelers",
     },
     {
         id:5,
         name:"Spoons & Ladles",
-        href:"",
+        href:"spoon-ladles",
     },
     {
         id:6,
         name:"Tea Infuser",
-        href:"",
+        href:"tea-infuser",
     },
     {
         id:7,
         name:"Milk Frother",
-        href:"",
+        href:"regalia-milk-frother-6w-battery-operated-6-months-warranty",
     },
     {
         id:8,
         name:"Snacks Maker",
-        href:"",
+        href:"wonderchef-snacks-maker",
     },
     {
         id:9,
         name:"Oil Sprayer",
-        href:"",
+        href:"wonderchef-stay-fit-oil-sprayer",
     },
 ];
 
@@ -470,51 +470,51 @@ export const DropDownListSeven = [
     {
       id:1,
       name:"Choppers",
-        href:"",
+        href:"choppers-spare-parts",
     },
     {
         id:2,
         name:"Nutri-blend",
-        href:"",
+        href:"nutri-blend-spare-part",
     },
     {
         id:3,
         name:"Nutri-blend Thunder",
-        href:"",
+        href:"nutri-blend-thunder-spare-parts",
     },
     {
         id:4,
         name:"Nutri-blend Bolt",
-        href:"",
+        href:"nutri-blend-bolt-spare-parts",
     },
     {
         id:5,
         name:"OTGs",
-        href:"",
+        href:"otg-spares-accessories",
     },
     {
         id:6,
         name:"Nutri-pot",
-        href:"",
+        href:"nutri-pot-spare-parts",
     },
     {
         id:7,
         name:"Egg Boiler",
-        href:"",
+        href:"egg-boiler-spare-parts",
     },
     {
         id:8,
         name:"Pressure Cooker",
-        href:"",
+        href:"pressure-cooker-spare-parts",
     },
     {
         id:9,
         name:"Cooktops",
-        href:"",
+        href:"ultima-3-burner-cooktop",
     },
     {
         id:10,
         name:"Lids",
-        href:"",
+        href:"lids",
     },
 ];

@@ -31,7 +31,7 @@ const Header = () => {
     }, []);
 
     const handleScroll = () => {
-        if (window.pageYOffset > 50) {
+        if (window.pageYOffset > 1) {
             setShowStickyHeader(true);
         } else {
             setShowStickyHeader(false);
@@ -53,7 +53,7 @@ const Header = () => {
 
     return(
         <React.Fragment>
-            <div className="header-top">
+            <div className="header-top sticky-header">
                 <div className="hamburgerMediaQuery">
                     <div className="sidebar-menu">
                         <HamburgerMenu />
@@ -179,6 +179,22 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div className="header-top-search-bar">
+                    <form className="search-box" onSubmit={handleSubmit}>
+                        <div style={{boxShadow:"0 0 4px #0003"}}>
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Search..."
+                                value={searchTerm}
+                                onChange={handleChange}
+                            />
+                            <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div className="header-middle sticky-header">

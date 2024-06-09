@@ -78,6 +78,7 @@
     font-weight: bold;
     color: #383E47;
     cursor: pointer;
+    text-align: center;
 }
 
 .dropdown {
@@ -95,6 +96,7 @@
     padding: 10px;
     color: #000; /* Adjust as necessary */
     text-decoration: none;
+    text-align: center;
 }
 
 .dropdownItem:hover {
