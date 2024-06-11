@@ -29,7 +29,7 @@
           <?php echo $this->Form->create($user, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('username');
+                echo $this->Form->control('user');
                 echo $this->Form->control('email');
                 echo $this->Form->control('role');
                 echo $this->Form->control('email_verified_at');

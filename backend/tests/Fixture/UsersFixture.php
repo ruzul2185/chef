@@ -18,7 +18,7 @@ class UsersFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'biginteger', 'length' => null, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'username' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'user' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'email' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'role' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'email_verified_at' => ['type' => 'timestamp', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
@@ -42,14 +42,14 @@ class UsersFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'username' => 'Lorem ipsum dolor sit amet',
+                'user' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'role' => 'Lorem ipsum dolor sit amet',
-                'email_verified_at' => 1717437629,
+                'email_verified_at' => 1718127569,
                 'password' => 'Lorem ipsum dolor sit amet',
                 'remember_token' => 'Lorem ipsum dolor sit amet',
-                'created_at' => 1717437629,
-                'updated_at' => 1717437629,
+                'created_at' => 1718127569,
+                'updated_at' => 1718127569,
             ],
         ];
         parent::init();

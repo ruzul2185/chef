@@ -48,36 +48,7 @@ class ItemsController extends AppController
     {
         $item = $this->Items->newEmptyEntity();
         if ($this->request->is('post')) {
-            $image = $this->request->getData('image');
-            $name  = $image->getClientFilename();
-            $data = $this->request->getData();
-            if (empty($name)) {
-                $data['image'] = '';
-            }
-            $writing = $this->Items->patchEntity($item, $data);
-
-            // Check for the image upload
-            if(!$item->getErrors){
-                $image = $this->request->getData('image');
-
-                $name  = $image->getClientFilename();
-
-                $targetPath = WWW_ROOT.'img'.DS.$name;
-
-//added
-//                $uploadPath = 'img/';
-//                $uploadFile = 'img/' .$name ;
-
-                if($name)
-                    $image->moveTo($targetPath);
-
-                $item->image = $name;
-
-                //added
-                $uploadFile = 'img/' .$name ;
-                // $item->url = Router::fullBaseUrl() . DS . $uploadFile;
-            }
-            // $item = $this->Items->patchEntity($item, $this->request->getData());
+            $item = $this->Items->patchEntity($item, $this->request->getData());
             if ($this->Items->save($item)) {
                 $this->Flash->success(__('The item has been saved.'));
 

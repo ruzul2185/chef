@@ -20,8 +20,8 @@
         <!-- /.box-header -->
         <div class="box-body">
           <dl class="dl-horizontal">
-            <dt scope="row"><?= __('Username') ?></dt>
-            <dd><?= h($user->username) ?></dd>
+            <dt scope="row"><?= __('User') ?></dt>
+            <dd><?= h($user->user) ?></dd>
             <dt scope="row"><?= __('Email') ?></dt>
             <dd><?= h($user->email) ?></dd>
             <dt scope="row"><?= __('Role') ?></dt>

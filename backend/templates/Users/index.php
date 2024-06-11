@@ -33,7 +33,7 @@
             <thead>
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('username') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('user') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('email_verified_at') ?></th>
@@ -48,7 +48,7 @@
               <?php foreach ($users as $user): ?>
                 <tr>
                   <td><?= $this->Number->format($user->id) ?></td>
-                  <td><?= h($user->username) ?></td>
+                  <td><?= h($user->user) ?></td>
                   <td><?= h($user->email) ?></td>
                   <td><?= h($user->role) ?></td>
                   <td><?= h($user->email_verified_at) ?></td>
