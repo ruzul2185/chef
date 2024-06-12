@@ -1,6 +1,9 @@
 import React from 'react';
 import './SlideShow.css'
 
+import slider1 from '../asset/slider1.jpg';
+import slider2 from '../asset/slider2.png'
+
 
 const SlideShow = () => {
 
@@ -18,13 +21,13 @@ const SlideShow = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="10000">
-                        <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" className="d-block w-100" alt="..."/>
+                        <img src={slider1} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
-                        <img src="https://img.freepik.com/free-photo/colorful-design-with-spiral-design_188544-9588.jpg?size=626&ext=jpg&ga=GA1.1.553209589.1715817600&semt=sph" className="d-block w-100" alt="..."/>
+                        <img src={slider2} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg" className="d-block w-100" alt="..."/>
+                        <img src="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg" className="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
