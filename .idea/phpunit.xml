@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/backend2/tests/TestCase" />
         <option value="$PROJECT_DIR$/backend/cms/tests/TestCase" />
         <option value="$PROJECT_DIR$/backend/tests/TestCase" />
+        <option value="$PROJECT_DIR$/backend3/tests/TestCase" />
       </list>
     </option>
   </component>
