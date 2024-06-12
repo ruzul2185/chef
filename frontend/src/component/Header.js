@@ -62,8 +62,10 @@ const Header = () => {
                         <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
                             <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
                                 <img itemProp="logo"
-                                     src="//www.wonderchef.com/cdn/shop/files/New-Website-Logo.png?v=1704047470"
-                                     alt="Wonderchef"/>
+                                     src={require("../asset/logo.png")}
+                                     alt="Wonderchef"
+                                     className="logoMobileView"
+                                />
                             </a>
                         </div>
                     </div>
@@ -205,7 +207,8 @@ const Header = () => {
                 <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
                     <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
                         <img itemProp="logo"
-                             src="//www.wonderchef.com/cdn/shop/files/New-Website-Logo.png?v=1704047470"
+                             src={require("../asset/logo.png")}
+                             className="logoMobileView"
                              alt="Wonderchef"/>
                     </a>
                 </div>

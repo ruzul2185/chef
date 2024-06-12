@@ -6,6 +6,7 @@ import {
 import SearchResult from "../page/SearchResult";
 import MainPage from "../page/MainPage";
 import RootLayout from "../utils/RootLayout";
+import ProductPage from "../page/ProductPage";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
         children: [
             {path: '/', element: <MainPage/>},
             {path: '/collection/:task', element: <SearchResult/>},
+            {path: '/collection/:task/products/:id', element:<ProductPage/>},
         ],
     },
     { path: '*', element: <Navigate to="/" /> }

@@ -437,6 +437,27 @@ html * {
     .search-input {
         min-width: 80%;
     }
+    .logoMobileView {
+        width:100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logoMobileView {
+        width:100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logoMobileView {
+        width:100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .logoMobileView {
+        width:100px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -461,5 +482,8 @@ html * {
     }
     .header-top-search-bar {
         display: none;
+    }
+    .logoMobileView {
+        width:80px;
     }
 }

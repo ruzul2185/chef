@@ -1,5 +1,5 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {redirect, useNavigate, useNavigation, useParams} from "react-router-dom";
 import classes from "./SearchResult.module.css";
 
 const SearchResult = () => {
@@ -80,13 +80,16 @@ const SearchResult = () => {
     ];
 
     const params = useParams();
+    const navigate = useNavigate();
     return(
         <React.Fragment>
             <div className={classes.outerContainer}>
                 <div className={`${classes.gridContainer}`}>
                     {list.map((item) => (
-                        <div className={`${classes.layout} card`} key={item.title}>
-                            <div className={classes.imageContainer}>
+                        <div className={`${classes.layout} card`} key={item.id} >
+                            <div className={classes.imageContainer} onClick={()=>{
+                                navigate(`./products/${item.id}`);
+                            }}>
                                 <img src={item.image} className={classes.cardImgTop} alt={item.title} />
                                 <div className={classes.overlay}>
                                     <button className={classes.overlayButton}>Click to View</button>
