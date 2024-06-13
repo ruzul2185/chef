@@ -15,7 +15,7 @@ import Footer from "../component/Footer";
 const MainPage = () => {
     return(
         <div>
-            <Header/>
+            {/*<Header/>*/}
             {/*<img alt="hare" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>*/}
             <div className={classes.haloContainer}>
                 <div className={classes.haloSection}>
@@ -60,10 +60,6 @@ const MainPage = () => {
 
             <div>
                 <OutletBanner title={"AVAILABLE AT OVER 10,000 OUTLETS INCLUDING ALL DEPARTMENT STORES"}/>
-            </div>
-
-            <div>
-                <Footer />
             </div>
         </div>
     )
