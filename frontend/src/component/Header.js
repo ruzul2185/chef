@@ -31,7 +31,7 @@ const Header = () => {
     }, []);
 
     const handleScroll = () => {
-        if (window.pageYOffset > 50) {
+        if (window.pageYOffset > 1) {
             setShowStickyHeader(true);
         } else {
             setShowStickyHeader(false);
@@ -53,7 +53,7 @@ const Header = () => {
 
     return(
         <React.Fragment>
-            <div className="header-top">
+            <div className="header-top sticky-header">
                 <div className="hamburgerMediaQuery">
                     <div className="sidebar-menu">
                         <HamburgerMenu />
@@ -62,8 +62,10 @@ const Header = () => {
                         <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
                             <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
                                 <img itemProp="logo"
-                                     src="//www.wonderchef.com/cdn/shop/files/New-Website-Logo.png?v=1704047470"
-                                     alt="Wonderchef"/>
+                                     src={require("../asset/logo.png")}
+                                     alt="Wonderchef"
+                                     className="logoMobileView"
+                                />
                             </a>
                         </div>
                     </div>
@@ -162,11 +164,11 @@ const Header = () => {
                                 <span className="navUser-text">
                                     <a href="https://www.facebook.com/WonderchefLife/" target="_blank"
                                        aria-describedby="a11y-new-window-external-message" rel="noopener">
-                                        <FontAwesomeIcon icon={faFacebookSquare} />
+                                        <FontAwesomeIcon icon={faFacebookSquare} color={"#383e47"}/>
                                         <b className="icon-text">1.16M</b> </a>&nbsp;<a
                                     href="https://www.instagram.com/wondercheflife/" target="_blank"
                                     aria-describedby="a11y-new-window-external-message" rel="noopener">&nbsp;
-                                    <FontAwesomeIcon icon={faInstagram} />
+                                    <FontAwesomeIcon icon={faInstagram} color={"#383e47"}/>
                                     <b className="icon-text">510k</b></a>
                                 </span>
                             </li>
@@ -180,6 +182,22 @@ const Header = () => {
                         </ul>
                     </div>
                 </div>
+                <div className="header-top-search-bar">
+                    <form className="search-box" onSubmit={handleSubmit}>
+                        <div style={{boxShadow:"0 0 4px #0003"}}>
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Search..."
+                                value={searchTerm}
+                                onChange={handleChange}
+                            />
+                            <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div className="header-middle sticky-header">
             <div className="header-Mobile-item text-center">
@@ -189,7 +207,8 @@ const Header = () => {
                 <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
                     <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
                         <img itemProp="logo"
-                             src="//www.wonderchef.com/cdn/shop/files/New-Website-Logo.png?v=1704047470"
+                             src={require("../asset/logo.png")}
+                             className="logoMobileView"
                              alt="Wonderchef"/>
                     </a>
                 </div>

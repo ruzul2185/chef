@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './OutletBanner.module.css';
 
+import Hawkins from '../asset/Hawkins.jpg';
+
 const OutletBanner = (props) => {
     const settings = {
         dots: false,
@@ -55,7 +57,7 @@ const OutletBanner = (props) => {
     const list = [
         {
             id:1,
-            image:"//www.wonderchef.com/cdn/shop/files/Home_centre_logo_color-min_200x_0bfc4fcf-dbb8-4d36-99eb-3964201a98ae_250x.jpg?v=1649916860",
+            image:Hawkins,
         },
         {
             id:2,
@@ -111,7 +113,7 @@ const OutletBanner = (props) => {
             <Slider {...settings}>
                     {list.map((item)=>(
                         <div className={styles.imageContainer}>
-                            <img src={item.image} id={item.id} alt={item.id}/>
+                            <img src={item.image} id={item.id} alt={item.id} style={{objectFit:"contain"}}/>
                         </div>
                     ))}
             </Slider>
