@@ -4,7 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './OutletBanner.module.css';
 
-import Hawkins from '../asset/Hawkins.jpg';
+import Hawkins from '../asset/hawkins-new.png';
+import Vinod from '../asset/vinod-new.png';
+import Sathl from '../asset/stahl-new.jpg';
+import Prestige from '../asset/prestige-new.png';
+import Boss from '../asset/boss-new.jpg';
+import Bosch from '../asset/bosch-new.png';
+import Vidiem from '../asset/vidiem-new.jpg';
+import Wonderchef from '../asset/wonderchef-new.jpg';
+import Sujata from '../asset/sujata-new.png';
+import Havells from '../asset/havells-new.png';
 
 const OutletBanner = (props) => {
     const settings = {
@@ -57,51 +66,43 @@ const OutletBanner = (props) => {
     const list = [
         {
             id:1,
-            image:Hawkins,
+            image:Vinod,
         },
         {
             id:2,
-            image:"//www.wonderchef.com/cdn/shop/files/2_1cd89edc-8c1c-41e0-a543-2ef9febd9765_250x.png?v=1649916838",
+            image:Sathl,
         },
         {
             id:3,
-            image:"//www.wonderchef.com/cdn/shop/files/4_30cea9b2-fd14-4762-8183-d68918b0708b_250x.png?v=1649916838",
+            image:Hawkins,
         },
         {
             id:4,
-            image:"//www.wonderchef.com/cdn/shop/files/5_74ed1c86-cbd2-46b6-883c-c078583626e9_250x.png?v=1649916838",
+            image:Prestige,
         },
         {
             id:5,
-            image:"//www.wonderchef.com/cdn/shop/files/6_250x.png?v=1649916838\" data-src=\"//www.wonderchef.com/cdn/shop/files/6_250x.png?v=1649916838",
+            image:Boss,
         },
         {
             id:6,
-            image:"//www.wonderchef.com/cdn/shop/files/7_250x.png?v=1649916838",
+            image:Bosch,
         },
         {
             id:7,
-            image:"//www.wonderchef.com/cdn/shop/files/8_a0acbeec-a5bb-4577-a3c1-c771c92efa45_250x.png?v=1649916838",
+            image:Vidiem,
         },
         {
             id:8,
-            image:"//www.wonderchef.com/cdn/shop/files/9_1807b9ac-4375-438c-8a16-5415b533dfa5_250x.png?v=1649916838",
+            image:Wonderchef,
         },
         {
             id:9,
-            image:"//www.wonderchef.com/cdn/shop/files/10_250x.png?v=1649916838",
+            image:Sujata,
         },
         {
             id:10,
-            image:"//www.wonderchef.com/cdn/shop/files/11_4f682a1d-d64b-43be-b366-ac82bbd790a2_250x.jpg?v=1649916838",
-        },
-        {
-            id:11,
-            image:"//www.wonderchef.com/cdn/shop/files/12_6a234330-b4e7-4805-8a60-35556a4e4cc6_250x.jpg?v=1649917006",
-        },
-        {
-            id:12,
-            image:"//www.wonderchef.com/cdn/shop/files/13_98a2fe95-27ad-4c4c-946c-f124fc830d04_250x.jpg?v=1649917018",
+            image:Havells,
         },
     ];
 
