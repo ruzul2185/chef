@@ -73,18 +73,29 @@
     justify-content: space-between;
     padding: 0 !important;
 }
+.prevButton{
+    height:40px;
+    background-color: #ff0002 !important;
+}
+
+.nextButton {
+    height: 40px;
+    background-color: #ff0002 !important;
+}
 
 .cart-button {
-    background-color: #be2c3f !important;
-    border-radius: 0;
+    background-color: #ff0002 !important;
+    border-radius: 0 !important;
     font-family: "Rajdhani", sans-serif;
     font-weight: bold;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
+    border: 1px solid #ff0002 !important;
 }
 
 .cart-button:hover {
     background-color: #004b05 !important;
+    border: 1px solid #004b05 !important;
 }
 
 .card-subtitle {
@@ -97,7 +108,7 @@
 
 .card-offer {
     font-size: 14px;
-    color: #be2c3f;
+    color: #ff0002;
     font-family: "Arimo",serif;
     font-weight: bold;
 }
@@ -117,8 +128,8 @@
 .view-all-button {
     text-align: center;
     margin-top: 30px;
-    color: #be2c3f;
-    border: 1px solid #be2c3f;
+    color: #ff0002;
+    border: 1px solid #ff0002;
     padding: 10px;
     border-radius: 4px;;
 }
@@ -127,8 +138,8 @@
     text-align: center;
     margin-top: 30px;
     color: white;
-    background-color: #be2c3f;
-    border: 1px solid #be2c3f;
+    background-color: #ff0002;
+    border: 1px solid #ff0002;
     padding: 10px;
     border-radius: 4px;;
 }

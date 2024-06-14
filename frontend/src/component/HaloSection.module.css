@@ -9,7 +9,22 @@
     padding-right: 20px;
 }
 
+.logoItem img {
+    height: 80px;
+    width: 80px;
+}
+
 .title {
     text-decoration: none;
     color: #1b0606;
+}
+
+@media (max-width: 786px) {
+    .logoItem img {
+        height: 70px;
+        width: 70px;
+    }
+    .logoItem {
+        font-size: 12px;
+    }
 }
