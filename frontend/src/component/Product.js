@@ -3,6 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Product.css';
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import classes from "../page/SearchResult.module.css";
+import {useNavigate} from "react-router-dom";
 
 const Product = (props) => {
     const list = [
@@ -80,6 +82,8 @@ const Product = (props) => {
         }
     ];
 
+    const navigate = useNavigate();
+
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 3;
     const totalPages = Math.ceil(list.length / itemsPerPage);
@@ -128,7 +132,14 @@ const Product = (props) => {
                             classNames="product"
                         >
                             <div className="card">
-                                <img src={item.image} className="card-img-top" alt={item.title} />
+                                <div className={classes.imageContainer} onClick={()=>{
+                                    navigate(`./products/${item.id}`);
+                                }}>
+                                    <img src={item.image} className={classes.cardImgTop} alt={item.title} />
+                                    <div className={classes.overlay}>
+                                        <button className={classes.overlayButton}>Click to View</button>
+                                    </div>
+                                </div>
                                 <div className="card-body">
                                     <div className="card-body-text">
                                         <h5 className="card-title">{item.title}</h5>
