@@ -73,7 +73,7 @@ const OutletBanner = (props) => {
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={20}
-                slidesPerView={3}
+                slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
@@ -81,15 +81,30 @@ const OutletBanner = (props) => {
                     '--swiper-navigation-color': 'red', // Change arrow color to red
                 }}
                 loop={true}
+                breakpoints={{
+                    586: {
+                        slidesPerView: 2,
+                    },
+                    786: {
+                        slidesPerView: 3,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                    },
+                    1450:{
+                        slidesPerView: 6,
+                    },
+                }}
                 autoplay={{
                     delay: 200,
                     disableOnInteraction: false,
                 }}
-                // onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log('slide change')}
             >
                 {list.map((item)=>(
-                    <SwiperSlide className={styles.container}>
+                    <SwiperSlide>
                         <div className={styles.imageContainer}>
                             <img src={item.image} id={item.id} alt={item.id} style={{objectFit:"contain"}}/>
                         </div>

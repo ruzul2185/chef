@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Review.module.css';
+import './SwiperControl.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -59,15 +60,28 @@ const Review = (props) => {
                     // install Swiper modules
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     style={{
                         '--swiper-navigation-color': 'red', // Change arrow color to red
                     }}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
+                    breakpoints={{
+                        992: {
+                            slidesPerView: 1,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1200:{
+                            slidesPerView: 3,
+                        },
+                    }}
+                    autoplay={{
+                        delay: 2,
+                        disableOnInteraction: false,
+                    }}
                 >
                     {list.map((item)=>(
                         <SwiperSlide className={styles.container}>
