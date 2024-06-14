@@ -199,7 +199,7 @@ const Header = () => {
                     </form>
                 </div>
             </div>
-            <div className="header-middle sticky-header">
+            <div className={`header-middle ${showStickyHeader ? 'sticky-header' : ''}`}>
             <div className="header-Mobile-item text-center">
                 {showStickyHeader && <div className="sidebar-menu">
                     <HamburgerMenu />
