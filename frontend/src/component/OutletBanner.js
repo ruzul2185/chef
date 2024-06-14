@@ -1,7 +1,4 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from './OutletBanner.module.css';
 
 import Hawkins from '../asset/hawkins-new.png';
@@ -15,53 +12,14 @@ import Wonderchef from '../asset/wonderchef-new.jpg';
 import Sujata from '../asset/sujata-new.png';
 import Havells from '../asset/havells-new.png';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
+
 const OutletBanner = (props) => {
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 1,
-                    infinite: false,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    infinite: false,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: false,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: false,
-                    dots: false
-                }
-            },
-        ]
-    };
 
     const list = [
         {
@@ -111,13 +69,33 @@ const OutletBanner = (props) => {
             <div className={styles.titleContainer}>
                 {props.title}
             </div>
-            <Slider {...settings}>
-                    {list.map((item)=>(
+            <Swiper
+                // install Swiper modules
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={20}
+                slidesPerView={3}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                style={{
+                    '--swiper-navigation-color': 'red', // Change arrow color to red
+                }}
+                loop={true}
+                autoplay={{
+                    delay: 200,
+                    disableOnInteraction: false,
+                }}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
+            >
+                {list.map((item)=>(
+                    <SwiperSlide className={styles.container}>
                         <div className={styles.imageContainer}>
                             <img src={item.image} id={item.id} alt={item.id} style={{objectFit:"contain"}}/>
                         </div>
-                    ))}
-            </Slider>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
     );
 };
