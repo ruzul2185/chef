@@ -18,7 +18,7 @@ import Havells from '../asset/havells-new.png';
 const OutletBanner = (props) => {
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -29,7 +29,7 @@ const OutletBanner = (props) => {
                 settings: {
                     slidesToShow: 5,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: true,
                     dots: false
                 }
             },
@@ -38,7 +38,7 @@ const OutletBanner = (props) => {
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: true,
                     dots: false
                 }
             },
@@ -47,7 +47,7 @@ const OutletBanner = (props) => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: true,
                     dots: false
                 }
             },
@@ -56,7 +56,7 @@ const OutletBanner = (props) => {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    infinite: false,
+                    infinite: true,
                     dots: false
                 }
             },
