@@ -17,7 +17,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
+import 'swiper/css/autoplay';
+import {A11y, Navigation, Pagination, Scrollbar, Autoplay} from "swiper/modules";
 
 const OutletBanner = (props) => {
 
@@ -71,7 +72,7 @@ const OutletBanner = (props) => {
             </div>
             <Swiper
                 // install Swiper modules
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={20}
                 slidesPerView={1}
                 navigation
@@ -98,10 +99,7 @@ const OutletBanner = (props) => {
                         slidesPerView: 6,
                     },
                 }}
-                autoplay={{
-                    delay: 200,
-                    disableOnInteraction: false,
-                }}
+                autoplay={true}
             >
                 {list.map((item)=>(
                     <SwiperSlide>
