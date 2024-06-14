@@ -9,6 +9,11 @@
     padding-right: 20px;
 }
 
+.logoItem img {
+    height: 80px;
+    width: 80px;
+}
+
 .title {
     text-decoration: none;
     color: #1b0606;

@@ -107,7 +107,7 @@ const Product = (props) => {
     return (
         <React.Fragment>
             <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="btn btn-secondary">
+                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="btn btn-secondary prevButton">
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <div className="indicator-container">
@@ -115,7 +115,7 @@ const Product = (props) => {
                         {props.title}
                     </p>
                 </div>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="btn btn-secondary">
+                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="btn btn-secondary nextButton">
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>

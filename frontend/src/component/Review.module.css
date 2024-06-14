@@ -19,7 +19,7 @@
 
 .container {
     padding: 15px;
-    margin: 0 15px; /* Increase horizontal spacing between items */
+    /*margin: 0 15px; !* Increase horizontal spacing between items *!*/
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff;
@@ -27,6 +27,7 @@
     display: flex !important;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .subContainer {
@@ -66,3 +67,4 @@
 .slickList {
     justify-content: center;
 }
+

@@ -4,35 +4,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from './Review.module.css';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
+
 const Review = (props) => {
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 775,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-        ]
-    };
 
     const list = [
         {
@@ -79,9 +58,22 @@ const Review = (props) => {
                 <div className={styles.textCenter}>
                     {props.title}
                 </div>
-                <Slider {...settings} className={styles.slickList}>
+                <Swiper
+                    // install Swiper modules
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={20}
+                    slidesPerView={3}
+                    navigation
+                    pagination={{ clickable: true }}
+                    scrollbar={{ draggable: true }}
+                    style={{
+                        '--swiper-navigation-color': 'red', // Change arrow color to red
+                    }}
+                    // onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
+                >
                     {list.map((item)=>(
-                        <div className={styles.container}>
+                        <SwiperSlide className={styles.container}>
                             <div className={styles.subContainer}>
                                 <div>
                                     <img
@@ -94,9 +86,9 @@ const Review = (props) => {
                                 <div className={styles.center}>{item.desc}</div>
                                 <div className={styles.center} style={{color:"#6A0c0D"}}>{item.address}</div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </Slider>
+                </Swiper>
             </div>
         </React.Fragment>
     );
