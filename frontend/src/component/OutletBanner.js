@@ -102,7 +102,7 @@ const OutletBanner = (props) => {
                 autoplay={true}
             >
                 {list.map((item)=>(
-                    <SwiperSlide>
+                    <SwiperSlide key={item.id}>
                         <div className={styles.imageContainer}>
                             <img src={item.image} id={item.id} alt={item.id} style={{objectFit:"contain"}}/>
                         </div>

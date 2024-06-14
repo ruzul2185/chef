@@ -82,7 +82,7 @@ const Review = (props) => {
                     autoplay={true}
                 >
                     {list.map((item)=>(
-                        <SwiperSlide className={styles.container}>
+                        <SwiperSlide className={styles.container} key={item.id}>
                             <div className={styles.subContainer}>
                                 <div>
                                     <img
