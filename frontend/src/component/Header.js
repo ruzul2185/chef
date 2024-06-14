@@ -194,7 +194,7 @@ const Header = () => {
                                 value={searchTerm}
                                 onChange={handleChange}
                             />
-                            <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
+                            <button type="submit" className="search-button" style={{background:"#f1f1f1",height:"41px",width:"41px"}}>
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
                         </div>
@@ -225,8 +225,8 @@ const Header = () => {
                             value={searchTerm}
                             onChange={handleChange}
                         />
-                        <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        <button type="submit" className="search-button" style={{background:"#f1f1f1",height:"40px",width:'40px'}}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} style={{marginLeft:"-4px"}}/>
                         </button>
                     </div>
                 </form>
