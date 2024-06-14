@@ -7,6 +7,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import LoginMenu from "./LoginMenu";
 import Cart from "./Cart";
 import NavDropdown from "./NavDropdown";
+import { useDetectClickOutside } from 'react-detect-click-outside';
 import {
     DropDownListFive,
     DropDownListFour,
@@ -20,6 +21,7 @@ const Header = () => {
 
     const [loginIsOpen, setLoginIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const ref = useDetectClickOutside({ onTriggered: () => {setLoginIsOpen(false)} });
 
     const [showStickyHeader, setShowStickyHeader] = useState(false);
 
@@ -116,12 +118,12 @@ const Header = () => {
                                     </svg>
                                 </i>
                             </li>
-                            <div className="dropdown">
+                            <div className="dropdown" ref={ref}>
                                 <div className="navUser-action" id="customer_login_link" onClick={toggleLoginDropdown} style={{cursor:"pointer"}}>
                                     Login
                                 </div>
                                 {loginIsOpen && (
-                                    <div className="dropdown-content">
+                                    <div className="dropdown-content" >
                                         <div className="header">
                                             <div className="headerText">
                                                 Customer Login
