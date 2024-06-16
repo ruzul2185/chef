@@ -518,3 +518,5 @@ export const DropDownListSeven = [
         href:"lids",
     },
 ];
+
+export const AUTHENTICATE = 'AUTHENTICATE';
