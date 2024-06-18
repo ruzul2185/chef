@@ -31,7 +31,7 @@ const Header = () => {
 
     const login = async() => {
         console.log("Redux");
-        await dispatch(authenticate()); 
+        await dispatch(authenticate());
     };
 
     useEffect(() => {
@@ -244,20 +244,16 @@ const Header = () => {
         </div>
             <div className="header-bottom">
                 <div className="bottom-container">
+                    <NavDropdown className="header-bottom-item" title="AIR FRYER" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKERS" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="INDUCTION" list={[]}/>
                     <NavDropdown className="header-bottom-item" title="COOKWARE" list={DropDownListOne}/>
-                    <NavDropdown className="header-bottom-item" title="APPLIANCES" list={DropDownListTwo}/>
-                    <NavDropdown className="header-bottom-item" title="COFFEE MACHINES" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="NUTRI-BLEND" list={DropDownListThree}/>
-                    <NavDropdown className="header-bottom-item" title="MIXER GRINDERS" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="FLASKS & BOTTLES" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="HOME & LIVING" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKERS" list={DropDownListFour}/>
-                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={DropDownListFive}/>
-                    <NavDropdown className="header-bottom-item" title="CHIMNEYS" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="KITCHEN TOOLS" list={DropDownListSix}/>
-                    <NavDropdown className="header-bottom-item" title="GIFTING" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="SPARE PARTS" list={DropDownListSeven}/>
-                    <NavDropdown className="header-bottom-item" title="WONDERENT" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKING APPLIANCE" list={DropDownListTwo}/>
+                    <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={DropDownListThree}/>
+                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={DropDownListFour}/>
+                    <NavDropdown className="header-bottom-item" title="BEVERAGES" list={DropDownListFive}/>
+                    <NavDropdown className="header-bottom-item" title="IRON" list={[]}/>
                 </div>
             </div>
         </React.Fragment>

@@ -22,7 +22,7 @@ export const authenticate = () => {
     return async dispatch => {
         try{
             const resData = await fetchGET(AUTHENTICATE_URL)
-            console.log(resData); 
+            console.log(resData);
             dispatch({
                 type: AUTHENTICATE,
                 payload: resData,
