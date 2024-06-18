@@ -4,8 +4,9 @@ import './SlideShow.css'
 import slider1 from '../asset/slider1.png';
 import slider2 from '../asset/slider2.png';
 import slider3 from '../asset/slider3.png';
-import slider4 from '../asset/slider4.png'
-import slider5 from '../asset/slider5.png'
+import slider4 from '../asset/slider4.png';
+import slider5 from '../asset/slider5.png';
+
 
 const SlideShow = () => {
 
@@ -24,7 +25,6 @@ const SlideShow = () => {
                             aria-label="Slide 4"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
                             aria-label="Slide 5"></button>
-                    
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="10000">
@@ -33,8 +33,14 @@ const SlideShow = () => {
                     <div className="carousel-item" data-bs-interval="2000">
                         <img src={slider2} className="d-block w-100" alt="..." />
                     </div>
-                    <div className="carousel-item">
+                    <div className="carousel-item" data-bs-interval="2000">
                         <img src={slider3} className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-item" data-bs-interval="2000">
+                        <img src={slider4} className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-item" data-bs-interval="2000">
+                        <img src={slider5} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
                         <img src={slider4} className="d-block w-100" alt="..." />

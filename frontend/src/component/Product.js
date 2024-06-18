@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Product.css';
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import classes from "../page/SearchResult.module.css";
+import {useNavigate} from "react-router-dom";
 
 const Product = (props) => {
+
+    const [itemsPerPage, setItemsPerPage] = useState(3);
+
     const list = [
         {
             id: 1,
@@ -80,9 +85,30 @@ const Product = (props) => {
         }
     ];
 
+    const navigate = useNavigate();
+
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;
+
     const totalPages = Math.ceil(list.length / itemsPerPage);
+
+    const updateItemsPerPage = () => {
+        const width = window.innerWidth;
+        if (width < 600) {
+            setItemsPerPage(3);
+        } else if (width < 938) {
+            setItemsPerPage(2);
+        } else {
+            setItemsPerPage(3);
+        }
+    };
+
+    useEffect(() => {
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+        return () => {
+            window.removeEventListener('resize', updateItemsPerPage);
+        };
+    }, []);
 
     const handleNextPage = () => {
         if (currentPage < totalPages) {
@@ -107,28 +133,38 @@ const Product = (props) => {
     return (
         <React.Fragment>
             <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="btn btn-secondary prevButton">
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="prevButton">
+                    <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }}/>
                 </button>
                 <div className="indicator-container">
                     <p className="product-carousel-title">
                         {props.title}
                     </p>
                 </div>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="btn btn-secondary nextButton">
-                    <FontAwesomeIcon icon={faChevronRight} />
+                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="nextButton">
+                    <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '48px' }}/>
                 </button>
             </div>
             <div className="product-container">
                 <TransitionGroup component={null}>
+                    <button onClick={handlePreviousPage} disabled={currentPage === 1} className="prevButtonLeft">
+                        <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }}/>
+                    </button>
                     {currentItems.map((item) => (
                         <CSSTransition
                             key={item.id}
                             timeout={500}
                             classNames="product"
                         >
-                            <div className="card">
-                                <img src={item.image} className="card-img-top" alt={item.title} />
+                            <div className="card responsive" >
+                                <div className={classes.imageContainer} onClick={()=>{
+                                    navigate(`./products/${item.id}`);
+                                }}>
+                                    <img src={item.image} className={classes.cardImgTop} alt={item.title} />
+                                    <div className={classes.overlay}>
+                                        <button className={classes.overlayButton}>Click to View</button>
+                                    </div>
+                                </div>
                                 <div className="card-body">
                                     <div className="card-body-text">
                                         <h5 className="card-title">{item.title}</h5>
@@ -141,6 +177,9 @@ const Product = (props) => {
                             </div>
                         </CSSTransition>
                     ))}
+                    <button onClick={handleNextPage} disabled={currentPage === totalPages} className="nextButtonRight">
+                        <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '48px' }}/>
+                    </button>
                 </TransitionGroup>
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'center',marginTop:"10px"}}>

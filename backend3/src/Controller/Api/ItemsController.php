@@ -20,7 +20,7 @@ class ItemsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['index']);
+        $this->Authentication->allowUnauthenticated(['getItems']);
 
     }
 //api url : http://localhost:8765/api//Items/getItems

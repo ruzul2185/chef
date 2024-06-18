@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+    align-items: center;
     /*height: 600px;*/
 }
 
@@ -25,9 +26,9 @@
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 1rem;
     padding:30px !important;
+    justify-content: center;
 }
 
 /* Transition classes for product items */
@@ -51,9 +52,10 @@
 }
 
 .product-carousel-title {
-    font-size: 40px;
+    font-size: 26px;
     font-family: "Rajdhani", sans-serif;
     font-weight: bold;
+    text-align: center;
 }
 
 .indicator-container {
@@ -75,12 +77,28 @@
 }
 .prevButton{
     height:40px;
-    background-color: #ff0002 !important;
+    background-color: #FFFFFF !important;
+    border: 0px solid #000000;
+}
+
+.prevButtonLeft{
+    height:40px;
+    background-color: #FFFFFF !important;
+    border: 0px solid #000000;
+    display: none;
 }
 
 .nextButton {
     height: 40px;
-    background-color: #ff0002 !important;
+    background-color: #FFFFFF !important;
+    border: 0px solid #000000;
+}
+
+.nextButtonRight {
+    height: 40px;
+    background-color: #FFFFFF !important;
+    border: 0px solid #000000;
+    display: none;
 }
 
 .cart-button {
@@ -163,8 +181,39 @@
     background-color: grey; /* Highlight active indicator */
 }
 
+.responsive {
+
+}
+
+@media (min-width: 450px) {
+    .product-carousel-title {
+        font-size: 40px;
+    }
+}
+
 @media (min-width: 980px){
     .card {
         width:30%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .prevButton{
+        display: none;
+    }
+
+    .prevButtonLeft{
+        display: block;
+    }
+
+    .nextButton {
+        display: none;
+    }
+
+    .nextButtonRight {
+        display: block;
+    }
+    .card {
+        width:29%;
     }
 }

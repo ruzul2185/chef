@@ -1,15 +1,14 @@
 import React from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styles from './Review.module.css';
+import './SwiperControl.css';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
+import 'swiper/css/autoplay';
+import {A11y, Navigation, Pagination, Scrollbar, Autoplay} from "swiper/modules";
 
 const Review = (props) => {
 
@@ -60,20 +59,30 @@ const Review = (props) => {
                 </div>
                 <Swiper
                     // install Swiper modules
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     style={{
                         '--swiper-navigation-color': 'red', // Change arrow color to red
                     }}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
+                    breakpoints={{
+                        992: {
+                            slidesPerView: 1,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1200:{
+                            slidesPerView: 3,
+                        },
+                    }}
+                    autoplay={true}
                 >
                     {list.map((item)=>(
-                        <SwiperSlide className={styles.container}>
+                        <SwiperSlide className={styles.container} key={item.id}>
                             <div className={styles.subContainer}>
                                 <div>
                                     <img

@@ -15,6 +15,8 @@ import {
     DropDownListThree,
     DropDownListTwo
 } from "../constants/WebConstant";
+import { useDispatch } from 'react-redux';
+import { authenticate } from '../stores/actions/auth';
 
 
 const Header = () => {
@@ -24,6 +26,13 @@ const Header = () => {
     const ref = useDetectClickOutside({ onTriggered: () => {setLoginIsOpen(false)} });
 
     const [showStickyHeader, setShowStickyHeader] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const login = async() => {
+        console.log("Redux");
+        await dispatch(authenticate()); 
+    };
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -152,7 +161,7 @@ const Header = () => {
                                         <div className="menuItems" style={{border:"none"}}>
                                             <div className="loginText">Create your account and enjoy a new shopping experience.</div>
                                             <div>
-                                                <button className="createButton">CREATE A NEW ACCOUNT</button>
+                                                <button className="createButton" onClick={login}>CREATE A NEW ACCOUNT</button>
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +203,7 @@ const Header = () => {
                                 value={searchTerm}
                                 onChange={handleChange}
                             />
-                            <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
+                            <button type="submit" className="search-button" style={{background:"#f1f1f1",height:"41px",width:"41px"}}>
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
                         </div>
@@ -225,8 +234,8 @@ const Header = () => {
                             value={searchTerm}
                             onChange={handleChange}
                         />
-                        <button type="submit" className="search-button" style={{background:"#f1f1f1"}}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        <button type="submit" className="search-button" style={{background:"#f1f1f1",height:"40px",width:'40px'}}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} style={{marginLeft:"-4px"}}/>
                         </button>
                     </div>
                 </form>
