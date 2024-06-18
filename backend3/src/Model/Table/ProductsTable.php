@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Products Model
  *
+ * @property \App\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsTo $Categories
  * @property \App\Model\Table\ImagesTable&\Cake\ORM\Association\HasMany $Images
  *
  * @method \App\Model\Entity\Product newEmptyEntity()
@@ -85,9 +86,9 @@ class ProductsTable extends Table
             ->allowEmptyString('discount');
 
         $validator
-            ->scalar('desc')
-            ->maxLength('desc', 255)
-            ->allowEmptyString('desc');
+            ->scalar('description')
+            ->maxLength('description', 255)
+            ->allowEmptyString('description');
 
         return $validator;
     }

@@ -37,7 +37,7 @@
                   <th scope="col"><?= $this->Paginator->sort('original_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('offer_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('desc') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('description') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
@@ -52,7 +52,7 @@
                   <td><?= $this->Number->format($product->original_price) ?></td>
                   <td><?= $this->Number->format($product->offer_price) ?></td>
                   <td><?= $this->Number->format($product->discount) ?></td>
-                  <td><?= h($product->desc) ?></td>
+                  <td><?= h($product->description) ?></td>
                   <td><?= h($product->created) ?></td>
                   <td><?= h($product->modified) ?></td>
                   <td><?= $this->Number->format($product->category_id) ?></td>

@@ -49,46 +49,66 @@ class ImagesController extends AppController
      */
     public function add()
     {
-    $image = $this->Images->newEmptyEntity();
-    if ($this->request->is('post')) {
-        $image1 = $this->Images->patchEntity($image, $this->request->getData());
+        $image = $this->Images->newEmptyEntity();
+        $this->loadModel('Products');
+        $products = $this->Products->find('all');
+        // debug($products);
+        if ($this->request->is('post')) {
+            $imageEntities = [];
+            $errors = [];
+            $images = $this->request->getData('image');
+            // $products = $this->request->getData();
+            // debug($products);die;
 
-        // Ensure no errors in the patched entity
-        if (!$image1->getErrors()) {
-            // Ensure 'image' data is available and valid
-            $imageFile = $this->request->getData('image');
+            if (!empty($images)) {
+                foreach ($images as $imageFile) {
+                    if ($imageFile && $imageFile->getClientFilename()) {
+                        $name = $imageFile->getClientFilename();
+                        $targetPath = WWW_ROOT . 'img' . DS . $name;
 
-            if ($imageFile && $imageFile->getClientFilename()) {
-                $name = $imageFile->getClientFilename();
-                $targetPath = WWW_ROOT . 'img' . DS . $name;
+                        $image1 = $this->Images->newEmptyEntity();
+                        $image1 = $this->Images->patchEntity($image1, $this->request->getData());
 
-                try {
-                    // Attempt to move the uploaded file
-                    $imageFile->moveTo($targetPath);
+                        if (!$image1->getErrors()) {
+                            try {
+                                $imageFile->moveTo($targetPath);
 
-                    $image1->name = $name;
-                    $uploadFile = 'img/' . $name;
-                    $image1->url = Router::fullBaseUrl() . '/' . $uploadFile;
+                                $image1->name = $name;
+                                $uploadFile = 'img/' . $name;
+                                $image1->url = Router::fullBaseUrl() . '/' . $uploadFile;
 
-                    if ($this->Images->save($image1)) {
-                        $this->Flash->success(__('The image has been saved.'));
-                        return $this->redirect(['action' => 'index']);
+                                $imageEntities[] = $image1;
+                            } catch (\Exception $e) {
+                                $errors[] = 'Error uploading the image ' . $name . ': ' . $e->getMessage();
+                            }
+                        } else {
+                            $errors[] = 'Validation errors occurred for image ' . $name;
+                        }
                     } else {
-                        $this->Flash->error(__('The image could not be saved. Please, try again.'));
+                        $errors[] = 'Image data is missing or invalid for one of the files.';
                     }
-                } catch (\Exception $e) {
-                    $this->Flash->error(__('Error uploading the image: ' . $e->getMessage()));
+                }
+
+                if (empty($errors) && $this->Images->saveMany($imageEntities)) {
+                    $this->Flash->success(__('The images have been saved.'));
+                    return $this->redirect(['action' => 'index']);
+                } else {
+                    $this->Flash->error(__('The images could not be saved. Please, try again.'));
+                    if (!empty($errors)) {
+                        foreach ($errors as $error) {
+                            $this->Flash->error($error);
+                        }
+                    }
                 }
             } else {
-                $this->Flash->error(__('Image data is missing or invalid.'));
+                $this->Flash->error(__('No images were uploaded.'));
             }
-        } else {
-            $this->Flash->error(__('Validation errors occurred.'));
         }
+        $products = $this->Images->Products->find('list', ['keyField' => 'id', 'valueField' => 'name', 'limit' => 200])->toArray();
+        $this->set(compact('image','products'));
     }
 
-    $this->set(compact('image'));
-}
+
 
 
     /**

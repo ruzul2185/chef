@@ -33,7 +33,7 @@
                 echo $this->Form->control('original_price');
                 echo $this->Form->control('offer_price');
                 echo $this->Form->control('discount');
-                echo $this->Form->control('desc');
+                echo $this->Form->control('description');
                 echo $this->Form->control('category_id', ['options' => $categories, 'empty' => true]);
               ?>
             </div>

@@ -22,8 +22,8 @@
           <dl class="dl-horizontal">
             <dt scope="row"><?= __('Name') ?></dt>
             <dd><?= h($product->name) ?></dd>
-            <dt scope="row"><?= __('Desc') ?></dt>
-            <dd><?= h($product->desc) ?></dd>
+            <dt scope="row"><?= __('Description') ?></dt>
+            <dd><?= h($product->description) ?></dd>
             <dt scope="row"><?= __('Category') ?></dt>
             <dd><?= $product->has('category') ? $this->Html->link($product->category->name, ['controller' => 'Categories', 'action' => 'view', $product->category->id]) : '' ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>

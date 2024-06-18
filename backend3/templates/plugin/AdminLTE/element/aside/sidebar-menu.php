@@ -39,7 +39,7 @@
     </li>
     <li class="treeview">
         <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Jobs</span>
+            <i class="fa fa-dashboard"></i> <span>Products</span>
             <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>

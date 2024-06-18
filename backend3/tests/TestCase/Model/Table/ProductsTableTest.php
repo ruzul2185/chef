@@ -25,6 +25,7 @@ class ProductsTableTest extends TestCase
      */
     protected $fixtures = [
         'app.Products',
+        'app.Categories',
         'app.Images',
     ];
 
@@ -59,6 +60,17 @@ class ProductsTableTest extends TestCase
      * @uses \App\Model\Table\ProductsTable::validationDefault()
      */
     public function testValidationDefault(): void
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     * @uses \App\Model\Table\ProductsTable::buildRules()
+     */
+    public function testBuildRules(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

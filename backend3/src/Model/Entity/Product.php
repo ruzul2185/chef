@@ -13,11 +13,12 @@ use Cake\ORM\Entity;
  * @property int|null $original_price
  * @property int|null $offer_price
  * @property int|null $discount
- * @property string|null $desc
+ * @property string|null $description
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $modified
  * @property int|null $category_id
  *
+ * @property \App\Model\Entity\Category $category
  * @property \App\Model\Entity\Image[] $images
  */
 class Product extends Entity
@@ -36,10 +37,11 @@ class Product extends Entity
         'original_price' => true,
         'offer_price' => true,
         'discount' => true,
-        'desc' => true,
+        'description' => true,
         'created' => true,
         'modified' => true,
         'category_id' => true,
+        'category' => true,
         'images' => true,
     ];
 }
