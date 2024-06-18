@@ -1,4 +1,6 @@
+import { AUTHENTICATE_URL } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
+import { fetchGET } from "../../utils/NetworkUtils";
 
 // export const getUnseenMcq = (type) => {
 //     return async dispatch => {
@@ -19,10 +21,11 @@ import {AUTHENTICATE} from "../../constants/WebConstant";
 export const authenticate = () => {
     return async dispatch => {
         try{
-            console.log("Redux is working!");
+            const resData = await fetchGET(AUTHENTICATE_URL)
+            console.log(resData);
             dispatch({
                 type: AUTHENTICATE,
-                payload: 2,
+                payload: resData,
             })
         } catch (err) {
             console.log(err);

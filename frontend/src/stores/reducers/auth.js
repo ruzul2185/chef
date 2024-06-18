@@ -1,7 +1,7 @@
 import {AUTHENTICATE} from "../../constants/WebConstant";
 
 const initialState = {
-    token: 0,
+    token: null,
 };
 
 export default (state = initialState, action) => {
