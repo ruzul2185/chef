@@ -1,106 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {redirect, useNavigate, useNavigation, useParams} from "react-router-dom";
 import classes from "./SearchResult.module.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductList } from '../stores/actions/auth';
 
 const SearchResult = () => {
 
-    const list = [
-        {
-            id: 1,
-            title: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 2,
-            title: "Product 2",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 3,
-            title: "Product 3",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 4,
-            title: "Product 4",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 5,
-            title: "Product 5",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 6,
-            title: "Product 2",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 7,
-            title: "Product 3",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 8,
-            title: "Product 4",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        },
-        {
-            id: 9,
-            title: "Product 5",
-            image: "//www.wonderchef.com/cdn/shop/files/Whiteimage_300x300.jpg?v=1714650388",
-            mrp: "$9000",
-            offerPrice: "$7000",
-            discount: "$2000",
-        }
-    ];
-
+    const dispatch = useDispatch();
+    const data = useSelector(state => state.auth.productList);
     const params = useParams();
     const navigate = useNavigate();
+    useEffect(() => {
+        async function getData(){
+            await dispatch(getProductList(params.task)) 
+        }
+        getData();
+    },[dispatch,params.task])
+
+
     return(
         <React.Fragment>
             <div className={classes.outerContainer}>
                 <div className={`${classes.gridContainer}`}>
-                    {list.map((item) => (
+                    {data.length>0 && data.map((item) => (
                         <div className={`${classes.layout} card`} key={item.id} >
                             <div className={classes.imageContainer} onClick={()=>{
                                 navigate(`./products/${item.id}`);
                             }}>
-                                <img src={item.image} className={classes.cardImgTop} alt={item.title} />
+                                <img src={item.images[0].url} className={classes.cardImgTop} alt={item.name} />
                                 <div className={classes.overlay}>
                                     <button className={classes.overlayButton}>Click to View</button>
                                 </div>
                             </div>
                             <div className={classes.cardBody}>
                                 <div className="card-body-text">
-                                    <h5 className={classes.cardTitle}>{item.title}</h5>
-                                    <h5 className={classes.subtitle}>MRP: {item.mrp}</h5>
-                                    <h5 className={classes.cardPrice}>OFFER PRICE: {item.mrp}</h5>
-                                    <h5 className={classes.cardDiscount}>You save 10%($700)</h5>
+                                    <h5 className={classes.cardTitle}>{item.name}</h5>
+                                    <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
+                                    <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
+                                    <h5 className={classes.cardDiscount}>You save {item.discount} </h5>
                                 </div>
                                 <a href="#" className="btn btn-primary cart-button" style={{width:"100%", borderRadius:"0"}}>
                                     <p className={classes.button}>

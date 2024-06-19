@@ -1,6 +1,6 @@
-import { AUTHENTICATE_URL } from "../../constants/URLConstant";
+import { AUTHENTICATE_URL, GET_PRODUCT_LIST } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
-import { fetchGET } from "../../utils/NetworkUtils";
+import { fetchGET, fetchPOST } from "../../utils/NetworkUtils";
 
 // export const getUnseenMcq = (type) => {
 //     return async dispatch => {
@@ -26,6 +26,25 @@ export const authenticate = () => {
             dispatch({
                 type: AUTHENTICATE,
                 payload: resData,
+            })
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    }
+}
+
+export const getProductList = (state) => {
+    return async dispatch => {
+        try{
+            const postData = {
+                'Category' : state
+            }
+            const resData = await fetchPOST(GET_PRODUCT_LIST,postData)
+            console.log(resData.data);
+            dispatch({
+                type: GET_PRODUCT_LIST,
+                payload: resData.data,
             })
         } catch (err) {
             console.log(err);
