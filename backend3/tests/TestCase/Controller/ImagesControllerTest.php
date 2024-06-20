@@ -25,6 +25,7 @@ class ImagesControllerTest extends TestCase
         'app.Images',
         'app.Products',
         'app.Reviews',
+        'app.ImageTypes',
     ];
 
     /**

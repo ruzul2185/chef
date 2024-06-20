@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property string|null $url
  * @property int|null $product_id
  * @property int|null $review_id
- * @property int|null $type
+ * @property int|null $image_type_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
@@ -36,7 +36,7 @@ class Image extends Entity
         'url' => true,
         'product_id' => true,
         'review_id' => true,
-        'type' => true,
+        'image_type_id' => true,
         'created' => true,
         'modified' => true,
         'product' => true,

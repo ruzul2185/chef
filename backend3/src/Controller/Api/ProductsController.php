@@ -20,17 +20,34 @@ class ProductsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['getProducts']);
+        $this->Authentication->allowUnauthenticated(['getProductLists']);
 
     }
 //api url : http://localhost:8765/api/Items/getProducts
 
-    public function getProducts(){
+    public function getProductLists(){
+        
         $this->loadModel("Products");
-        $data = $this->Products->find('all');
+        $data = $this->Products->find('all')->contain([
+            'Images' => function ($q) {
+                return $q->where(['image_type_id' => 1]);
+            }
+        ]);
+        // $data = $this->Products->find('all');
+        // $Image = $this->Products->get($id, [
+        //     'contain' => ['Images'],
+        // ]);
+        // $data = $this->Images->select()
         $this->set([
             'data' => $data,
             '_serialize' => ['data']
         ]);
+
+    }
+
+    public function getProductDetail($id = null){
+        $this->loadModel('Products');
+        $data = $this->Products->find('all')->where(['id'=>$id]);
+
     }
 }

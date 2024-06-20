@@ -29,10 +29,10 @@
             <dd><?= $image->has('product') ? $this->Html->link($image->product->name, ['controller' => 'Products', 'action' => 'view', $image->product->id]) : '' ?></dd>
             <dt scope="row"><?= __('Review') ?></dt>
             <dd><?= $image->has('review') ? $this->Html->link($image->review->name, ['controller' => 'Reviews', 'action' => 'view', $image->review->id]) : '' ?></dd>
+            <dt scope="row"><?= __('Image Type') ?></dt>
+            <dd><?= $image->has('image_type') ? $this->Html->link($image->image_type->name, ['controller' => 'ImageTypes', 'action' => 'view', $image->image_type->id]) : '' ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($image->id) ?></dd>
-            <dt scope="row"><?= __('Type') ?></dt>
-            <dd><?= $this->Number->format($image->type) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
             <dd><?= h($image->created) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>

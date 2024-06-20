@@ -54,6 +54,9 @@ class ImagesTable extends Table
         $this->belongsTo('Reviews', [
             'foreignKey' => 'review_id',
         ]);
+        $this->belongsTo('ImageTypes', [
+            'foreignKey' => 'image_type_id',
+        ]);
     }
 
     /**
@@ -78,10 +81,6 @@ class ImagesTable extends Table
             ->maxLength('url', 255)
             ->allowEmptyString('url');
 
-        $validator
-            ->integer('type')
-            ->allowEmptyString('type');
-
         return $validator;
     }
 
@@ -96,6 +95,7 @@ class ImagesTable extends Table
     {
         $rules->add($rules->existsIn(['product_id'], 'Products'), ['errorField' => 'product_id']);
         $rules->add($rules->existsIn(['review_id'], 'Reviews'), ['errorField' => 'review_id']);
+        $rules->add($rules->existsIn(['image_type_id'], 'ImageTypes'), ['errorField' => 'image_type_id']);
 
         return $rules;
     }

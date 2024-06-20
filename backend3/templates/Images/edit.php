@@ -33,7 +33,7 @@
                 echo $this->Form->control('url');
                 echo $this->Form->control('product_id', ['options' => $products, 'empty' => true]);
                 echo $this->Form->control('review_id', ['options' => $reviews, 'empty' => true]);
-                echo $this->Form->control('type');
+                echo $this->Form->control('image_type_id', ['options' => $imageTypes, 'empty' => true]);
               ?>
             </div>
             <!-- /.box-body -->

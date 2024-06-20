@@ -19,7 +19,7 @@ class ImagesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Products', 'Reviews'],
+            'contain' => ['Products', 'Reviews', 'ImageTypes'],
         ];
         $images = $this->paginate($this->Images);
 
@@ -36,7 +36,7 @@ class ImagesController extends AppController
     public function view($id = null)
     {
         $image = $this->Images->get($id, [
-            'contain' => ['Products', 'Reviews'],
+            'contain' => ['Products', 'Reviews', 'ImageTypes'],
         ]);
 
         $this->set(compact('image'));
@@ -91,7 +91,7 @@ class ImagesController extends AppController
 
                 if (empty($errors) && $this->Images->saveMany($imageEntities)) {
                     $this->Flash->success(__('The images have been saved.'));
-                    return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index']);
                 } else {
                     $this->Flash->error(__('The images could not be saved. Please, try again.'));
                     if (!empty($errors)) {
@@ -134,7 +134,8 @@ class ImagesController extends AppController
         }
         $products = $this->Images->Products->find('list', ['limit' => 200]);
         $reviews = $this->Images->Reviews->find('list', ['limit' => 200]);
-        $this->set(compact('image', 'products', 'reviews'));
+        $imageTypes = $this->Images->ImageTypes->find('list', ['limit' => 200]);
+        $this->set(compact('image', 'products', 'reviews', 'imageTypes'));
     }
 
     /**

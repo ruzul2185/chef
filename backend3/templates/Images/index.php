@@ -37,7 +37,7 @@
                   <th scope="col"><?= $this->Paginator->sort('url') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('product_id') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('review_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('type') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('image_type_id') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                   <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
@@ -53,7 +53,7 @@
                   <td><?= h($image->url) ?></td>
                   <td><?= $this->Number->format($image->product_id) ?></td>
                   <td><?= $this->Number->format($image->review_id) ?></td>
-                  <td><?= $this->Number->format($image->type) ?></td>
+                  <td><?= $this->Number->format($image->image_type_id) ?></td>
                   <td><?= h($image->created) ?></td>
                   <td><?= h($image->modified) ?></td>
                   <td class="actions text-right">
