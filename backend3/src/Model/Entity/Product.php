@@ -10,10 +10,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string|null $name
- * @property int|null $original_price
- * @property int|null $offer_price
+ * @property int $original_price
+ * @property int $offer_price
  * @property int|null $discount
- * @property string|null $description
+ * @property string $description
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime|null $modified
  * @property int|null $category_id

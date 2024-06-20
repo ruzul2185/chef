@@ -61,7 +61,7 @@
                     <th scope="col"><?= __('Url') ?></th>
                     <th scope="col"><?= __('Product Id') ?></th>
                     <th scope="col"><?= __('Review Id') ?></th>
-                    <th scope="col"><?= __('Type') ?></th>
+                    <th scope="col"><?= __('Image Type Id') ?></th>
                     <th scope="col"><?= __('Created') ?></th>
                     <th scope="col"><?= __('Modified') ?></th>
                     <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
@@ -73,7 +73,7 @@
                     <td><?= h($images->url) ?></td>
                     <td><?= h($images->product_id) ?></td>
                     <td><?= h($images->review_id) ?></td>
-                    <td><?= h($images->type) ?></td>
+                    <td><?= h($images->image_type_id) ?></td>
                     <td><?= h($images->created) ?></td>
                     <td><?= h($images->modified) ?></td>
                       <td class="actions text-right">
