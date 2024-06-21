@@ -39,11 +39,14 @@ const NavDropdown = (props) => {
 
     return (
         <div className={styles.dropdown} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <button className={styles.dropbtn}>{props.title}</button>
+            <a href={props.link}>
+    <button className={styles.dropbtn}>{props.title}</button>
+</a>
+
             {isOpen && (
                 <div ref={dropdownRef} className={styles.dropdownContent}>
                     {props.list.map((item) => (
-                        <a key={item.id} className={styles.item} href={"/collection/" + `${item.href}`} id={item.id}>{item.name}</a>
+                        <a key={item.name} className={styles.item} href={"/collection/" + `${item.name}`} id={item.name}>{item.name}</a>
                     ))}
                 </div>
             )}

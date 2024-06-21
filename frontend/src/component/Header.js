@@ -15,8 +15,9 @@ import {
     DropDownListThree,
     DropDownListTwo
 } from "../constants/WebConstant";
-import { useDispatch } from 'react-redux';
-import { authenticate } from '../stores/actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { authenticate, getCategoryList, getProductList } from '../stores/actions/auth';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 const Header = () => {
@@ -28,11 +29,33 @@ const Header = () => {
     const [showStickyHeader, setShowStickyHeader] = useState(false);
 
     const dispatch = useDispatch();
+    // const data = useSelector(state => state.auth.productList);
+    const params = useParams();
+    // const navigate = useNavigate();
+    const categoryList = useSelector(state => state.auth.categoryList); // Access categoryList from Redux state
+        console.log("params");
+        console.log(categoryList);
+
+    // Fetch category list on component mount
+    useEffect(() => {
+        dispatch(getCategoryList());
+    }, [dispatch]);
+
+    const itemsFilter = (item,option)=>{
+        const cookwareItems = item.filter(item => item.parent_name === option);
+        console.log(cookwareItems);
+        return cookwareItems
+    }
 
     const login = async() => {
-        console.log("Redux");
+        // console.log("Redux");
         await dispatch(authenticate());
     };
+    // console.log(categoryList);
+    // useEffect(()=>{
+    //     console.log(getCategoryList);
+    // },[getCategoryList])
+
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -244,16 +267,21 @@ const Header = () => {
         </div>
             <div className="header-bottom">
                 <div className="bottom-container">
-                    <NavDropdown className="header-bottom-item" title="AIR FRYER" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKERS" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="INDUCTION" list={[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKWARE" list={DropDownListOne}/>
-                    <NavDropdown className="header-bottom-item" title="COOKING APPLIANCE" list={DropDownListTwo}/>
-                    <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={DropDownListThree}/>
-                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={DropDownListFour}/>
-                    <NavDropdown className="header-bottom-item" title="BEVERAGES" list={DropDownListFive}/>
-                    <NavDropdown className="header-bottom-item" title="IRON" list={[]}/>
+                    <NavDropdown className="header-bottom-item" title="AIR FRYER" list={categoryList.length>0 ? itemsFilter(categoryList,"Airfryer"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKERS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooker"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooktop"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="INDUCTION" list={categoryList.length>0 ? itemsFilter(categoryList,"Induction"):[]}/>
+                    {/* <li className="header-bottom-item">
+                                <NavDropdown title="COOKWARE" id="cookware-nav-dropdown" items={cookwareItems} /> */}
+                            {/* </li> */}
+                    <NavDropdown className="header-bottom-item" title="COOKWARE" list={categoryList.length>0 ? itemsFilter(categoryList,"Cookware"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKING APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooking Appliances"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Kitchen Appliances"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="BEVERAGES" list={categoryList.length>0 ? itemsFilter(categoryList,"Beverages"):[]}/>
+                    
+                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
+
+                    <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
                 </div>
             </div>
         </React.Fragment>

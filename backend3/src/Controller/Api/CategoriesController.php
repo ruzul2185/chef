@@ -27,7 +27,7 @@ class CategoriesController extends AppController
 
     public function getCategories(){
         $this->loadModel("Categories");
-        $data = $this->Categories->find('all');
+        $data = $this->Categories->find('all')->select(['name','parent_name']);
         $this->set([
             'data' => $data,
             '_serialize' => ['data']
