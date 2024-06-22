@@ -1,10 +1,11 @@
-import { GET_CATEGORY_LIST, GET_PRODUCT_LIST } from "../../constants/URLConstant";
+import { GET_CATEGORY_LIST, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 
 const initialState = {
     token: null,
     productList: [],
     categoryList: [],
+    productDetail: [],
 };
 
 export default (state = initialState, action) => {
@@ -23,6 +24,11 @@ export default (state = initialState, action) => {
                 return {
                     ...state,
                     categoryList: action.payload
+                }
+                case GET_PRODUCT_DETAIL:
+                return {
+                    ...state,
+                    productDetail: action.payload
                 }
         default:
             return state;

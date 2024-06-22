@@ -33,8 +33,8 @@ const Header = () => {
     const params = useParams();
     // const navigate = useNavigate();
     const categoryList = useSelector(state => state.auth.categoryList); // Access categoryList from Redux state
-        console.log("params");
-        console.log(categoryList);
+        // console.log("params");
+        // console.log(categoryList);
 
     // Fetch category list on component mount
     useEffect(() => {
@@ -43,7 +43,7 @@ const Header = () => {
 
     const itemsFilter = (item,option)=>{
         const cookwareItems = item.filter(item => item.parent_name === option);
-        console.log(cookwareItems);
+        // console.log(cookwareItems);
         return cookwareItems
     }
 

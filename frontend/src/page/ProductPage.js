@@ -2,8 +2,10 @@ import React, {useEffect, useState} from 'react';
 import classes from './ProductPage.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductDetail } from '../stores/actions/auth';
 
 
 const product = {
@@ -28,6 +30,24 @@ const ProductPage = () => {
     const [showMore, setShowMore] = useState(false); // Initial state set to false
 
     const [selectedImage, setSelectedImage] = useState(product.carousel[0]);
+    const dispatch = useDispatch();
+    const data = useSelector(detail => detail.auth.productDetail);
+     const { id } = useParams();
+    const navigate = useNavigate();
+    useEffect(() => {
+        async function getData(){
+            await dispatch(getProductDetail(id)) 
+        }
+        getData();
+    },[dispatch,id])
+    console.log("params",data);
+    // console.log(params);
+
+    useEffect(() => {
+        if (data && data.carousel && data.carousel.length > 0) {
+            setSelectedImage(data.carousel[0]);
+        }
+    }, [data]);
 
     const settings = {
         dots: true,
@@ -75,7 +95,7 @@ const ProductPage = () => {
         <React.Fragment>
             <div className={classes.container}>
                 <div className={classes.subContainer}>
-                    <div className={classes.title}>{product.title}</div>
+                    <div className={classes.title}>{data.name}</div>
                     <div className={classes.carouselSpecial}>
                         <div className="container">
                             <div className={`main-image mb-3 ${classes.mainImageContainer}`}>
@@ -83,7 +103,7 @@ const ProductPage = () => {
                             </div>
                             <div className="thumbnail-carousel">
                                 <Slider {...settings}>
-                                    {product.carousel.map((item, index) => (
+                                    {                                                       .carousel.map((item, index) => (
                                         <div key={index} className="thumbnail mx-1" onClick={() => setSelectedImage(item)}>
                                             <img src={item} className={`img-thumbnail ${selectedImage === item ? 'selected' : ''}`} alt={`Thumbnail ${index + 1}`} style={{ height: "120px", width: "120px", objectFit: "contain", cursor: "pointer" }} />
                                         </div>
@@ -94,7 +114,7 @@ const ProductPage = () => {
                     </div>
                 </div>
                 <div className={classes.subContainer}>
-                    <div className={classes.titleNew}>{product.title}</div>
+                    <div className={classes.titleNew}>{data.title}</div>
                     <div className={classes.carouselContainer}>
                         <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                             <div className="carousel-inner">

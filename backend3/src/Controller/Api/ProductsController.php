@@ -20,7 +20,7 @@ class ProductsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['getProductLists']);
+        $this->Authentication->allowUnauthenticated(['getProductLists','getProductDetail']);
 
     }
 //api url : http://localhost:8765/api/Items/getProducts
@@ -61,9 +61,23 @@ class ProductsController extends AppController
     }
 
 
-    public function getProductDetail($id = null){
-        $this->loadModel('Products');
-        $data = $this->Products->find('all')->where(['id'=>$id]);
+    public function getProductDetail($id = null)
+    {
+        $this->request->allowMethod(['post']); // Ensure the request method is POST
+        $data = $this->request->getData(); // Get POST data
+        $productId = $data['id']; // Extract the 'id' from the POST data
 
+        $this->loadModel('Products');
+
+        $product = $this->Products->find('all')
+            ->contain(['Images'])
+            ->where(['Products.id' => $productId])
+            ->first();
+
+        $this->set([
+            'data' => $product,
+            '_serialize' => ['data']
+        ]);
     }
+
 }

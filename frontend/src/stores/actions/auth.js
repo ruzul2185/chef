@@ -1,4 +1,4 @@
-import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_PRODUCT_LIST } from "../../constants/URLConstant";
+import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 import { fetchGET, fetchPOST } from "../../utils/NetworkUtils";
 
@@ -41,7 +41,7 @@ export const getProductList = (state) => {
                 'Category' : state
             }
             const resData = await fetchPOST(GET_PRODUCT_LIST,postData)
-            console.log(resData.data);
+            // console.log(resData.data);
             dispatch({
                 type: GET_PRODUCT_LIST,
                 payload: resData.data,
@@ -61,6 +61,25 @@ export const getCategoryList = () => {
             // console.log(resData);
             dispatch({
                 type: GET_CATEGORY_LIST,
+                payload: resData.data,
+            })
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    }
+}
+
+export const getProductDetail = (detail) => {
+    return async dispatch => {
+        try{
+            const postData = {
+                'id' : detail
+            }
+            const resData = await fetchPOST(GET_PRODUCT_DETAIL,postData)
+            // console.log(resData.data);
+            dispatch({
+                type: GET_PRODUCT_DETAIL,
                 payload: resData.data,
             })
         } catch (err) {
