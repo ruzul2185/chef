@@ -6,8 +6,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetail } from '../stores/actions/auth';
-import {A11y, Navigation, Pagination, Scrollbar, Autoplay} from "swiper/modules";
-
+import LoadingOverlay from 'react-loading-overlay';
+import PacmanLoader from 'react-spinners/PacmanLoader'
 
 const product = {
     id: 1,
@@ -34,6 +34,7 @@ const ProductPage = () => {
     const data = useSelector(state => state.auth.productDetail);
     const [selectedImage, setSelectedImage] = useState(data!==null ? data.imageArray[0] : '');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isActive, setIsActive] = useState(true);
      const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
@@ -56,7 +57,7 @@ const ProductPage = () => {
                 });
             }, 3000);
         }
-
+        setIsActive(false);
         return () => {
             if (timer) {
                 clearInterval(timer);
@@ -107,6 +108,12 @@ const ProductPage = () => {
 
     return (
         <React.Fragment>
+            <LoadingOverlay
+                active={isActive}
+                spinner={<PacmanLoader />}
+                style = {{paddingTop:'20px'}}
+                // text='Loading your content...'
+                >
             <div className={classes.container}>
                 {data !== null && <div className={classes.subContainer}>  
                     <div className={classes.title}>{data.name !==' ' ? data.name:' '}</div>
@@ -167,6 +174,7 @@ const ProductPage = () => {
                     </div>
                 </div>}
             </div>
+            </LoadingOverlay>
         </React.Fragment>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../component/Header";
 import HaloSection from "../component/HaloSection";
 
@@ -11,10 +11,24 @@ import CategoryComponent from "../component/CategoryComponent";
 import Review from "../component/Review";
 import OutletBanner from "../component/OutletBanner";
 import Footer from "../component/Footer";
+import LoadingOverlay from 'react-loading-overlay';
+import PacmanLoader from 'react-spinners/PacmanLoader'
+
 
 const MainPage = () => {
+    
+    const [isActive, setIsActive] = useState(false);
+    // useEffect(()=>{
+    //     setIsActive(false);
+    // },[])
     return(
         <div>
+            <LoadingOverlay
+                active={isActive}
+                spinner={<PacmanLoader />}
+                style = {{paddingTop:'20px'}}
+                // text='Loading your content...'
+                >
             {/*<Header/>*/}
             {/*<img alt="hare" src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>*/}
             <div className={classes.haloContainer}>
@@ -63,6 +77,7 @@ const MainPage = () => {
             <div>
                 <OutletBanner title={"AVAILABLE AT OVER 10,000 OUTLETS INCLUDING ALL DEPARTMENT STORES"}/>
             </div>
+            </LoadingOverlay>
         </div>
     )
 }
