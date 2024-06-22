@@ -34,23 +34,25 @@ const MainPage = () => {
                 <SlideShow />
             </div>
 
-            <div className={classes.productCarouselConatiner}>
+            {/* <div className={classes.productCarouselConatiner}> */}
+            <div className={`${classes.productCarouselConatiner} ${classes.container}`}>
+
                 <Product title={"NEW ARRIVALS"}/>
             </div>
 
-            <div>
+            {/* <div>
                 <Jumbotron />
-            </div>
+            </div> */}
 
             <div>
                 <CategoryComponent />
             </div>
 
-            <div className={classes.productCarouselConatiner}>
+            {/* <div className={classes.productCarouselConatiner}>
                 <Product title={"SUMMERTIME SELECTION"}/>
-            </div>
+            </div> */}
 
-            <div>
+            <div className={classes.container}>
                 <Review title={"HAPPY CUSTOMERS"}/>
             </div>
 

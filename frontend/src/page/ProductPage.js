@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetail } from '../stores/actions/auth';
+import {A11y, Navigation, Pagination, Scrollbar, Autoplay} from "swiper/modules";
 
 
 const product = {
@@ -29,9 +30,10 @@ const product = {
 const ProductPage = () => {
     const [showMore, setShowMore] = useState(false); // Initial state set to false
 
-    const [selectedImage, setSelectedImage] = useState(product.carousel[0]);
     const dispatch = useDispatch();
-    const data = useSelector(detail => detail.auth.productDetail);
+    const data = useSelector(state => state.auth.productDetail);
+    const [selectedImage, setSelectedImage] = useState(data!==null ? data.imageArray[0] : '');
+    const [currentIndex, setCurrentIndex] = useState(0);
      const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
@@ -44,14 +46,26 @@ const ProductPage = () => {
     // console.log(params);
 
     useEffect(() => {
-        if (data && data.carousel && data.carousel.length > 0) {
-            setSelectedImage(data.carousel[0]);
+        let timer;
+        if (data && data.imageArray && data.imageArray.length > 0) {
+            timer = setInterval(() => {
+                setCurrentIndex(prevIndex => {
+                    const newIndex = (prevIndex + 1) % data.imageArray.length;
+                    setSelectedImage(data.imageArray[newIndex]);
+                    return newIndex;
+                });
+            }, 3000);
         }
-    }, [data]);
 
+        return () => {
+            if (timer) {
+                clearInterval(timer);
+            }
+        };
+    }, [data]);
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -94,8 +108,8 @@ const ProductPage = () => {
     return (
         <React.Fragment>
             <div className={classes.container}>
-                <div className={classes.subContainer}>
-                    <div className={classes.title}>{data.name}</div>
+                {data !== null && <div className={classes.subContainer}>  
+                    <div className={classes.title}>{data.name !==' ' ? data.name:' '}</div>
                     <div className={classes.carouselSpecial}>
                         <div className="container">
                             <div className={`main-image mb-3 ${classes.mainImageContainer}`}>
@@ -103,7 +117,7 @@ const ProductPage = () => {
                             </div>
                             <div className="thumbnail-carousel">
                                 <Slider {...settings}>
-                                    {                                                       .carousel.map((item, index) => (
+                                    {data.imageArray.map((item, index) => (
                                         <div key={index} className="thumbnail mx-1" onClick={() => setSelectedImage(item)}>
                                             <img src={item} className={`img-thumbnail ${selectedImage === item ? 'selected' : ''}`} alt={`Thumbnail ${index + 1}`} style={{ height: "120px", width: "120px", objectFit: "contain", cursor: "pointer" }} />
                                         </div>
@@ -112,13 +126,13 @@ const ProductPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={classes.subContainer}>
-                    <div className={classes.titleNew}>{data.title}</div>
+                </div>}
+                {data !== null && <div className={classes.subContainer}>
+                    <div className={classes.titleNew}>{data.name !==' ' ? data.name:' '}</div>
                     <div className={classes.carouselContainer}>
                         <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                             <div className="carousel-inner">
-                                {product.carousel.map((item, index) => (
+                                {data.imageArray.map((item, index) => (
                                     <div
                                         key={index}
                                         className={`carousel-item ${index === 0 ? 'active' : ''}`}
@@ -139,19 +153,19 @@ const ProductPage = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={classes.originalPrice}>MRP: {product.mrp}/-</div>
-                    <div className={classes.offerPrice}>OFFER PRICE: {product.offerPrice}/-</div>
-                    <div className={classes.discount}>You Save {product.discount}/-</div>
+                    <div className={classes.originalPrice}>MRP: {data.original_price !==' ' ? data.original_price:' '}/-</div>
+                    <div className={classes.offerPrice}>OFFER PRICE: {data.offer_price !==' ' ? data.offer_price:' '}/-</div>
+                    <div className={classes.discount}>You Save {data.discount !==' ' ? data.discount:' '}/-</div>
                     <div className={classes.aboutProduct}>
                         About the Product
                         <div className={`${classes.description} ${showMore ? classes.showMore : ''}`}>
-                            {showMore ? product.about : product.about.split(' ').slice(0, 30).join(' ') + '...'}
+                            {showMore ? data.description : data.description.split(' ').slice(0, 30).join(' ') + '...'}
                         </div>
                         <button className={classes.showMoreButton} onClick={toggleShowMore}>
                             <FontAwesomeIcon icon={showMore ? faChevronUp : faChevronDown} /> {showMore ? 'Show Less' : 'Show More'}
                         </button>
                     </div>
-                </div>
+                </div>}
             </div>
         </React.Fragment>
     );

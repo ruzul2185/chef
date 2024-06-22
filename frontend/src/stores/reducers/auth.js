@@ -5,7 +5,7 @@ const initialState = {
     token: null,
     productList: [],
     categoryList: [],
-    productDetail: [],
+    productDetail: null,
 };
 
 export default (state = initialState, action) => {

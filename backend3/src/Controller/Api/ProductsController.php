@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\Api;
 
 use App\Controller\Api\AppController;
@@ -7,7 +8,7 @@ use Firebase\JWT\JWT;
 class ProductsController extends AppController
 {
     public $paginate = [
-        'page' => 1,2,
+        'page' => 1, 2,
         'limit' => 10,
         'maxLimit' => 10,
         'sortWhitelist' => [
@@ -20,10 +21,9 @@ class ProductsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['getProductLists','getProductDetail']);
-
+        $this->Authentication->allowUnauthenticated(['getProductLists', 'getProductDetail']);
     }
-//api url : http://localhost:8765/api/Items/getProducts
+    //api url : http://localhost:8765/api/Items/getProducts
 
     public function getProductLists()
     {
@@ -36,7 +36,7 @@ class ProductsController extends AppController
                 ->where(['name' => $categoryName])
                 ->first();
 
-                $categoryId = $category->id;
+            $categoryId = $category->id;
 
             $this->loadModel("Products");
 
@@ -63,6 +63,7 @@ class ProductsController extends AppController
 
     public function getProductDetail($id = null)
     {
+
         $this->request->allowMethod(['post']); // Ensure the request method is POST
         $data = $this->request->getData(); // Get POST data
         $productId = $data['id']; // Extract the 'id' from the POST data
@@ -74,10 +75,15 @@ class ProductsController extends AppController
             ->where(['Products.id' => $productId])
             ->first();
 
+        $imageArray = [];
+        foreach ($product->images as $item) {
+            $imageArray[] = $item->url;
+        }
+        // debug($imageArray);
+        $product->imageArray = $imageArray;
         $this->set([
             'data' => $product,
             '_serialize' => ['data']
         ]);
     }
-
 }

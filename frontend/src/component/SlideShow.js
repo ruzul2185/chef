@@ -42,12 +42,12 @@ const SlideShow = () => {
                     <div className="carousel-item" data-bs-interval="2000">
                         <img src={slider5} className="d-block w-100" alt="..." />
                     </div>
-                    <div className="carousel-item">
-                        <img src={slider4} className="d-block w-100" alt="..." />
+                    {/* <div className="carousel-item">
+                        <img src={slider6} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src={slider5} className="d-block w-100" alt="..." />
-                    </div>                    
+                        <img src={slider7} className="d-block w-100" alt="..." />
+                    </div>                     */}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
                         data-bs-slide="prev">
