@@ -103,7 +103,7 @@ const ProductPage = () => {
                             </div>
                             <div className="thumbnail-carousel">
                                 <Slider {...settings}>
-                                    {                                                       .carousel.map((item, index) => (
+                                    {product.carousel.map((item, index) => (
                                         <div key={index} className="thumbnail mx-1" onClick={() => setSelectedImage(item)}>
                                             <img src={item} className={`img-thumbnail ${selectedImage === item ? 'selected' : ''}`} alt={`Thumbnail ${index + 1}`} style={{ height: "120px", width: "120px", objectFit: "contain", cursor: "pointer" }} />
                                         </div>
