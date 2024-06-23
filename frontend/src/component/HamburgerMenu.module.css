@@ -57,6 +57,7 @@
 
 .menuItems {
     padding: 0 20px;
+    background-color: red;
 }
 
 .menuItems a {
@@ -67,7 +68,7 @@
 }
 
 .menuItems a:hover {
-    background-color: #555;
+    background-color: red;
     color: white;
 }
 
@@ -76,9 +77,33 @@
     font-size: 14px;
     padding: 12px 20px 10px;
     font-weight: bold;
-    color: #383E47;
+    color: white;
+    background-color: red;
     cursor: pointer;
     text-align: center;
+    width: 100%;
+}
+
+.menuContent:hover {
+    background-color: white;
+    color: red;
+}
+
+.menuContent2 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 14px;
+    padding: 12px 20px 10px;
+    font-weight: bold;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.menuContent2:hover {
+    background-color: white;
+    color: red;
 }
 
 .dropdown {

@@ -9,19 +9,35 @@ import {
     DropDownListThree,
     DropDownListTwo
 } from "../constants/WebConstant";
+import { useSelector } from 'react-redux';
+import HamDropdown from './HamDropdown';
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [dropdownState, setDropdownState] = useState({
-        cookware: false,
-        appliances: false,
-        nutriBlend: false,
-        homeAndLiving: false,
-        cookers: false,
-        cooktops: false,
-        kitchenTools: false,
-        spareParts: false
+        Airfryer: false,
+        Cooker: false,
+        Cooktop: false,
+        Induction: false,
+        Cookware: false,
+        Cooking_Appliances: false,
+        Kitchen_Appliances: false,
+        Beverages: false,
+        Breakfast_and_Snacks: false,
+        Iron: false
     });
+
+    const categoryList = useSelector(state => state.auth.categoryList); // Access categoryList from Redux state
+        // console.log("params");
+        // console.log(categoryList);
+
+    // Fetch category list on component mount
+
+    const itemsFilter = (item,option)=>{
+        const cookwareItems = item.filter(item => item.parent_name === option);
+        // console.log(cookwareItems);
+        return cookwareItems
+    }
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -45,88 +61,102 @@ const HamburgerMenu = () => {
                     </div>
                 </div>
                 <div className={styles.menuItems}>
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('cookware')}>
-                        COOKWARE
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Airfryer')}>
+                        AIRFRYER
                     </div>
-                    {dropdownState.cookware && (
+                    {dropdownState.Airfryer && (
                         <div className={styles.dropdown}>
-                            {DropDownListOne.map((item) => (
-                                <a className={styles.dropdownItem} key={item.id} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Airfryer"):[]}/>
                         </div>
                     )}
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('appliances')}>
-                        APPLIANCES
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Cooker')}>
+                        COOKER
                     </div>
-                    {dropdownState.appliances && (
+                    {dropdownState.Cooker && (
                         <div className={styles.dropdown}>
-                            {DropDownListTwo.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Cooker"):[]} />
                         </div>
                     )}
-                    <a className={styles.menuContent} href="#">COFFEE MACHINES</a>
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('nutriBlend')}>
-                        NUTRI-BLEND
+                    {/* <a className={styles.menuContent} href="#">COFFEE MACHINES</a> */}
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Cooktop')}>
+                        COOKTOPS
                     </div>
-                    {dropdownState.nutriBlend && (
+                    {dropdownState.Cooktop && (
                         <div className={styles.dropdown}>
-                            {DropDownListThree.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Cooktop"):[]}/>
                         </div>
                     )}
-                    <a className={styles.menuContent} href="#">MIXER GRINDERS</a>
+                    {/* <a className={styles.menuContent} href="#">MIXER GRINDERS</a>
                     <a className={styles.menuContent} href="#">FLASKS & BOTTLES</a>
                     {/* Nutri-Blend dropdown contents */}
-                    <a className={styles.menuContent} href="#">HOME & LIVING</a>
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('cookers')}>
-                        COOKERS
+                    {/* <a className={styles.menuContent} href="#">HOME & LIVING</a> */} 
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Induction')}>
+                        INDUCTION
                     </div>
-                    {dropdownState.cookers && (
+                    {dropdownState.Induction && (
                         <div className={styles.dropdown}>
-                            {DropDownListFour.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Induction"):[]}/>
                         </div>
                     )}
                     {/* Cookers dropdown contents */}
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('cooktops')}>
-                        COOKTOPS
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Cookware')}>
+                        COOKWARE
                     </div>
-                    {dropdownState.cooktops && (
+                    {dropdownState.Cookware && (
                         <div className={styles.dropdown}>
-                            {DropDownListFive.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Cookware"):[]}/>
                         </div>
                     )}
-                    <a className={styles.menuContent} href="#">CHIMNEYS</a>
+                    {/* <a className={styles.menuContent} href="#">CHIMNEYS</a> */}
                     {/* Cooktops dropdown contents */}
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('kitchenTools')}>
-                        KITCHEN TOOLS
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Cooking_Appliances')}>
+                        COOKING APPLIANCES
                     </div>
-                    {dropdownState.kitchenTools && (
+                    {dropdownState.Cooking_Appliances && (
                         <div className={styles.dropdown}>
-                            {DropDownListSix.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Cooking Appliances"):[]}/>
                         </div>
                     )}
-                    <div className={styles.menuContent} onClick={() => toggleDropdown('spareParts')}>
-                        SPARE PARTS
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Kitchen_Appliances')}>
+                        KITCHEN APPLIANCES
                     </div>
-                    {dropdownState.spareParts && (
+                    {dropdownState.Kitchen_Appliances && (
                         <div className={styles.dropdown}>
-                            {DropDownListSeven.map((item) => (
-                                <a className={styles.dropdownItem} href={"/collection/" + `${item.href}`}>{item.name}</a>
-                            ))}
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Kitchen Appliances"):[]}/>
                         </div>
                     )}
-                    <a className={styles.menuContent} href="#">GIFTING</a>
+                    {/* <a className={styles.menuContent} href="#">GIFTING</a> */}
                     {/* Kitchen Tools dropdown contents */}
-                    <a className={styles.menuContent} href="#">WONDERENT</a>
+                    {/* <a className={styles.menuContent} href="#">WONDERENT</a> */}
                     {/* Spare Parts dropdown contents */}
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Beverages')}>
+                        BEVERAGES
+                    </div>
+                    {dropdownState.Beverages && (
+                        <div className={styles.dropdown}>
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Beverages"):[]}/>
+                        </div>
+                    )}
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Breakfast_and_Snacks')}>
+                        BREAKFAST & SNACKS
+                    </div>
+                    {dropdownState.Breakfast_and_Snacks && (
+                        <div className={styles.dropdown}>
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
+                        </div>
+                    )}
+                    <div className={styles.menuContent} onClick={() => toggleDropdown('Iron')}>
+                        IRON
+                    </div>
+                    {dropdownState.Iron && (
+                        <div className={styles.dropdown}>
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length>0 ? itemsFilter(categoryList,"Iron"):[]}/>
+                        </div>
+                    )}
+                </div>
+                <div style={{marginTop:"20px"}}>
+                <a className={styles.menuContent2} href="../pages/about-us">ABOUT US</a>
+                <a className={styles.menuContent2} href="../pages/contact-us">CONTACT</a>
                 </div>
             </div>
         </React.Fragment>

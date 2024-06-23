@@ -281,7 +281,7 @@ const Header = () => {
                     
                     <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
 
-                    <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Iron"):[]}/>
                 </div>
             </div>
         </React.Fragment>

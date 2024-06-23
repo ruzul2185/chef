@@ -15,6 +15,11 @@
     font-weight: bolder;
 }
 
+.dropbtn:hover {
+    background-color: white;
+    color: red;
+}
+
 .dropdownContent {
     display: none;
     position: absolute; /* Position absolutely relative to the dropdown */
@@ -50,7 +55,8 @@
 }
 
 .dropdownContent a:hover {
-    background-color: #f1f1f1; /* Change background on hover */
+    background-color: red; /* Change background on hover */
+    color: white;
 }
 
 .dropdown:hover .dropdownContent {
@@ -58,6 +64,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 
 @media (max-width: 1300px) {
     .dropdown {
