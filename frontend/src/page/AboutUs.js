@@ -13,7 +13,7 @@ const AboutUs = () => {
                     <div className={styles.title}>
                         ABOUT US
                     </div>
-                    <div>
+                    <div className={styles.desc}>
                         Wonderchef is a leader in cookware and kitchen
                         appliances that enable our customers to cook
                         healthy, tasty food with convenience. German
