@@ -34,12 +34,14 @@ export const authenticate = () => {
     }
 }
 
-export const getProductList = (state) => {
+export const getProductList = (state,query) => {
     return async dispatch => {
         try{
             const postData = {
-                'Category' : state
+                'Category' : state,
+                'query' : query,
             }
+            console.log(postData,"poastdata")
             const resData = await fetchPOST(GET_PRODUCT_LIST,postData)
             // console.log(resData.data);
             dispatch({

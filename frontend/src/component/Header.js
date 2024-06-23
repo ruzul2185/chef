@@ -31,6 +31,7 @@ const Header = () => {
     const dispatch = useDispatch();
     // const data = useSelector(state => state.auth.productList);
     const params = useParams();
+    const navigate = useNavigate();
     // const navigate = useNavigate();
     const categoryList = useSelector(state => state.auth.categoryList); // Access categoryList from Redux state
         // console.log("params");
@@ -83,6 +84,7 @@ const Header = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(event.target.value);
+        navigate(`./collection/search?q=${searchTerm}`)
     };
 
     return(

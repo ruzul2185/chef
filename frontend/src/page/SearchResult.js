@@ -3,19 +3,24 @@ import {redirect, useNavigate, useNavigation, useParams} from "react-router-dom"
 import classes from "./SearchResult.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductList } from '../stores/actions/auth';
+import { useLocation } from "react-router-dom";
 
 const SearchResult = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(state => state.auth.productList);
     const params = useParams();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const paramValue = queryParams.get("q");
+    
     const navigate = useNavigate();
     useEffect(() => {
         async function getData(){
-            await dispatch(getProductList(params.task)) 
+            await dispatch(getProductList(params.task, paramValue)) 
         }
         getData();
-    },[dispatch,params.task])
+    },[dispatch,params.task,paramValue])
 
 
     return(

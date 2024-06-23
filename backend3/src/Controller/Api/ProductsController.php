@@ -30,18 +30,26 @@ class ProductsController extends AppController
         if ($this->request->is('post')) {
             $receivedData = $this->request->getData();
             $categoryName = $receivedData['Category'];
-
+            $query = $receivedData['query'];
             $this->loadModel('Categories');
+            if ($categoryName == 'search') {
+                $category = $this->Products->find()
+                    ->where(['name LIKE' => '%' . $query . '%'])
+                    ->first();
+                    // debug($category);
+                    $data = $this->Products->find('all')
+                ->contain([
+                    'Images' => function ($q) {
+                        return $q->where(['image_type_id' => 1]);
+                    }
+                ])
+                ->all();
+            }
+            else {
             $category = $this->Categories->find()
                 ->where(['name' => $categoryName])
                 ->first();
-
-            $categoryId = $category->id;
-
-            $this->loadModel("Products");
-
-            // Fetch products that have images of type 1 and category_id matching the received data
-            $data = $this->Products->find('all')
+                $data = $this->Products->find('all')
                 ->contain([
                     'Images' => function ($q) {
                         return $q->where(['image_type_id' => 1]);
@@ -51,6 +59,23 @@ class ProductsController extends AppController
                     'Products.category_id' => $categoryId
                 ])
                 ->all();
+
+            }
+            $categoryId = $category->id;
+
+            $this->loadModel("Products");
+
+            // Fetch products that have images of type 1 and category_id matching the received data
+            // $data = $this->Products->find('all')
+            //     ->contain([
+            //         'Images' => function ($q) {
+            //             return $q->where(['image_type_id' => 1]);
+            //         }
+            //     ])
+            //     ->where([
+            //         'Products.category_id' => $categoryId
+            //     ])
+            //     ->all();
 
             // Set the data to be returned as JSON
             $this->set([

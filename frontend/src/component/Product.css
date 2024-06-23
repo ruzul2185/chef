@@ -77,26 +77,26 @@
 }
 .prevButton{
     height:40px;
-    background-color: #FFFFFF !important;
+    background-color: #E4E0E0 !important;
     border: 0px solid #000000;
 }
 
 .prevButtonLeft{
     height:40px;
-    background-color: #FFFFFF !important;
+    background-color: #E4E0E0 !important;
     border: 0px solid #000000;
     display: none;
 }
 
 .nextButton {
     height: 40px;
-    background-color: #FFFFFF !important;
+    background-color: #E4E0E0 !important;
     border: 0px solid #000000;
 }
 
 .nextButtonRight {
     height: 40px;
-    background-color: #FFFFFF !important;
+    background-color: #E4E0E0 !important;
     border: 0px solid #000000;
     display: none;
 }

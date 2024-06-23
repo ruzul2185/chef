@@ -77,7 +77,7 @@ const OutletBanner = (props) => {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
+            
                 style={{
                     '--swiper-navigation-color': 'red', // Change arrow color to red
                 }}

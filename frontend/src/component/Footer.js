@@ -21,7 +21,7 @@ const Footer = () => {
                     <div className={styles.heading}>
                         ABOUT WONDERCHEF
                     </div>
-                    <a href="#" className={styles.anchor}>About Wonderchef</a>
+                    <a href="../pages/about-us" className={styles.anchor}>About Us</a>
                     <a href="#" className={styles.anchor}>Investors</a>
                 </div>
                 <div className={styles.optionContainer}>
@@ -50,7 +50,7 @@ const Footer = () => {
                     <a href="#" className={styles.anchor}>Warranty Registration</a>
                     <a href="#" className={styles.anchor}>Replacement Request</a>
                     <a href="#" className={styles.anchor}>Gift Card</a>
-                    <a href="#" className={styles.anchor}>Contact Us</a>
+                    <a href="../pages/contact-us" className={styles.anchor}>Contact Us</a>
                 </div>
                 <div className={styles.optionContainer}>
                     <div className={styles.heading}>
