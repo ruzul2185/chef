@@ -114,10 +114,10 @@ const Header = () => {
                     <div className="container navUser">
                         <ul className="navUser-left navUser-section">
                             <li className="navUser-item">
-                                <a className="navUser-action" href="/#">About Wonderchef</a>
+                                <a className="navUser-action" href="../pages/about-us">About Us</a>
                             </li>
                             <li className="navUser-item">
-                                <a className="navUser-action" href="/#">Contact</a>
+                                <a className="navUser-action" href="../pages/contact-us">Contact</a>
                             </li>
                             <li className="navUser-item">
                                 <a className="navUser-action" href="/#">Track Order</a>
