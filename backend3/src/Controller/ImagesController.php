@@ -51,14 +51,12 @@ class ImagesController extends AppController
     {
         $image = $this->Images->newEmptyEntity();
         $this->loadModel('Products');
-        $products = $this->Products->find('all');
-        // debug($products);
+        $this->loadModel('ImageTypes');
+        $this->loadModel('Reviews');
         if ($this->request->is('post')) {
             $imageEntities = [];
             $errors = [];
             $images = $this->request->getData('image');
-            // $products = $this->request->getData();
-            // debug($products);die;
 
             if (!empty($images)) {
                 foreach ($images as $imageFile) {
@@ -104,8 +102,10 @@ class ImagesController extends AppController
                 $this->Flash->error(__('No images were uploaded.'));
             }
         }
-        $products = $this->Images->Products->find('list', ['keyField' => 'id', 'valueField' => 'name', 'limit' => 200])->toArray();
-        $this->set(compact('image','products'));
+        $products = $this->Images->Products->find('list', ['keyField' => 'id', 'valueField' => 'name'])->toArray();
+        $imageTypes = $this->Images->ImageTypes->find('list', ['keyField' => 'id', 'valueField' => 'name'])->toArray();
+        $reviews = $this->Images->Reviews->find('list', ['keyField' => 'id', 'valueField' => 'name'])->toArray();
+        $this->set(compact('image','products','imageTypes','reviews'));
     }
 
 

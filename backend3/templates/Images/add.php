@@ -29,9 +29,9 @@
           <?php echo $this->Form->create($image, ['role' => 'form','type'=>'file']); ?>
             <div class="box-body">
               <?php
-                echo $this->Form->control('image[]', ['type' => 'file', 'multiple' => true]);
+                echo $this->Form->control('image[]', ['type' => 'file', 'multiple' => true,'label'=>'Images']);
                 // echo $this->Form->control('url');
-                echo $this->Form->control('product_id', ['options' => $products->name, 'empty' => true]);
+                echo $this->Form->control('product_id', ['options' => $products, 'empty' => true]);
                 echo $this->Form->control('review_id', ['options' => $reviews, 'empty' => true]);
                 echo $this->Form->control('image_type_id', ['options' => $imageTypes, 'empty' => true]);
               ?>
