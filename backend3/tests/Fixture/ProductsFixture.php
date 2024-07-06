@@ -19,7 +19,7 @@ class ProductsFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'name' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
-        'original_price' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'original_price' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'offer_price' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'discount' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'description' => ['type' => 'string', 'length' => 10000, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
@@ -50,8 +50,8 @@ class ProductsFixture extends TestFixture
                 'offer_price' => 1,
                 'discount' => 1,
                 'description' => 'Lorem ipsum dolor sit amet',
-                'created' => '2024-07-02 14:52:27',
-                'modified' => '2024-07-02 14:52:27',
+                'created' => '2024-07-06 09:55:18',
+                'modified' => '2024-07-06 09:55:18',
                 'category_id' => 1,
             ],
         ];

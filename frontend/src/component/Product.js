@@ -5,10 +5,23 @@ import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import classes from "../page/SearchResult.module.css";
 import {useNavigate} from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { getLatestProducts } from '../stores/actions/auth';
+// import { LatestProducts } from '../stores/reducers/auth';
 
 const Product = (props) => {
 
     const [itemsPerPage, setItemsPerPage] = useState(3);
+    const dispatch = useDispatch();
+
+    const categoryList = useSelector(state => state.auth.LatestProducts); // Access categoryList from Redux state
+    // console.log("params");
+    // console.log(categoryList);
+
+// Fetch category list on component mount
+useEffect(() => {
+    dispatch(getLatestProducts());
+}, [dispatch]);
 
     const list = [
         {
@@ -87,9 +100,10 @@ const Product = (props) => {
 
     const navigate = useNavigate();
 
+    
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(list.length / itemsPerPage);
+    const totalPages = categoryList.length>0?Math.ceil(categoryList.length / itemsPerPage):0;
 
     const updateItemsPerPage = () => {
         const width = window.innerWidth;
@@ -128,7 +142,8 @@ const Product = (props) => {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = list.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = categoryList.length>0?categoryList.slice(indexOfFirstItem, indexOfLastItem):0;
+
 
     return (
         <React.Fragment>
@@ -150,7 +165,7 @@ const Product = (props) => {
                     <button onClick={handlePreviousPage} disabled={currentPage === 1} className="prevButtonLeft">
                         <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }}/>
                     </button>
-                    {currentItems.map((item) => (
+                    {categoryList.length>0 && currentItems.map((item) => (
                         <CSSTransition
                             key={item.id}
                             timeout={500}
@@ -160,16 +175,17 @@ const Product = (props) => {
                                 <div className={classes.imageContainer} onClick={()=>{
                                     navigate(`./products/${item.id}`);
                                 }}>
-                                    <img src={item.image} className={classes.cardImgTop} alt={item.title} />
+                                    <img src={item.images && item.images.length > 0 ? item.images[0].url : 'default-image-url.png'} className={classes.cardImgTop} alt={item.title} />
+                                    {console.log(item.images[0].url)}
                                     <div className={classes.overlay}>
                                         <button className={classes.overlayButton}>Click to View</button>
                                     </div>
                                 </div>
                                 <div className="card-body">
                                     <div className="card-body-text">
-                                        <h5 className="card-title">{item.title}</h5>
-                                        <h5 className="card-subtitle">MRP: {item.mrp}</h5>
-                                        <h5 className="card-offer">OFFER PRICE: {item.mrp}</h5>
+                                        <h5 className="card-title">{item.name}</h5>
+                                        <h5 className="card-subtitle">MRP: {item.original_price}</h5>
+                                        <h5 className="card-offer">OFFER PRICE: {item.offer_price}</h5>
                                         <h5 className="card-discount">You save 10%($700)</h5>
                                     </div>
                                     <a href="#" className="btn btn-primary cart-button">ADD TO CART</a>

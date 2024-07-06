@@ -21,7 +21,7 @@ class ProductsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['getProductLists', 'getProductDetail']);
+        $this->Authentication->allowUnauthenticated(['getProductLists', 'getProductDetail','getLatestProducts']);
     }
     //api url : http://localhost:8765/api/Items/getProducts
 
@@ -66,6 +66,38 @@ class ProductsController extends AppController
             ]);
         }
     }
+
+    public function getLatestProducts()
+{
+    if ($this->request->is('get')) {
+        $this->loadModel("Products");
+
+        // Fetch the latest 9 products that have images of type 1
+        $data = $this->Products->find('all')
+            ->contain([
+                'Images' => function ($q) {
+                    return $q->where(['image_type_id' => 1]);
+                }
+            ])
+            ->order(['Products.created' => 'DESC']) // Order by creation date descending
+            ->limit(9) // Limit the results to 9
+            ->all();
+        foreach($data as $item){
+            if($item->images != []){
+                $item->url=$item->images[0]->url;
+            }
+            // die();
+        }
+// debug($data);
+
+        // Set the data to be returned as JSON
+        $this->set([
+            'data' => $data,
+            '_serialize' => ['data']
+        ]);
+    }
+}
+
 
 //     public function getProductLists()
 //     {

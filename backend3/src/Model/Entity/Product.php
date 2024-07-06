@@ -10,8 +10,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string|null $name
- * @property int $original_price
- * @property int $offer_price
+ * @property int|null $original_price
+ * @property int|null $offer_price
  * @property int|null $discount
  * @property string $description
  * @property \Cake\I18n\FrozenTime $created

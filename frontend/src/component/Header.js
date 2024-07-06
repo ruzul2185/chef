@@ -116,12 +116,15 @@ const Header = () => {
                     <div className="container navUser">
                         <ul className="navUser-left navUser-section">
                             <li className="navUser-item">
+                                <a className="navUser-action" href="/">Home</a>
+                            </li>
+                            <li className="navUser-item">
                                 <a className="navUser-action" href="../pages/about-us">About Us</a>
                             </li>
                             <li className="navUser-item">
                                 <a className="navUser-action" href="../pages/contact-us">Contact</a>
                             </li>
-                            <li className="navUser-item">
+                            {/* <li className="navUser-item">
                                 <a className="navUser-action" href="/#">Track Order</a>
                             </li>
                             <li className="navUser-item">
@@ -135,7 +138,7 @@ const Header = () => {
                             </li>
                             <li className="navUser-item">
                                 <a className="navUser-action" href="/#">E-Recipe Book</a>
-                            </li>
+                            </li> */}
                         </ul>
                         <ul className="navUser-center navUser-section">
 
@@ -212,7 +215,7 @@ const Header = () => {
                                 <FontAwesomeIcon icon={faPhoneAlt} />
                                 <a className="navUser-action icon-text" href="tel:1860 266 0788"
                                    aria-describedby="a11y-external-message">
-                                    1860 266 0788
+                                    07122533308
                                 </a>
                             </li>
                         </ul>
@@ -270,7 +273,7 @@ const Header = () => {
             <div className="header-bottom">
                 <div className="bottom-container">
                     <NavDropdown className="header-bottom-item" title="AIR FRYER" list={categoryList.length>0 ? itemsFilter(categoryList,"Airfryer"):[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKERS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooker"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKERS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cookers"):[]}/>
                     <NavDropdown className="header-bottom-item" title="COOKTOPS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooktop"):[]}/>
                     <NavDropdown className="header-bottom-item" title="INDUCTION" list={categoryList.length>0 ? itemsFilter(categoryList,"Induction"):[]}/>
                     {/* <li className="header-bottom-item">

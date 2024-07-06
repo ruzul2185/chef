@@ -11,6 +11,7 @@ import Vidiem from '../asset/vidiem-new.jpg';
 import Wonderchef from '../asset/wonderchef-new.jpg';
 import Sujata from '../asset/sujata-new.png';
 import Havells from '../asset/havells-new.png';
+import phillips from '../asset/philips-icon.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -62,6 +63,10 @@ const OutletBanner = (props) => {
         {
             id:10,
             image:Havells,
+        },
+        {
+            id:11,
+            image:phillips,
         },
     ];
 

@@ -75,13 +75,11 @@ class ProductsTable extends Table
 
         $validator
             ->integer('original_price')
-            ->requirePresence('original_price', 'create')
-            ->notEmptyString('original_price');
+            ->allowEmptyString('original_price');
 
         $validator
             ->integer('offer_price')
-            ->requirePresence('offer_price', 'create')
-            ->notEmptyString('offer_price');
+            ->allowEmptyString('offer_price');
 
         $validator
             ->integer('discount')
