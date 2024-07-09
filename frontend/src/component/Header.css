@@ -246,6 +246,10 @@ html * {
 .logo-wrapper {
     position: relative; /* Make sure it's a positioned element */
     z-index: 1; /* Ensure it's behind the sidebar menu */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .dropdown-content {

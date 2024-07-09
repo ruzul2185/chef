@@ -175,8 +175,8 @@ useEffect(() => {
                                 <div className={classes.imageContainer} onClick={()=>{
                                     navigate(`./products/${item.id}`);
                                 }}>
-                                    <img src={item.images && item.images.length > 0 ? item.images[0].url : 'default-image-url.png'} className={classes.cardImgTop} alt={item.title} />
-                                    {console.log(item.images[0].url)}
+                                    <img src={item.url !== null ? item.url : 'default-image-url.png'} className={classes.cardImgTop} alt={item.name} style={{objectFit:'contain', height:'400px'}}/>
+                                    {/* {console.log(item.images[0].url)} */}
                                     <div className={classes.overlay}>
                                         <button className={classes.overlayButton}>Click to View</button>
                                     </div>

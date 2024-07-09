@@ -76,7 +76,7 @@ class ItemsTable extends Table
 
         $validator
             ->scalar('description')
-            ->maxLength('description', 100)
+            ->maxLength('description', 4294967295)
             ->allowEmptyString('description');
 
         $validator

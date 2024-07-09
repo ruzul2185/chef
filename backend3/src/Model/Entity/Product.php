@@ -9,7 +9,7 @@ use Cake\ORM\Entity;
  * Product Entity
  *
  * @property int $id
- * @property string|null $name
+ * @property string $name
  * @property int|null $original_price
  * @property int|null $offer_price
  * @property int|null $discount

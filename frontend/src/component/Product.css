@@ -124,6 +124,17 @@
     font-weight: bold;
 }
 
+.card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 3em; /* Ensures space for two lines */
+    line-height: 1.5em; /* Adjust based on your font size */
+  }
+  
+
 .card-offer {
     font-size: 14px;
     color: #ff0002;
@@ -183,6 +194,12 @@
 
 .responsive {
 
+}
+@media (min-width: 415px) {
+    .responsive{
+        max-width: 415px;
+        min-width: 415px;
+    }
 }
 
 @media (min-width: 450px) {

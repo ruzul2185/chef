@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Header.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookSquare, faInstagram} from "@fortawesome/free-brands-svg-icons";
-import {faMagnifyingGlass, faPhoneAlt, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faHome, faMagnifyingGlass, faPhoneAlt, faXmark} from "@fortawesome/free-solid-svg-icons";
 import HamburgerMenu from "./HamburgerMenu";
 import LoginMenu from "./LoginMenu";
 import Cart from "./Cart";
@@ -115,9 +115,9 @@ const Header = () => {
                 <div className="headerMediaQuery">
                     <div className="container navUser">
                         <ul className="navUser-left navUser-section">
-                            <li className="navUser-item">
+                            {/* <li className="navUser-item">
                                 <a className="navUser-action" href="/">Home</a>
-                            </li>
+                            </li> */}
                             <li className="navUser-item">
                                 <a className="navUser-action" href="../pages/about-us">About Us</a>
                             </li>
@@ -244,11 +244,13 @@ const Header = () => {
                     <HamburgerMenu />
                 </div>}
                 <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
-                    <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
+                <a className="navUser-action" href="/"><FontAwesomeIcon icon={faHome} color={"red"} style={{height:'33px'}}/>
+                </a>
+                    <a href="/" className="site-header__logo-image" style={{width:"130px"}}>
                         <img itemProp="logo"
                              src={require("../asset/logo.png")}
                              className="logoMobileView"
-                             alt="Wonderchef"/>
+                             alt="Sathe's Metalware"/>
                     </a>
                 </div>
             </div>

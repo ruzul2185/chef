@@ -6,6 +6,7 @@ namespace App\Controller;
 /**
  * Items Controller
  *
+ * @property \App\Model\Table\ItemsTable $Items
  * @method \App\Model\Entity\Item[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ItemsController extends AppController

@@ -57,7 +57,7 @@
 
 .menuItems {
     padding: 0 20px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .menuItems a {
@@ -77,8 +77,8 @@
     font-size: 14px;
     padding: 12px 20px 10px;
     font-weight: bold;
-    color: white;
-    background-color: red;
+    color: red;
+    /* background-color: red; */
     cursor: pointer;
     text-align: center;
     width: 100%;

@@ -37,7 +37,6 @@
                   <th scope="col"><?= $this->Paginator->sort('image') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('color') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('size') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('description') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created_at') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('updated_at') ?></th>
                   <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
@@ -51,7 +50,6 @@
                   <td><?= h($item->image) ?></td>
                   <td><?= h($item->color) ?></td>
                   <td><?= h($item->size) ?></td>
-                  <td><?= h($item->description) ?></td>
                   <td><?= h($item->created_at) ?></td>
                   <td><?= h($item->updated_at) ?></td>
                   <td class="actions text-right">

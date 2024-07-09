@@ -28,8 +28,6 @@
             <dd><?= h($item->color) ?></dd>
             <dt scope="row"><?= __('Size') ?></dt>
             <dd><?= h($item->size) ?></dd>
-            <dt scope="row"><?= __('Description') ?></dt>
-            <dd><?= h($item->description) ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($item->id) ?></dd>
             <dt scope="row"><?= __('Created At') ?></dt>
@@ -42,4 +40,18 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <i class="fa fa-text-width"></i>
+          <h3 class="box-title"><?= __('Description') ?></h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <?= $this->Text->autoParagraph($item->description); ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

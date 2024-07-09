@@ -22,8 +22,6 @@
           <dl class="dl-horizontal">
             <dt scope="row"><?= __('Name') ?></dt>
             <dd><?= h($product->name) ?></dd>
-            <dt scope="row"><?= __('Description') ?></dt>
-            <dd><?= h($product->description) ?></dd>
             <dt scope="row"><?= __('Category') ?></dt>
             <dd><?= $product->has('category') ? $this->Html->link($product->category->name, ['controller' => 'Categories', 'action' => 'view', $product->category->id]) : '' ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
@@ -44,6 +42,20 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <i class="fa fa-text-width"></i>
+          <h3 class="box-title"><?= __('Description') ?></h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <?= $this->Text->autoParagraph($product->description); ?>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="box box-solid">

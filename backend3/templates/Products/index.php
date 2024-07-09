@@ -37,7 +37,6 @@
                   <th scope="col"><?= $this->Paginator->sort('original_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('offer_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('description') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>

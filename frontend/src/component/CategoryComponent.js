@@ -5,42 +5,42 @@ const CategoryComponent = () => {
     const items = [
         {
             id: 1,
-            title: "NUTRI-BLEND",
+            title: "AIR FRYER",
             image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
         },
         {
             id: 2,
-            title: "MIXER GRINDER",
+            title: "COOKERS",
             image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
         },
         {
             id: 3,
-            title: "APPLIANCES",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
-        },
-        {
-            id: 4,
-            title: "COOKWARE",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
-        },
-        {
-            id: 5,
-            title: "BAKEWARE",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
-        },
-        {
-            id: 6,
             title: "COOKTOPS",
             image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
         },
         {
+            id: 4,
+            title: "INDUCTION",
+            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+        },
+        {
+            id: 5,
+            title: "COOKWARE",
+            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+        },
+        {
+            id: 6,
+            title: "COOKING APPLIANCE",
+            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+        },
+        {
             id: 7,
-            title: "HOME & LIVING",
+            title: "KITCHEN APPLIANCE",
             image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
         },
         {
             id: 8,
-            title: "KITCHEN TOOLS",
+            title: "BREAKFAST & SNACKS",
             image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
         },
     ];
