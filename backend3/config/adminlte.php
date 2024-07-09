@@ -2,10 +2,10 @@
 
 return [
     'Theme' => [
-        'title' => 'AdminLTE',
+        'title' => "Sathe's Metalwares",
         'logo' => [
-            'mini' => '<b>A</b>LT',
-            'large' => '<b>Admin</b>LTE'
+            'mini' => '<b>SATHE</b>metalwares',
+            'large' => '<b>Admin </b>Panel'
         ],
         'login' => [
             'show_remember' => true,
