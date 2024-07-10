@@ -32,8 +32,11 @@ const SearchResult = () => {
                             <div className={classes.imageContainer} onClick={()=>{
                                 navigate(`./products/${item.id}`);
                             }}>
-                                <img src={item.images[0].url} className={classes.cardImgTop} alt={item.name} />
-                                <div className={classes.overlay}>
+                            <img
+                            src={item.images[0] && item.images[0].url !== null ? item.images[0].url : ""}
+                            className={classes.cardImgTop}
+                            alt={item.name} style={{objectFit:'contain', height:'300px'}}
+                            /><div className={classes.overlay}>
                                     <button className={classes.overlayButton}>Click to View</button>
                                 </div>
                             </div>

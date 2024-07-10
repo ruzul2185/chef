@@ -31,33 +31,51 @@ class ProductsController extends AppController
             $receivedData = $this->request->getData();
             $categoryName = $receivedData['Category'];
             $query = $receivedData['query'];
+
             $this->loadModel('Categories');
+
             if ($categoryName == 'search') {
-                $category = $this->Products->find()
+                // Perform search based on product name
+                $product = $this->Products->find()
                     ->where(['name LIKE' => '%' . $query . '%'])
+                    ->contain([
+                        'Images' => function ($q) {
+                            return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                        }
+                    ])
                     ->first();
-                    // debug($category);
-            }
-            else {
-            $category = $this->Categories->find()
-                ->where(['name' => $categoryName])
-                ->first();
-            }
-            $categoryId = $category->id;
 
-            $this->loadModel("Products");
+                if (!$product) {
+                    // Handle case where no product matches the search
+                    $data = [];
+                } else {
+                    $data = [$product];
+                }
+            } else {
+                // Fetch category ID based on category name
+                $category = $this->Categories->find()
+                    ->where(['name' => $categoryName])
+                    ->first();
 
-            // Fetch products that have images of type 1 and category_id matching the received data
-            $data = $this->Products->find('all')
-                ->contain([
-                    'Images' => function ($q) {
-                        return $q->where(['image_type_id' => 1]);
-                    }
-                ])
-                ->where([
-                    'Products.category_id' => $categoryId
-                ])
-                ->all();
+                if (!$category) {
+                    // Handle case where category is not found
+                    $data = [];
+                } else {
+                    $categoryId = $category->id;
+
+                    // Fetch products under the found category
+                    $data = $this->Products->find('all')
+                        ->contain([
+                            'Images' => function ($q) {
+                                return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                            }
+                        ])
+                        ->where([
+                            'Products.category_id' => $categoryId
+                        ])
+                        ->all();
+                }
+            }
 
             // Set the data to be returned as JSON
             $this->set([
@@ -66,6 +84,7 @@ class ProductsController extends AppController
             ]);
         }
     }
+
 
     public function getLatestProducts()
     {
