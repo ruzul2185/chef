@@ -42,7 +42,9 @@ const SearchResult = () => {
                             </div>
                             <div className={classes.cardBody}>
                                 <div className="card-body-text">
-                                    <h5 className={classes.cardTitle}>{item.name}</h5>
+                                    <h5 className={classes.cardTitle} style={{cursor:'pointer'}} onClick={()=>{
+                                navigate(`./products/${item.id}`);
+                            }}>{item.name}</h5>
                                     <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
                                     <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
                                     <h5 className={classes.cardDiscount}>You save {item.discount} </h5>

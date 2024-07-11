@@ -1,4 +1,4 @@
-import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST } from "../../constants/URLConstant";
+import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST, URL } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 import { fetchGET, fetchPOST } from "../../utils/NetworkUtils";
 
@@ -99,6 +99,27 @@ export const getLatestProducts = () => {
             // console.log(resData.data);
             dispatch({
                 type: GET_LATEST_PRODUCTS,
+                payload: resData.data,
+            })
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    }
+}
+
+export const getLoginDetail = (detail) => {
+    return async dispatch => {
+        try{
+            const postData = {
+                "username": "admin@test.com",
+	            "password": "admin@1234"
+            }
+            const url = "http://localhost:8765/users/login";
+            const resData = await fetchPOST(url,postData)
+            // console.log(resData.data);
+            dispatch({
+                type: URL,
                 payload: resData.data,
             })
         } catch (err) {

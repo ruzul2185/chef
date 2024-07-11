@@ -16,8 +16,9 @@ import {
     DropDownListTwo
 } from "../constants/WebConstant";
 import { useDispatch, useSelector } from 'react-redux';
-import { authenticate, getCategoryList, getProductList } from '../stores/actions/auth';
-import { useNavigate, useParams } from 'react-router-dom';
+import { authenticate, getCategoryList, getLoginDetail, getProductList } from '../stores/actions/auth';
+import { redirect, useNavigate, useParams } from 'react-router-dom';
+import { URL } from '../constants/URLConstant';
 
 
 const Header = () => {
@@ -184,6 +185,11 @@ const Header = () => {
                                             </div>
                                             <div>
                                                 <button className="loginButton">Login</button>
+                                            </div>
+                                            <div>
+                                                <a href={`${URL}`}>
+                                                <button className="loginButton">Admin Login</button>
+                                                </a>
                                             </div>
                                         </div>
                                         <div className="menuItems" style={{border:"none"}}>

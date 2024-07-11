@@ -22,6 +22,10 @@
     line-height: 1.5em; /* Adjust based on your text's line height */
 }
 
+.cardTitle:hover{
+    color:red;
+}
+
 .subtitle {
     font-size: 14px;
     margin-left: -10px;
