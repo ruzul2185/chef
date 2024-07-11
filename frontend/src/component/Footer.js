@@ -19,7 +19,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.optionContainer}>
                     <div className={styles.heading}>
-                        ABOUT WONDERCHEF
+                        ABOUT Sathe Metal's
                     </div>
                     <a href="../pages/about-us" className={styles.anchor}>About Us</a>
                     <a href="#" className={styles.anchor}>Investors</a>
