@@ -2,87 +2,94 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #555555;
+    align-items: flex-start;
+    background-color: #555555; /* Your background color */
     padding: 30px 20px;
-}
-
-.heading {
+    flex-wrap: wrap;
+    color: #DFDFDF;
+  }
+  
+  .section {
+    flex: 1;
+    min-width: 200px; /* Adjust this value based on your needs */
+    margin: 0 20px;
+    text-align: center;
+  }
+  
+  .heading {
     font-family: "Rajdhani", sans-serif;
-    color: #DFDFDF;
+    color: #DFDFDF; /* Your heading color */
     font-weight: bold;
-    margin-top: 10px;
+    font-size: 20px;
     margin-bottom: 10px;
-}
-
-.description {
-    color: #DFDFDF;
-    font-size: 12px;
-}
-
-.emailContainer {
-    margin-top: 10px;
+  }
+  
+  .description {
+    font-size: 14px;
     margin-bottom: 10px;
-    padding: 10px;
+  }
+  
+  .emailContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.submitButton {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
+  }
+  
+  .submitButton {
     background-color: #DDAC17;
+    color: #000000;
     font-family: "Rajdhani", sans-serif;
     font-weight: bold;
-    color: #000000;
-    margin: 0 0 0 10px;
-    padding: 5px 15px;
-}
-
-.inputContainer{
-    margin: 0 0 0 10px;
-    padding: 5px 15px;
-    width: 100%;
-}
-
-.optionContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.anchor {
-    padding: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #DFDFDF;
+  }
+  
+  .address, .contactDetails, .socialMedia {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .socialMedia a {
+    margin: 0 10px;
     text-decoration: none;
     color: #DFDFDF;
-    font-size: 12px;
-    position: relative; /* Ensure the ::before pseudo-element is positioned relative to this */
-}
-
-.anchor::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px; /* Adjust the thickness of the underline */
-    background-color: #DFDFDF;
-    transition: width 0.3s ease; /* Transition for the width property */
-}
-
-.anchor:hover::before {
-    width: 100%; /* Expand the width of the underline on hover */
-}
-
-@media(max-width: 1024px)
-{
-    .mainContainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        background-color: #555555;
-        padding-top: 30px;
-    }
-
-    .optionContainer {
-        flex-basis: calc(50% - 20px); /* Each container takes roughly half the width minus some space for margin */
-        margin: 10px; /* Margin between containers */
-    }
-}
+    font-size: 20px;
+  }
+  
+  .socialMedia a:hover {
+    color: #000000;
+  }
+  
+  .footerBottom {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #DFDFDF;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  .anchor {
+    text-decoration: none;
+    color: DFDFDF;
+  }
+  
+  .anchor:hover {
+    text-decoration: underline;
+  }
+  
