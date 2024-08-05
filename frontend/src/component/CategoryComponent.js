@@ -1,47 +1,55 @@
 import React from 'react';
 import styles from './CategoryComponent.module.css';
+import airfryer from '../asset/airfryer.png'
+import cookers from '../asset/cookers.png'
+import cooktops from '../asset/cooktops.png'
+import induction from '../asset/induction.png'
+import cookware from '../asset/category_cookware.png'
+import cooking from '../asset/cooking.png'
+import kitchen from '../asset/kitchen.png'
+import breakfast from '../asset/breakfast4.png'
 
 const CategoryComponent = () => {
     const items = [
         {
             id: 1,
             title: "AIR FRYER",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: airfryer
         },
         {
             id: 2,
             title: "COOKERS",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: cookers
         },
         {
             id: 3,
             title: "COOKTOPS",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: cooktops
         },
         {
             id: 4,
             title: "INDUCTION",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: induction
         },
         {
             id: 5,
             title: "COOKWARE",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: cookware
         },
         {
             id: 6,
             title: "COOKING APPLIANCE",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: cooking
         },
         {
             id: 7,
             title: "KITCHEN APPLIANCE",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: kitchen
         },
         {
             id: 8,
             title: "BREAKFAST & SNACKS",
-            image: "//www.wonderchef.com/cdn/shop/files/Nutri-blend_1s_b1144304-7f2a-4365-9db3-e0c15836e4b0.jpg?v=1709626811"
+            image: breakfast
         },
     ];
 
