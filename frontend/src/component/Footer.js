@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.section}>
+
+<div className={styles.section}>
         <div className={styles.heading}>SUBSCRIBE TO OUR NEWSLETTER</div>
         <div className={styles.description}>
           Subscribe to email alerts. We promise not to spam your inbox.
@@ -22,14 +28,13 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className={styles.section}>
-        <div className={styles.heading}>Find Us Here</div>
-        <div className={styles.address}>
-        Sathe's Metalwares West High Court Road, Gokulpeth, Gokulpeth,
-        opposite Rama Theator, Nagpur, Maharashtra 440010
+      <div className={styles.section} style={{marginLeft: 65}}>
+          <div className={styles.heading}>Find Us Here</div>
+          <div className={styles.address}>
+            Sathe's Metalwares West High Court Road, Gokulpeth, Gokulpeth,
+            opposite Rama Theator, Nagpur, Maharashtra 440010
+          </div>
         </div>
-        
-      </div>
       <div className={styles.section}>
         <div className={styles.heading}>Contact Us</div>
         <div className={styles.contactDetails}>
@@ -45,15 +50,25 @@ const Footer = () => {
       <div className={styles.section}>
         <div className={styles.heading}>About Us</div>
         <div className={styles.address}>
-        Established in 1974 by Chintamani Sathe and 
-        now led by Pardeep S. Sathe....
-        <a href="../pages/about-us" className={styles.anchor}>Read More</a>
+          Established in 1974 by Chintamani Sathe and now led by Pardeep S.
+          Sathe....
+          <a href="../pages/about-us" className={styles.anchor}>
+            Read More
+          </a>
         </div>
         <div className={styles.socialMedia}>
-          <a href="#" className={styles.socialIcon}><FontAwesomeIcon icon={faFacebook} /></a>
-          <a href="#" className={styles.socialIcon}><FontAwesomeIcon icon={faTwitter} /></a>
-          <a href="#" className={styles.socialIcon}><FontAwesomeIcon icon={faInstagram} /></a>
-          <a href="#" className={styles.socialIcon}><FontAwesomeIcon icon={faLinkedin} /></a>
+          <a href="#" className={styles.socialIcon}>
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
         </div>
       </div>
       <div className={styles.footerBottom}>
