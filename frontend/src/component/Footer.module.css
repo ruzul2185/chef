@@ -1,95 +1,108 @@
 .mainContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    background-color: #555555; /* Your background color */
-    padding: 30px 20px;
-    flex-wrap: wrap;
-    color: #DFDFDF;
-  }
-  
-  .section {
-    flex: 1;
-    min-width: 200px; /* Adjust this value based on your needs */
-    margin: 0 20px;
-    text-align: center;
-  }
-  
-  .heading {
-    font-family: "Rajdhani", sans-serif;
-    color: #DFDFDF; /* Your heading color */
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .description {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .emailContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .inputContainer {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #DFDFDF;
-    border-radius: 5px;
-  }
-  
-  .submitButton {
-    background-color: #DDAC17;
-    color: #000000;
-    font-family: "Rajdhani", sans-serif;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .submitButton:hover {
-    background-color: #DFDFDF;
-  }
-  
-  .address, .contactDetails, .socialMedia {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .socialMedia a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #DFDFDF;
-    font-size: 20px;
-  }
-  
-  .socialMedia a:hover {
-    color: #000000;
-  }
-  
-  .footerBottom {
-    text-align: center;
-    width: 100%;
-    padding-top: 20px;
-    border-top: 1px solid #DFDFDF;
-    font-size: 14px;
-    margin-top: 20px;
-  }
-  
-  .anchor {
-    text-decoration: none;
-    color: DFDFDF;
-  }
-  
-  .anchor:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #333; /* Darker background */
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  color: #f1f1f1; /* Lighter text color */
+}
+
+.section {
+  flex: 1;
+  min-width: 220px; /* Slightly larger minimum width */
+  /* margin-left: 20px; */
+  /* margin: 0 20px; */
+  text-align: center;
+/* padding-left: 80px; */
+
+}
+
+.section2{
+padding-left: 1px;
+}
+
+.heading {
+  font-family: "Rajdhani", sans-serif;
+  color: #f1f1f1; /* Lighter heading color */
+  font-weight: bold;
+  font-size: 22px; /* Slightly larger font size */
+  margin-bottom: 15px; /* Increased margin */
+}
+
+.description {
+  font-size: 16px; /* Larger font size for better readability */
+  margin-bottom: 15px; /* Increased margin */
+}
+
+.emailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inputContainer {
+  padding: 12px; /* Increased padding */
+  width: 220px; /* Wider input field */
+  border: 1px solid #f1f1f1; /* Lighter border */
+  border-radius: 5px;
+  background-color: #444; /* Darker background */
+  color: #fff; /* Lighter text color */
+}
+
+.submitButton {
+  background-color: #DDAC17;
+  color: #000;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bold;
+  padding: 12px 24px; /* Increased padding */
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.submitButton:hover {
+  background-color: #f1f1f1; /* Lighter hover color */
+  color: #333; /* Darker text color on hover */
+}
+
+.address, .contactDetails, .socialMedia {
+  font-size: 16px; /* Larger font size for better readability */
+  margin-bottom: 15px; /* Increased margin */
+}
+
+.socialMedia a {
+  margin: 0 15px; /* Increased margin */
+  text-decoration: none;
+  color: #f1f1f1; /* Lighter text color */
+  font-size: 24px; /* Larger icon size */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.socialMedia a:hover {
+  color: #DDAC17; /* Hover color */
+}
+
+.footerBottom {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #f1f1f1; /* Lighter border */
+  font-size: 16px; /* Larger font size */
+  margin-top: 20px;
+}
+
+.anchor {
+  text-decoration: none;
+  color: #f1f1f1; /* Lighter text color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.anchor:hover {
+  text-decoration: underline;
+  color: #DDAC17; /* Hover color */
+}
