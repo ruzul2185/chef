@@ -18,6 +18,22 @@
     text-decoration: none;
     color: #1b0606;
 }
+.noDataMessage {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5em;
+    color: #555;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    color: #333; /* Optional: make the category name color slightly darker */
+}
 
 @media (max-width: 786px) {
     .logoItem img {
