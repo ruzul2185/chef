@@ -5,8 +5,8 @@ import cookers from '../asset/cookers.png'
 import cooktops from '../asset/cooktops.png'
 import induction from '../asset/induction.png'
 import cookware from '../asset/category_cookware.png'
-import cooking from '../asset/cooking.png'
-import kitchen from '../asset/kitchen.png'
+import cooking from '../asset/cookingAppliance.png'
+import kitchen from '../asset/kitchenApplicance.png'
 import breakfast from '../asset/breakfast4.png'
 
 const CategoryComponent = () => {
