@@ -1,11 +1,20 @@
-// AllProductsPage.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLatestProducts } from '../stores/actions/auth'; // Assuming you have this action to fetch products
 import classes from "../page/SearchResult.module.css";
 
 const AllProductsPage = () => {
     const location = useLocation();
-    const { categoryList } = location.state || {};
+    const dispatch = useDispatch();
+    const categoryList = useSelector(state => state.auth.LatestProducts); // Fetching from Redux state
+    
+    // If the data isn't passed via location.state, fetch it
+    useEffect(() => {
+        if (!location.state || !location.state.categoryList) {
+            dispatch(getLatestProducts());
+        }
+    }, [dispatch, location.state]);
 
     return (
         <div>
