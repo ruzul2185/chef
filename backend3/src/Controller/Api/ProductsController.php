@@ -21,7 +21,7 @@ class ProductsController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        $this->Authentication->allowUnauthenticated(['getProductLists', 'getProductDetail','getLatestProducts']);
+        $this->Authentication->allowUnauthenticated(['getProductLists', 'getProductDetail','getLatestProducts','getAllProduct']);
     }
     //api url : http://localhost:8765/api/Items/getProducts
 
@@ -119,6 +119,67 @@ class ProductsController extends AppController
         }
     }
 
+    public function getAllProduct()
+{
+    if ($this->request->is('post')) {
+        $receivedData = $this->request->getData();
+        $categoryName = $receivedData['Category'];
+        $query = $receivedData['query'];
+
+        $this->loadModel('Categories');
+        $this->loadModel('Products');
+
+        if ($categoryName == 'search') {
+            // Perform search based on product name
+            $product = $this->Products->find()
+                ->where(['name LIKE' => '%' . $query . '%'])
+                ->contain([
+                    'Images' => function ($q) {
+                        return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                    }
+                ])
+                ->first();
+
+            if (!$product) {
+                // Handle case where no product matches the search
+                $data = [];
+            } else {
+                $data = [$product];
+            }
+        } else {
+            // Fetch all categories with the specified parent_name
+            $categories = $this->Categories->find()
+                ->where(['parent_name' => $categoryName])
+                ->all();
+
+            if ($categories->isEmpty()) {
+                // Handle case where no categories match the given name
+                $data = [];
+            } else {
+                // Extract category IDs
+                $categoryIds = $categories->extract('id')->toArray();
+
+                // Fetch all products under these categories
+                $data = $this->Products->find('all')
+                    ->contain([
+                        'Images' => function ($q) {
+                            return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                        }
+                    ])
+                    ->where([
+                        'Products.category_id IN' => $categoryIds
+                    ])
+                    ->all();
+            }
+        }
+
+        // Set the data to be returned as JSON
+        $this->set([
+            'data' => $data,
+            '_serialize' => ['data']
+        ]);
+    }
+}
 
 
 //     public function getProductLists()
