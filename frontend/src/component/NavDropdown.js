@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from '../component/NavDropdown.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const NavDropdown = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleMouseEnter = () => {
         if (props.list && props.list.length > 0) {
@@ -13,6 +15,11 @@ const NavDropdown = (props) => {
 
     const handleMouseLeave = () => {
         setIsOpen(false);
+    };
+
+    const handleClick = () => {
+        // Navigate to the new page with the category in the URL
+        navigate(`/category/${props.title.toLowerCase()}`);
     };
 
     useEffect(() => {
@@ -39,14 +46,16 @@ const NavDropdown = (props) => {
 
     return (
         <div className={styles.dropdown} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <a href={props.link}>
-    <button className={styles.dropbtn}>{props.title}</button>
-</a>
+            <button className={styles.dropbtn} onClick={handleClick}>
+                {props.title}
+            </button>
 
             {isOpen && (
                 <div ref={dropdownRef} className={styles.dropdownContent}>
                     {props.list.map((item) => (
-                        <a key={item.name} className={styles.item} href={"/collection/" + `${item.name}`} id={item.name}>{item.name}</a>
+                        <a key={item.name} className={styles.item} href={`/collection/${item.name}`} id={item.name}>
+                            {item.name}
+                        </a>
                     ))}
                 </div>
             )}

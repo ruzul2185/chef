@@ -9,6 +9,8 @@ import RootLayout from "../utils/RootLayout";
 import ProductPage from "../page/ProductPage";
 import AboutUs from '../page/AboutUs';
 import ContactUs from '../page/ContactUs';
+import AllProductsPage from '../component/AllProductsPage';
+import CategoryPage from '../component/CategoryPage';
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,8 @@ const router = createBrowserRouter([
             {path: '/collection/:task/products/:id', element:<ProductPage/>},
             {path: '/pages/about-us',element: <AboutUs/>},
             {path: '/pages/contact-us', element: <ContactUs/>},
+            {path: '/all-products', element: <AllProductsPage/>},
+            {path: '/category/:categoryName', element: <CategoryPage/>},
         ],
     },
     { path: '*', element: <Navigate to="/" /> }
