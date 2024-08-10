@@ -1,4 +1,4 @@
-import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS, URL } from "../../constants/URLConstant";
+import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS, URL, GET_MIX_DATA } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 import { fetchGET, fetchPOST } from "../../utils/NetworkUtils";
 
@@ -149,3 +149,25 @@ export const getAllProduct = (state,query) => {
         }
     }
 }
+
+export const getMixData = (state,query) => {
+    return async dispatch => {
+        try{
+            const postData = {
+                'Category' : 'cookware',
+                'query' : query,
+            }
+            console.log(postData,"poastdata")
+            const resData = await fetchPOST(GET_MIX_DATA,postData)
+            // console.log(resData.data);
+            dispatch({
+                type: GET_MIX_DATA,
+                payload: resData.data,
+            })
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    }
+}
+

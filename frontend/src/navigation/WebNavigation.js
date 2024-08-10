@@ -11,6 +11,7 @@ import AboutUs from '../page/AboutUs';
 import ContactUs from '../page/ContactUs';
 import AllProductsPage from '../component/AllProductsPage';
 import CategoryPage from '../component/CategoryPage';
+import MixData from '../component/MixData';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             {path: '/pages/contact-us', element: <ContactUs/>},
             {path: '/all-products', element: <AllProductsPage/>},
             {path: '/category/:categoryName', element: <CategoryPage/>},
+            {path: '/mix-data', element: <MixData/>},
         ],
     },
     { path: '*', element: <Navigate to="/" /> }
