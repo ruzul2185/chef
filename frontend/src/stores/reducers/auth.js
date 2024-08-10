@@ -1,4 +1,4 @@
-import { GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS, URL } from "../../constants/URLConstant";
+import { GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS,GET_MIX_DATA, URL } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 
 const initialState = {
@@ -8,6 +8,7 @@ const initialState = {
     productDetail: null,
     LatestProducts: [],
     allProduct:[],
+    mixData:[],
     login:null,
 };
 
@@ -47,6 +48,11 @@ export default (state = initialState, action) => {
                 return {
                     ...state,
                     allProduct: action.payload
+                }
+                case GET_MIX_DATA:
+                return {
+                    ...state,
+                    mixData: action.payload
                 }
         default:
             return state;

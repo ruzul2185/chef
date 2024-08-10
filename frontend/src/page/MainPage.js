@@ -41,13 +41,13 @@ const MainPage = () => {
                 {/* Rest of your components */}
                 <div className={classes.haloContainer}>
                     <div className={classes.haloSection}>
-                        <HaloSection 
-                            link="/collections/best-selling-product" 
-                            image={bestSellers} 
-                            title="BEST SELLERS" 
-                            categoryList={categoryList}
-                            noDataMessage="No data found. Please add some data in BEST SELLERS."
-                        />
+                    <HaloSection 
+                        link="/mix-data" 
+                        image={bestSellers} 
+                        title="BEST SELLERS" 
+                        categoryList={categoryList}
+                        noDataMessage="No data found. Please add some data in BEST SELLERS."
+                    />
                         <HaloSection 
                             link="/category/cookware" 
                             image={cookware} 
