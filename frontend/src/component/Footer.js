@@ -32,7 +32,7 @@ const Footer = () => {
           <div className={styles.heading}>Find Us Here</div>
           <div className={styles.address}>
             Sathe's Metalwares West High Court Road, Gokulpeth, Gokulpeth,
-            opposite Rama Theator, Nagpur, Maharashtra 440010
+            opposite Sudama Theater, Nagpur, Maharashtra 440010
           </div>
         </div>
       <div className={styles.section}>

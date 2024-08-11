@@ -93,7 +93,7 @@ const MainPage = () => {
                 </div>
 
                 <div>
-                    <OutletBanner title="AVAILABLE AT OVER 10,000 OUTLETS INCLUDING ALL DEPARTMENT STORES" />
+                    <OutletBanner title="AVAILABLE AT TWO STORES AS SATHE METALWARES AND SATHE EXCLUSIVE" />
                 </div>
             </LoadingOverlay>
         </div>
