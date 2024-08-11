@@ -22,15 +22,13 @@ const CategoryPage = () => {
             {data.length === 0 ? (
                 <p className={classes.noDataMessage}>
                 No data found. Please wait... or add some data in <strong className={classes.uppercase}>{categoryName}</strong>.
-            </p>
-            
-                // </div>
+                </p>
             ) : (
                 <div className={classes.gridContainer}>
                     {data.map((item) => (
                         <div className={`${classes.layout} card`} key={item.id}>
                             <div className={classes.imageContainer} onClick={() => {
-                                navigate(`./products/${item.id}`);
+                                navigate(`/products/${item.id}`); // Use an absolute path
                             }}>
                                 <img
                                     src={item.images[0] && item.images[0].url !== null ? item.images[0].url : ""}
@@ -45,7 +43,7 @@ const CategoryPage = () => {
                             <div className={classes.cardBody}>
                                 <div className="card-body-text">
                                     <h5 className={classes.cardTitle} style={{ cursor: 'pointer' }} onClick={() => {
-                                        navigate(`./products/${item.id}`);
+                                        navigate(`/products/${item.id}`); // Use an absolute path
                                     }}>{item.name}</h5>
                                     <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
                                     <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>

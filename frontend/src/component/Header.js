@@ -250,7 +250,7 @@ const Header = () => {
                     <HamburgerMenu />
                 </div>}
                 <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
-                <a className="navUser-action" href="/"><FontAwesomeIcon icon={faHome} color={"red"} style={{height:'33px'}}/>
+                <a className="navUser-action" href="/"><FontAwesomeIcon icon={faHome} color={"red"} style={{ height: '33px' }} className="home-icon" />
                 </a>
                     <a href="/" className="site-header__logo-image" style={{width:"130px"}}>
                         <img itemProp="logo"

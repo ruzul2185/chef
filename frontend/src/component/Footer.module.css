@@ -18,6 +18,11 @@
 /* padding-left: 80px; */
 
 }
+@media (max-width: 767px) {
+  .section {
+    margin-left: 0px !important;
+  }
+}
 
 .section2{
 padding-left: 1px;

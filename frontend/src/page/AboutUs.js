@@ -1,16 +1,23 @@
 import React from "react";
 import styles from "./AboutUs.module.css";
-import logo from "../asset/aboutUs.jpg";
+import logo from "../asset/About_us_2.jpg";
 
 const AboutUs = () => {
   return (
     <React.Fragment>
+        <div className={`${styles.title} ${styles.textContainer2}`}>ABOUT US</div>
+
+
       <div className={styles.container}>
+      
         <div className={styles.imageContainer}>
+          {/* <img src={logo} alt="images" className={styles.image} /> */}
           <img src={logo} alt="images" className={styles.image} />
         </div>
-        <div className={styles.textContainer}>
-          <div className={styles.title}>ABOUT US</div>
+
+        {/* </div><div className={styles.textContainer}> */}
+        <div className={styles.textContainer} style={{ }}>
+          
           <div className={styles.aboutUs}>
             <div className={styles.section}>
               <h2>Welcome to SATHE METALS</h2>
@@ -19,7 +26,7 @@ const AboutUs = () => {
                 S. Sathe, SATHE METALS has been a trusted name in kitchen
                 appliances for nearly five decades. As we approach our 50th
                 anniversary on January 26, 2025, we take pride in our rich
-                history and the trust we've earned from over 1 lakh happy
+                history and the trust we've earned from over 1 lakh+ happy
                 customers.
               </p>
             </div>
