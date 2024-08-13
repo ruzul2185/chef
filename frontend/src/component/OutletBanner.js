@@ -12,6 +12,7 @@ import Wonderchef from '../asset/wonderchef-new2.png';
 import Sujata from '../asset/sujata-new.png';
 import Havells from '../asset/havells-new.png';
 import phillips from '../asset/philips-icon.png';
+import Tramontina from '../asset/Tramontina_icon.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -67,6 +68,10 @@ const OutletBanner = (props) => {
         {
             id:11,
             image:phillips,
+        },
+        {
+            id:12,
+            image:Tramontina,
         },
     ];
 
