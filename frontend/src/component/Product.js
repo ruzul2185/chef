@@ -64,6 +64,7 @@ const Product = (props) => {
     const currentItems = categoryList.length > 0 ? categoryList.slice(indexOfFirstItem, indexOfLastItem) : [];
 
     const handleViewAllClick = () => {
+        window.scrollTo(0, 0); // Scroll to the top of the page
         navigate('/all-products', { state: { categoryList } }); // Adjust the path to where your all products page is located
     };
 
