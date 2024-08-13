@@ -5,8 +5,8 @@ const HamDropdown = (props) => {
         <React.Fragment>
             {console.log(props.list)}
             {props.list.map((item) => (
-                                <a className={props.styling} key={item.name} href={"/collection/" + `${item.name}`}>{item.name}</a>
-                            ))}
+                <a className={props.styling} key={item.name} href={"/collection/" + `${item.name}`}>{item.name}</a>
+            ))}
         </React.Fragment>
     )
 }
