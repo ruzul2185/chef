@@ -11,11 +11,11 @@ const HaloSection = (props) => {
 
     return (
         <div className={classes.logoItem} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: 'center' }}>
-            {props.categoryList.length === 0 ? (
+            {/* {props.categoryList.length === 0 ? (
                 <p className={classes.noDataMessage}>
                     No data found. Please add some data in <strong className={classes.uppercase}>{props.title}</strong>.
                 </p>
-            ) : (
+            ) : ( */}
                 <>
                     <a onClick={handleViewAllClick} className="logo-link" tabIndex="0">
                         <span className="logo-image border-image">
@@ -29,7 +29,7 @@ const HaloSection = (props) => {
                         {props.title}
                     </a>
                 </>
-            )}
+            {/* )} */}
         </div>
     );
 };

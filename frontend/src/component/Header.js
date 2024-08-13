@@ -96,16 +96,25 @@ const Header = () => {
                         <HamburgerMenu />
                     </div>
                     <div className="header-Mobile-item text-center">
-                        <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
-                            <a href="/" className="site-header__logo-image" style={{width:"250px"}}>
-                                <img itemProp="logo"
-                                     src={require("../asset/logo.png")}
-                                     alt="Wonderchef"
-                                     className="logoMobileView"
-                                />
-                            </a>
-                        </div>
-                    </div>
+    <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href="/" className="site-header__logo-image" style={{ display: 'flex', alignItems: 'center' }}>
+            <FontAwesomeIcon 
+                icon={faHome} 
+                color={"red"} 
+                style={{ height: '40px', paddingRight: '20px', paddingTop: '5px' }} 
+                className="home-icon" 
+            />
+            <img 
+                itemProp="logo"
+                src={require("../asset/logo.png")}
+                alt="Wonderchef"
+                className="logoMobileView"
+                style={{ marginLeft: '10px' }} /* Adjust margin as needed */
+            />
+        </a>
+    </div>
+</div>
+
                     <div className="sidebar-menu text-right">
                         <LoginMenu/>
                         <div style={{marginTop:"5px"}}>
