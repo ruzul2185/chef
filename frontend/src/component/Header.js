@@ -297,11 +297,11 @@ const Header = () => {
                                 <NavDropdown title="COOKWARE" id="cookware-nav-dropdown" items={cookwareItems} /> */}
                             {/* </li> */}
                     <NavDropdown className="header-bottom-item" title="COOKWARE" list={categoryList.length>0 ? itemsFilter(categoryList,"Cookware"):[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKING APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooking Appliances"):[]}/>
-                    <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Kitchen Appliances"):[]}/>
-                    <NavDropdown className="header-bottom-item" title="BEVERAGES" list={categoryList.length>0 ? itemsFilter(categoryList,"Beverages"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKING APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooking Appliance"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Kitchen Appliance"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="Beverage" list={categoryList.length>0 ? itemsFilter(categoryList,"Beverage"):[]}/>
                     
-                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snacks"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snack"):[]}/>
 
                     <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Iron"):[]}/>
                 </div>

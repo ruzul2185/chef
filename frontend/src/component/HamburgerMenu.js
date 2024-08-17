@@ -17,7 +17,7 @@ const HamburgerMenu = () => {
         Cookware: false,
         Cooking_Appliances: false,
         Kitchen_Appliances: false,
-        Beverages: false,
+        Beverage: false,
         Breakfast_and_Snacks: false,
         Iron: false
     });
@@ -97,27 +97,27 @@ const HamburgerMenu = () => {
                         </div>
                     )}
                     <div className={styles.menuContent} onClick={() => { toggleDropdown('Cooking_Appliances'); handleNavigation('cooking appliance'); }}>
-                        COOKING APPLIANCES
+                        Cooking Appliance
                     </div>
                     {dropdownState.Cooking_Appliances && (
                         <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cooking Appliances") : []} />
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cooking Appliance") : []} />
                         </div>
                     )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Kitchen_Appliances'); handleNavigation('kitchen appliance'); }}>
-                        KITCHEN APPLIANCES
+                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Kitchen_Appliance'); handleNavigation('kitchen appliance'); }}>
+                        Kitchen Appliance
                     </div>
                     {dropdownState.Kitchen_Appliances && (
                         <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Kitchen Appliances") : []} />
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Kitchen Appliance") : []} />
                         </div>
                     )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Beverages'); handleNavigation('beverages'); }}>
-                        BEVERAGES
+                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Beverage'); handleNavigation('Beverage'); }}>
+                        Beverage
                     </div>
-                    {dropdownState.Beverages && (
+                    {dropdownState.Beverage && (
                         <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Beverages") : []} />
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Beverage") : []} />
                         </div>
                     )}
                     <div className={styles.menuContent} onClick={() => { toggleDropdown('Breakfast_and_Snacks'); handleNavigation('breakfast & snacks'); }}>
@@ -125,7 +125,7 @@ const HamburgerMenu = () => {
                     </div>
                     {dropdownState.Breakfast_and_Snacks && (
                         <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Breakfast and Snacks") : []} />
+                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Breakfast and Snack") : []} />
                         </div>
                     )}
                     <div className={styles.menuContent} onClick={() => { toggleDropdown('Iron'); handleNavigation('iron'); }}>

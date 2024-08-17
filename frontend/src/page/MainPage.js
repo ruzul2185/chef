@@ -56,7 +56,7 @@ const MainPage = () => {
                             noDataMessage="No data found. Please add some data in COOKWARE."
                         />
                         <HaloSection 
-                            link="/category/Kitchen Appliances" 
+                            link="/category/Kitchen Appliance" 
                             image={applicance} 
                             title="APPLIANCES" 
                             categoryList={categoryList}

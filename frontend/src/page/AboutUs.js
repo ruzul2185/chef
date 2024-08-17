@@ -36,7 +36,7 @@ const AboutUs = () => {
               <p>
                 At SATHE METALS, we are committed to providing top-quality
                 kitchen products and exceptional service. Our extensive range of
-                kitchen appliances, available at both SATHE METALS and SATHE'S
+                Kitchen Appliance, available at both SATHE METALS and SATHE'S
                 Exclusive, caters to all your culinary needs. From essential
                 appliances to unique innovations, we ensure that every product
                 meets the highest standards of quality and performance.
@@ -47,7 +47,7 @@ const AboutUs = () => {
               <h2>Dedicated Service and Support</h2>
               <p>
                 Our own service center ensures prompt and reliable maintenance
-                for all your kitchen appliances, providing peace of mind and
+                for all your Kitchen Appliance, providing peace of mind and
                 longevity to your investment. Our friendly and knowledgeable
                 staff is dedicated to delivering personalized service and expert
                 advice, making your shopping experience enjoyable and

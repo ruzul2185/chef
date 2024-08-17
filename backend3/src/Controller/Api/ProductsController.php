@@ -119,70 +119,7 @@ class ProductsController extends AppController
         }
     }
 
-//     public function getAllProduct()
-// {
-//     if ($this->request->is('post')) {
-//         $receivedData = $this->request->getData();
-//         $categoryName = $receivedData['Category'];
-//         $query = $receivedData['query'];
-
-//         $this->loadModel('Categories');
-//         $this->loadModel('Products');
-
-//         if ($categoryName == 'search') {
-//             // Perform search based on product name
-//             $product = $this->Products->find()
-//                 ->where(['name LIKE' => '%' . $query . '%'])
-//                 ->contain([
-//                     'Images' => function ($q) {
-//                         return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
-//                     }
-//                 ])
-//                 ->first();
-
-//             if (!$product) {
-//                 // Handle case where no product matches the search
-//                 $data = [];
-//             } else {
-//                 $data = [$product];
-//             }
-//         } else {
-//             // Fetch all categories with the specified parent_name
-//             $categories = $this->Categories->find()
-//                 ->where(['parent_name' => $categoryName])
-//                 ->all();
-
-//             if ($categories->isEmpty()) {
-//                 // Handle case where no categories match the given name
-//                 $data = [];
-//             } else {
-//                 // Extract category IDs
-//                 $categoryIds = $categories->extract('id')->toArray();
-
-//                 // Fetch all products under these categories
-//                 $data = $this->Products->find('all')
-//                     ->contain([
-//                         'Images' => function ($q) {
-//                             return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
-//                         }
-//                     ])
-//                     ->where([
-//                         'Products.category_id IN' => $categoryIds
-//                     ])
-//                     ->all();
-//             }
-//         }
-
-//         // Set the data to be returned as JSON
-//         $this->set([
-//             'data' => $data,
-//             '_serialize' => ['data']
-//         ]);
-//     }
-// }
-
-
-public function getAllProduct()
+    public function getAllProduct()
 {
     if ($this->request->is('post')) {
         $receivedData = $this->request->getData();
@@ -203,34 +140,12 @@ public function getAllProduct()
                 ])
                 ->first();
 
-            $data = $product ? [$product] : [];
-        } else if ($categoryName == 'kitchen appliance') {
-            // Specific category IDs for Kitchen Appliances
-            $categoryIds = [20, 21, 22, 23, 24, 25, 26];
-
-            // Fetch all products under these category IDs
-            $data = $this->Products->find('all')
-                ->contain([
-                    'Images' => function ($q) {
-                        return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
-                    }
-                ])
-                ->where(['Products.category_id IN' => $categoryIds])
-                ->all();
-        } else if ($categoryName == 'cooking appliance' || $categoryName == 'beverages' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
-
-            // Hardcoded category IDs for Cooking Appliances and others
-            $hardcodedCategoryIds = [17, 18, 19]; // Replace with actual IDs as needed
-
-            // Fetch all products under these hardcoded category IDs
-            $data = $this->Products->find('all')
-                ->contain([
-                    'Images' => function ($q) {
-                        return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
-                    }
-                ])
-                ->where(['Products.category_id IN' => $hardcodedCategoryIds])
-                ->all();
+            if (!$product) {
+                // Handle case where no product matches the search
+                $data = [];
+            } else {
+                $data = [$product];
+            }
         } else {
             // Fetch all categories with the specified parent_name
             $categories = $this->Categories->find()
@@ -251,7 +166,9 @@ public function getAllProduct()
                             return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
                         }
                     ])
-                    ->where(['Products.category_id IN' => $categoryIds])
+                    ->where([
+                        'Products.category_id IN' => $categoryIds
+                    ])
                     ->all();
             }
         }
@@ -287,7 +204,90 @@ public function getAllProduct()
 //                 ->first();
 
 //             $data = $product ? [$product] : [];
-//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'kitchen appliance' || $categoryName == 'beverages' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
+//         } else if ($categoryName == 'kitchen appliance') {
+//             // Specific category IDs for Kitchen Appliance
+//             $categoryIds = [20, 21, 22, 23, 24, 25, 26];
+
+//             // Fetch all products under these category IDs
+//             $data = $this->Products->find('all')
+//                 ->contain([
+//                     'Images' => function ($q) {
+//                         return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+//                     }
+//                 ])
+//                 ->where(['Products.category_id IN' => $categoryIds])
+//                 ->all();
+//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
+
+//             // Hardcoded category IDs for Cooking Appliance and others
+//             $hardcodedCategoryIds = [17, 18, 19]; // Replace with actual IDs as needed
+
+//             // Fetch all products under these hardcoded category IDs
+//             $data = $this->Products->find('all')
+//                 ->contain([
+//                     'Images' => function ($q) {
+//                         return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+//                     }
+//                 ])
+//                 ->where(['Products.category_id IN' => $hardcodedCategoryIds])
+//                 ->all();
+//         } else {
+//             // Fetch all categories with the specified parent_name
+//             $categories = $this->Categories->find()
+//                 ->where(['parent_name' => $categoryName])
+//                 ->all();
+
+//             if ($categories->isEmpty()) {
+//                 // Handle case where no categories match the given name
+//                 $data = [];
+//             } else {
+//                 // Extract category IDs
+//                 $categoryIds = $categories->extract('id')->toArray();
+
+//                 // Fetch all products under these categories
+//                 $data = $this->Products->find('all')
+//                     ->contain([
+//                         'Images' => function ($q) {
+//                             return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+//                         }
+//                     ])
+//                     ->where(['Products.category_id IN' => $categoryIds])
+//                     ->all();
+//             }
+//         }
+
+//         // Set the data to be returned as JSON
+//         $this->set([
+//             'data' => $data,
+//             '_serialize' => ['data']
+//         ]);
+//     }
+// }
+
+
+// public function getAllProduct()
+// {
+//     if ($this->request->is('post')) {
+//         $receivedData = $this->request->getData();
+//         $categoryName = $receivedData['Category'];
+//         $query = $receivedData['query'];
+
+//         $this->loadModel('Categories');
+//         $this->loadModel('Products');
+
+//         if ($categoryName == 'search') {
+//             // Perform search based on product name
+//             $product = $this->Products->find()
+//                 ->where(['name LIKE' => '%' . $query . '%'])
+//                 ->contain([
+//                     'Images' => function ($q) {
+//                         return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+//                     }
+//                 ])
+//                 ->first();
+
+//             $data = $product ? [$product] : [];
+//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'kitchen appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
 
 //             // Hardcoded category IDs for Cooking Appliance (e.g., OTG, Microwave Oven)
 //             $hardcodedCategoryIds = [17, 18, 19]; // Replace 1, 2 with actual category IDs from your DB
