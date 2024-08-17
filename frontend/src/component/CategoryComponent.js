@@ -24,9 +24,9 @@ const CategoryComponent = () => {
         { id: 8, title: "BREAKFAST & SNACKS", image: breakfast },
     ];
 
-    const handleClick = () => {
-        navigate('/all-products');
-        window.scrollTo(0, 0); // Scroll to top after navigation
+    const handleClick = (categoryTitle) => {
+        navigate(`/category/${categoryTitle}`);
+        // window.scrollTo(0, 0); // Scroll to top after navigation
     };
 
     return (
@@ -36,7 +36,7 @@ const CategoryComponent = () => {
             </div>
             <div className={styles.gridContainer}>
                 {items.map((item) => (
-                    <div key={item.id} className={styles.card} onClick={handleClick}>
+                    <div key={item.id} className={styles.card} onClick={() => handleClick(item.title)}>
                         <div className={styles.imageContainer}>
                             <img src={item.image} alt={item.title} className={styles.image} />
                         </div>

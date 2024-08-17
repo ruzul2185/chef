@@ -216,11 +216,11 @@ const Header = () => {
                             </div>
                             <li className="navUser-item icon-border">
                                 <span className="navUser-text">
-                                    <a href="https://www.facebook.com/WonderchefLife/" target="_blank"
+                                    <a href="/" /*target="_blank"*/
                                        aria-describedby="a11y-new-window-external-message" rel="noopener">
                                         <FontAwesomeIcon icon={faFacebookSquare} color={"#383e47"}/>
                                         <b className="icon-text">1.16M</b> </a>&nbsp;<a
-                                    href="https://www.instagram.com/wondercheflife/" target="_blank"
+                                    href="/" /*target="_blank"*/
                                     aria-describedby="a11y-new-window-external-message" rel="noopener">&nbsp;
                                     <FontAwesomeIcon icon={faInstagram} color={"#383e47"}/>
                                     <b className="icon-text">510k</b></a>
