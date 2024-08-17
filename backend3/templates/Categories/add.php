@@ -37,10 +37,10 @@
                             <option value="Cooktop">Cooktop</option>
                             <option value="Induction">Induction</option>
                             <option value="Cookware">Cookware</option>
-                            <option value="Cooking Appliances">Cooking Appliances</option>
-                            <option value="Kitchen Appliances">Kitchen Appliances</option>
-                            <option value="Breakfast and Snacks">Breakfast and Snacks</option>
-                            <option value="Beverages">Beverages</option>
+                            <option value="Cooking Appliance">Cooking Appliance</option>
+                            <option value="Kitchen Appliance">Kitchen Appliance</option>
+                            <option value="Breakfast and Snack">Breakfast and Snack</option>
+                            <option value="Beverage">Beverage</option>
                             <option value="Iron">Iron</option>
                             <option value="Others">Others</option>
                         </select>
