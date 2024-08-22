@@ -21,7 +21,7 @@ const CategoryComponent = () => {
         { id: 5, title: "COOKWARE", image: cookware },
         { id: 6, title: "COOKING APPLIANCE", image: cooking },
         { id: 7, title: "KITCHEN APPLIANCE", image: kitchen },
-        { id: 8, title: "BREAKFAST & SNACKS", image: breakfast },
+        { id: 8, title: "Breakfast and Snack", image: breakfast },
     ];
 
     const handleClick = (categoryTitle) => {

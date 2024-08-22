@@ -120,8 +120,8 @@ const HamburgerMenu = () => {
                             <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Beverage") : []} />
                         </div>
                     )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Breakfast_and_Snacks'); handleNavigation('breakfast & snacks'); }}>
-                        BREAKFAST & SNACKS
+                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Breakfast_and_Snacks'); handleNavigation('Breakfast and Snack'); }}>
+                        Breakfast and Snack
                     </div>
                     {dropdownState.Breakfast_and_Snacks && (
                         <div className={styles.dropdown}>
