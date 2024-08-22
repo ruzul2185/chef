@@ -3,12 +3,18 @@
     flex-direction: column;
     align-items: center;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto; /* Add margin for spacing around the form */
     padding: 20px;
-    /*border: 1px solid #ccc;*/
+    border: 2px solid #ff0002; /* Red border */
     border-radius: 8px;
-    /*background-color: #f9f9f9;*/
-    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+    background-color: #ffffff; /* White background for form */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Downward shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    margin-bottom: 40px; /* Add space below the form */
+}
+
+.formStyle:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .inputContainerStyle {
@@ -50,13 +56,60 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border:1px solid #ff0002;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #ff0002;
     font-weight: bold;
 }
 
 .buttonStyle:hover {
     background-color: white;
-    color:#ff0002;
-    border:1px solid #ff0002;
+    color: #ff0002;
+    border: 1px solid #ff0002;
+}
+
+/* Add a font import if you're using a web font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* Ensure the container is centered and has adequate spacing */
+.thankYouMessageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Ensure the container is tall enough for vertical centering */
+    text-align: center;
+    background-color: transparent; /* Keep the background of the container transparent */
+    margin: 20px; /* General margin around the container */
+}
+
+/* Style for the thank you message box */
+.thankYouMessage {
+    background-color: #ffffff; /* White background for the message box */
+    padding: 20px;
+    border-radius: 12px; /* Slightly more rounded corners */
+    border: 2px solid #ff0002; /* Thin red border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.05); /* Enhanced downward shadow */
+    max-width: 500px; /* Optional: Limit the width of the box */
+    width: 100%; /* Ensure it is responsive */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+}
+
+.thankYouMessage:hover {
+    transform: scale(1.05); /* Slightly increase the size of the box */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Style for the thank you message text */
+.thankYouMessage h2 {
+    font-family: 'Roboto', sans-serif; /* Apply a stylish font */
+    font-size: 3rem; /* Larger font size for emphasis */
+    margin-bottom: 10px;
+    color: #ff0002; /* Red color for the text */
+    font-weight: 700; /* Bold text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for a stylish effect */
+}
+
+.thankYouMessage p {
+    font-family: 'Roboto', sans-serif; /* Apply a stylish font */
+    font-size: 1.5rem; /* Larger font size for the message */
+    color: #666; /* Gray color for the text */
 }

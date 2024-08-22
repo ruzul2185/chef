@@ -1,4 +1,4 @@
-import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS, URL, GET_MIX_DATA } from "../../constants/URLConstant";
+import { AUTHENTICATE_URL, GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS, URL, GET_MIX_DATA, ADD_CONTACT } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
 import { fetchGET, fetchPOST } from "../../utils/NetworkUtils";
 
@@ -171,3 +171,29 @@ export const getMixData = (state,query) => {
     }
 }
 
+export const addContact = (name,email,phone,message) => {
+    return async dispatch => {
+        try{
+            const postData = {
+                'name' : name,
+                'email' : email,
+                'phone' : phone,
+                'message' : message,
+            }
+            console.log(postData,"poastdata")
+            const resData = await fetchPOST(ADD_CONTACT,postData)
+            // console.log(resData.data);
+            if (resData && !resData.error_code) {
+                dispatch({
+                    type: ADD_CONTACT,
+                    payload: resData,  // Save response data to Redux state or handle it
+                });
+            } else {
+                console.error('Error from API:', resData.error_message);
+            }
+
+        } catch (err) {
+            console.error('Error occurred:', err);
+        }
+    };
+};

@@ -73,5 +73,16 @@
             <li><a href="<?php echo $this->Url->build('/ImageTypes'); ?>"><i class="fa fa-circle-o"></i>List of Image Types</a></li>
         </ul>
     </li>
-
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Contacts</span>
+            <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="<?php echo $this->Url->build('/Contacts/add'); ?>"><i class="fa fa-circle-o"></i> New Contact</a></li>
+            <li><a href="<?php echo $this->Url->build('/Contacts'); ?>"><i class="fa fa-circle-o"></i>List of Contacts</a></li>
+        </ul>
+    </li>
 </ul>

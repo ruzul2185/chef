@@ -139,7 +139,7 @@ const HamburgerMenu = () => {
                 </div>
                 <div style={{ marginTop: "20px" }}>
                     <a className={styles.menuContent} href="../pages/about-us">ABOUT US</a>
-                    <a className={styles.menuContent} href="../pages/contact-us">CONTACT</a>
+                    <a className={styles.menuContent} href="../pages/contact-us">CONTACT US</a>
                 </div>
             </div>
         </React.Fragment>

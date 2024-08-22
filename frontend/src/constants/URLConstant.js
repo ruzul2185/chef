@@ -8,5 +8,6 @@ export const GET_PRODUCT_DETAIL = BASE_URL + '/api/Products/getProductDetail';
 export const GET_LATEST_PRODUCTS = BASE_URL + '/api/Products/getLatestProducts';
 export const GET_ALL_PRODUCTS = BASE_URL + '/api/Products/getAllProduct';
 export const GET_MIX_DATA = BASE_URL + '/api/Products/getMixData';
+export const ADD_CONTACT = BASE_URL + '/api/Contacts/contact';
 export const URL = 'http://localhost:8765/users/login';
 
