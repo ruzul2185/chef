@@ -301,7 +301,7 @@ const Header = () => {
                     <NavDropdown className="header-bottom-item" title="KITCHEN APPLIANCE" list={categoryList.length>0 ? itemsFilter(categoryList,"Kitchen Appliance"):[]}/>
                     <NavDropdown className="header-bottom-item" title="Beverage" list={categoryList.length>0 ? itemsFilter(categoryList,"Beverage"):[]}/>
                     
-                    <NavDropdown className="header-bottom-item" title="BREAKFAST & SNACKS" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snack"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="Breakfast and Snack" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snack"):[]}/>
 
                     <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Iron"):[]}/>
                 </div>

@@ -212,7 +212,7 @@ class ProductsController extends AppController
 //                 ])
 //                 ->where(['Products.category_id IN' => $categoryIds])
 //                 ->all();
-//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
+//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'Breakfast and Snacks') {
 
 //             // Hardcoded category IDs for Cooking Appliance and others
 //             $hardcodedCategoryIds = [17, 18, 19]; // Replace with actual IDs as needed
@@ -282,7 +282,7 @@ class ProductsController extends AppController
 //                 ->first();
 
 //             $data = $product ? [$product] : [];
-//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'kitchen appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'breakfast & snacks') {
+//         } else if ($categoryName == 'cooking appliance' || $categoryName == 'kitchen appliance' || $categoryName == 'Beverage' || $categoryName == 'induction' || $categoryName == 'Breakfast and Snacks') {
 
 //             // Hardcoded category IDs for Cooking Appliance (e.g., OTG, Microwave Oven)
 //             $hardcodedCategoryIds = [17, 18, 19]; // Replace 1, 2 with actual category IDs from your DB
