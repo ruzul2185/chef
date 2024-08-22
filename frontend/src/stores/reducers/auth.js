@@ -1,5 +1,6 @@
-import { GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS,GET_MIX_DATA, URL } from "../../constants/URLConstant";
+import { GET_CATEGORY_LIST, GET_LATEST_PRODUCTS, GET_PRODUCT_DETAIL, GET_PRODUCT_LIST,GET_ALL_PRODUCTS,GET_MIX_DATA, URL, ADD_CONTACT } from "../../constants/URLConstant";
 import {AUTHENTICATE} from "../../constants/WebConstant";
+import { addContact } from "../actions/auth";
 
 const initialState = {
     token: null,
@@ -10,6 +11,7 @@ const initialState = {
     allProduct:[],
     mixData:[],
     login:null,
+    addContact:null,
 };
 
 export default (state = initialState, action) => {
@@ -53,6 +55,11 @@ export default (state = initialState, action) => {
                 return {
                     ...state,
                     mixData: action.payload
+                }
+                case ADD_CONTACT:
+                return {
+                    ...state,
+                    addContact: action.payload
                 }
         default:
             return state;
