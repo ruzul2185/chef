@@ -40,6 +40,7 @@
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('company_id') ?></th>
                   <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
               </tr>
             </thead>
@@ -55,6 +56,7 @@
                   <td><?= h($product->created) ?></td>
                   <td><?= h($product->modified) ?></td>
                   <td><?= $this->Number->format($product->category_id) ?></td>
+                  <td><?= $this->Number->format($product->company_id) ?></td>
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $product->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id], ['class'=>'btn btn-warning btn-xs']) ?>

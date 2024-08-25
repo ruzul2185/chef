@@ -13,18 +13,7 @@
     </ul>
   </li>
 
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Categories</span>
-            <span class="pull-right-container">
-        <i class="fa fa-angle-left pull-right"></i>
-      </span>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href="<?php echo $this->Url->build('/categories/add'); ?>"><i class="fa fa-circle-o"></i> New Category</a></li>
-            <li><a href="<?php echo $this->Url->build('/categories'); ?>"><i class="fa fa-circle-o"></i>List of Categories</a></li>
-        </ul>
-    </li>
+    
     <li class="treeview">
         <a href="#">
             <i class="fa fa-dashboard"></i> <span>Images</span>
@@ -47,6 +36,30 @@
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/products/add'); ?>"><i class="fa fa-circle-o"></i> New Product</a></li>
             <li><a href="<?php echo $this->Url->build('/products'); ?>"><i class="fa fa-circle-o"></i>List of Products</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Categories</span>
+            <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="<?php echo $this->Url->build('/categories/add'); ?>"><i class="fa fa-circle-o"></i> New Category</a></li>
+            <li><a href="<?php echo $this->Url->build('/categories'); ?>"><i class="fa fa-circle-o"></i>List of Categories</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Companies</span>
+            <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="<?php echo $this->Url->build('/companies/add'); ?>"><i class="fa fa-circle-o"></i> New Companies</a></li>
+            <li><a href="<?php echo $this->Url->build('/companies'); ?>"><i class="fa fa-circle-o"></i>List of Companies</a></li>
         </ul>
     </li>
     <li class="treeview">

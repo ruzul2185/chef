@@ -24,6 +24,8 @@
             <dd><?= h($product->name) ?></dd>
             <dt scope="row"><?= __('Category') ?></dt>
             <dd><?= $product->has('category') ? $this->Html->link($product->category->name, ['controller' => 'Categories', 'action' => 'view', $product->category->id]) : '' ?></dd>
+            <dt scope="row"><?= __('Company') ?></dt>
+            <dd><?= $product->has('company') ? $this->Html->link($product->company->name, ['controller' => 'Companies', 'action' => 'view', $product->company->id]) : '' ?></dd>
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($product->id) ?></dd>
             <dt scope="row"><?= __('Original Price') ?></dt>

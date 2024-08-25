@@ -1,13 +1,13 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Product $product
+ * @var \Cake\Datasource\EntityInterface $company
  */
 ?>
 <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Product
+      Company
       <small><?php echo __('Add'); ?></small>
     </h1>
     <ol class="breadcrumb">
@@ -26,16 +26,10 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <?php echo $this->Form->create($product, ['role' => 'form']); ?>
+          <?php echo $this->Form->create($company, ['role' => 'form']); ?>
             <div class="box-body">
               <?php
                 echo $this->Form->control('name');
-                echo $this->Form->control('original_price');
-                echo $this->Form->control('offer_price');
-                echo $this->Form->control('discount');
-                echo $this->Form->control('description');
-                echo $this->Form->control('category_id', ['options' => $categories, 'empty' => true]);
-                echo $this->Form->control('company_id', ['options' => $companies, 'empty' => true]);
               ?>
             </div>
             <!-- /.box-body -->
