@@ -51,6 +51,10 @@ class ProductsTable extends Table
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
         ]);
+        $this->belongsTo('Companies', [
+            'foreignKey' => 'company_id',
+            'joinType' => 'INNER',
+        ]);
         $this->hasMany('Images', [
             'foreignKey' => 'product_id',
         ]);
@@ -105,6 +109,7 @@ class ProductsTable extends Table
     public function buildRules(RulesChecker $rules): RulesChecker
     {
         $rules->add($rules->existsIn(['category_id'], 'Categories'), ['errorField' => 'category_id']);
+        $rules->add($rules->existsIn(['company_id'], 'Companies'), ['errorField' => 'company_id']);
 
         return $rules;
     }
