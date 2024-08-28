@@ -77,7 +77,17 @@ const MainPage = () => {
                 </div>
 
                 <div className={`${classes.productCarouselConatiner} ${classes.container}`}>
-                    <Product title="NEW ARRIVALS" />
+                    {/* <Product title="NEW ARRIVALS" /> */}
+                    <Product 
+                        title="NEW ARRIVALS" 
+                        buttonStyles={{ 
+                            prevButton: { backgroundColor: '#E4E0E0' },
+                            prevButtonLeft: { backgroundColor: '#E4E0E0' },
+                            nextButton: { backgroundColor: '#E4E0E0' },
+                            nextButtonRight: { backgroundColor: '#E4E0E0' }
+                        }} 
+                    />
+
                 </div>
 
                 <div>
@@ -89,7 +99,15 @@ const MainPage = () => {
                 </div>
 
                 <div className={classes.productCarouselConatiner}>
-                    <Product title="OUR BEST SELLERS" />
+                <Product 
+                    title="OUR BEST SELLERS" 
+                    buttonStyles={{ 
+                        prevButton: { backgroundColor: '#ffffff' },
+                        prevButtonLeft: { backgroundColor: '#ffffff' },
+                        nextButton: { backgroundColor: '#ffffff' },
+                        nextButtonRight: { backgroundColor: '#ffffff' }
+                    }}
+                />
                 </div>
 
                 <div>

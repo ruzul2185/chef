@@ -68,10 +68,24 @@ const Product = (props) => {
         navigate('/all-products', { state: { categoryList } }); // Adjust the path to where your all products page is located
     };
 
+    const {
+        buttonStyles = {
+            prevButton: { backgroundColor: '#E4E0E0' },
+            prevButtonLeft: { backgroundColor: '#E4E0E0' },
+            nextButton: { backgroundColor: '#E4E0E0' },
+            nextButtonRight: { backgroundColor: '#E4E0E0' }
+        }
+    } = props;
+
     return (
         <React.Fragment>
             <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="prevButton">
+                <button 
+                    onClick={handlePreviousPage} 
+                    disabled={currentPage === 1} 
+                    className="prevButton" 
+                    style={buttonStyles.prevButton}
+                >
                     <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }} />
                 </button>
                 <div className="indicator-container">
@@ -79,13 +93,23 @@ const Product = (props) => {
                         {props.title}
                     </p>
                 </div>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="nextButton">
+                <button 
+                    onClick={handleNextPage} 
+                    disabled={currentPage === totalPages} 
+                    className="nextButton" 
+                    style={buttonStyles.nextButton}
+                >
                     <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '48px' }} />
                 </button>
             </div>
             <div className="product-container">
                 <TransitionGroup component={null}>
-                    <button onClick={handlePreviousPage} disabled={currentPage === 1} className="prevButtonLeft">
+                    <button 
+                        onClick={handlePreviousPage} 
+                        disabled={currentPage === 1} 
+                        className="prevButtonLeft" 
+                        style={buttonStyles.prevButtonLeft}
+                    >
                         <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }} />
                     </button>
                     {categoryList.length > 0 && currentItems.map((item) => (
@@ -115,7 +139,12 @@ const Product = (props) => {
                             </div>
                         </CSSTransition>
                     ))}
-                    <button onClick={handleNextPage} disabled={currentPage === totalPages} className="nextButtonRight">
+                    <button 
+                        onClick={handleNextPage} 
+                        disabled={currentPage === totalPages} 
+                        className="nextButtonRight" 
+                        style={buttonStyles.nextButtonRight}
+                    >
                         <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '48px' }} />
                     </button>
                 </TransitionGroup>
