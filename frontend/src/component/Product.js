@@ -132,7 +132,8 @@ const Product = (props) => {
                                         <h5 className="card-title">{item.name}</h5>
                                         <h5 className="card-subtitle">MRP: {item.original_price}</h5>
                                         <h5 className="card-offer">OFFER PRICE: {item.offer_price}</h5>
-                                        <h5 className="card-discount">You save 10%($700)</h5>
+                                        <h5 className="card-discount">
+                                        You save Rs.{item.discount && item.discount.trim() !== '' ? item.discount : (item.original_price - item.offer_price)}/-</h5>
                                     </div>
                                     <a href="#" className="btn btn-primary cart-button">ADD TO CART</a>
                                 </div>

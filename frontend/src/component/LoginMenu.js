@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from './LoginMenu.module.css';
 import {faUser, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { URL } from '../constants/URLConstant';
 const LoginMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +47,11 @@ const LoginMenu = () => {
                     <div>
                         <button className={styles.loginButton}>Login</button>
                     </div>
+                    <div>
+                                                <a href={`${URL}`}>
+                                                <button className="loginButton">Admin Login</button>
+                                                </a>
+                                            </div>
                 </div>
                 <div className={styles.menuItems} style={{border:"none"}}>
                     <div className={styles.loginText}>Create your account and enjoy a new shopping experience.</div>
