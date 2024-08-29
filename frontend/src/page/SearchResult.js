@@ -54,7 +54,7 @@ const SearchResult = () => {
                                         }}>{item.name}</h5>
                                         <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
                                         <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
-                                        <h5 className={classes.cardDiscount}>You save {item.discount} </h5>
+                                        <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount.trim() !== '' ? item.discount : (item.original_price - item.offer_price)}/-</h5>
                                     </div>
                                     <a href="#" className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                         <p className={classes.button}>
