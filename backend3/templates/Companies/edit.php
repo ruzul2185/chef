@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \Cake\Datasource\EntityInterface $company
+ * @var \App\Model\Entity\Company $company
  */
 ?>
 <!-- Content Header (Page header) -->

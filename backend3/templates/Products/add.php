@@ -35,7 +35,7 @@
                 echo $this->Form->control('discount');
                 echo $this->Form->control('description');
                 echo $this->Form->control('category_id', ['options' => $categories, 'empty' => true]);
-                echo $this->Form->control('company_id', ['options' => $companies, 'empty' => true]);
+                echo $this->Form->control('company_id', ['options' => $companies]);
               ?>
             </div>
             <!-- /.box-body -->

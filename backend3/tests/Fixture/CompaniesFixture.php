@@ -41,8 +41,8 @@ class CompaniesFixture extends TestFixture
             [
                 'id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2024-08-23 12:51:54',
-                'modified' => '2024-08-23 12:51:54',
+                'created' => '2024-08-31 14:35:21',
+                'modified' => '2024-08-31 14:35:21',
             ],
         ];
         parent::init();
