@@ -162,7 +162,7 @@ const ProductPage = () => {
                     </div>
                     <div className={classes.originalPrice}>MRP: {data.original_price !==' ' ? data.original_price:' '}/-</div>
                     <div className={classes.offerPrice}>OFFER PRICE: {data.offer_price !==' ' ? data.offer_price:' '}/-</div>
-                    <div className={classes.discount}>You save Rs.{data.discount && data.discount.trim() !== '' ? data.discount : (data.original_price - data.offer_price)}/-</div>
+                    <div className={classes.discount}>You save Rs.{data.discount && data.discount !== '' && data.discount !== null  ? data.discount : (data.original_price - data.offer_price)}/-</div>
                     <div className={classes.offerPrice}>Colour & Size: Different Colors and Sizes are available asper your requirement. Please contact us for more detail.</div>
                     <div className={classes.aboutProduct}>
                         About the Product
