@@ -19,7 +19,7 @@ class ProductsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Categories'],
+            'contain' => ['Categories','Companies'],
         ];
         $products = $this->paginate($this->Products);
 
@@ -36,7 +36,7 @@ class ProductsController extends AppController
     public function view($id = null)
     {
         $product = $this->Products->get($id, [
-            'contain' => ['Categories', 'Images'],
+            'contain' => ['Categories', 'Images','Companies'],
         ]);
 
         $this->set(compact('product'));
@@ -59,8 +59,16 @@ class ProductsController extends AppController
             }
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
-        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
-        $companies = $this->Products->Companies->find('list', ['limit' => 200]);
+        $categories = $this->Products->Categories->find('list', [
+            'limit' => 200,
+            'order' => ['Categories.name' => 'ASC'] // Order by name in ascending order
+        ]);
+        
+        $companies = $this->Products->Companies->find('list', [
+            'limit' => 200,
+            'order' => ['Companies.name' => 'ASC'] // Order by name in ascending order
+        ]);
+        
         $this->set(compact('product', 'categories','companies'));
     }
 
@@ -85,8 +93,17 @@ class ProductsController extends AppController
             }
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
-        $categories = $this->Products->Categories->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'categories'));
+        $categories = $this->Products->Categories->find('list', [
+            'limit' => 200,
+            'order' => ['Categories.name' => 'ASC'] // Order by name in ascending order
+        ]);
+        
+        $companies = $this->Products->Companies->find('list', [
+            'limit' => 200,
+            'order' => ['Companies.name' => 'ASC'] // Order by name in ascending order
+        ]);
+        
+        $this->set(compact('product', 'categories','companies'));
     }
 
     /**

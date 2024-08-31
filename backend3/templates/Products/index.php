@@ -37,6 +37,7 @@
                   <th scope="col"><?= $this->Paginator->sort('original_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('offer_price') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('descripiton') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
@@ -55,8 +56,9 @@
                   <td><?= h($product->description) ?></td>
                   <td><?= h($product->created) ?></td>
                   <td><?= h($product->modified) ?></td>
-                  <td><?= $this->Number->format($product->category_id) ?></td>
-                  <td><?= $this->Number->format($product->company_id) ?></td>
+                  <td><?= $product->category ? h($product->category->name) : 'No Category' ?></td>
+                <td><?= $product->company ? h($product->company->name) : 'No Company Selected' ?></td>
+                
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $product->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id], ['class'=>'btn btn-warning btn-xs']) ?>

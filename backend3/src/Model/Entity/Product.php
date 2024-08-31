@@ -20,6 +20,7 @@ use Cake\ORM\Entity;
  * @property int $company_id
  *
  * @property \App\Model\Entity\Category $category
+ * @property \App\Model\Entity\Company $company
  * @property \App\Model\Entity\Image[] $images
  */
 class Product extends Entity
@@ -44,6 +45,7 @@ class Product extends Entity
         'category_id' => true,
         'company_id' => true,
         'category' => true,
+        'company' => true,
         'images' => true,
     ];
 }
