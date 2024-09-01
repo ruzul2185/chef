@@ -1,8 +1,11 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
     Images
-
     <div class="pull-right"><?php echo $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
@@ -19,7 +22,6 @@
             <form action="<?php echo $this->Url->build(); ?>" method="POST">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
-
                 <div class="input-group-btn">
                   <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                 </div>
@@ -32,53 +34,85 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                  <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('url') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('product_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('review_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('image_type_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                  <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <!-- <th scope="col"><?= $this->Paginator->sort('url') ?></th> -->
+                <!-- <th scope="col"><?= $this->Paginator->sort('product.name') ?></th> Update header to show product name -->
+                <th scope="col"><?= $this->Paginator->sort('review_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('image_type_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($images as $image): ?>
+              <?php
+                // Group images by product_id
+                $groupedImages = [];
+                foreach ($images as $image) {
+                  $groupedImages[$image->product_id]['product'] = $image->product; // Store product entity
+                  $groupedImages[$image->product_id]['images'][] = $image; // Store images
+                }
+              ?>
+
+              <?php foreach ($groupedImages as $productId => $data): ?>
                 <tr>
-                  <td><?= $this->Number->format($image->id) ?></td>
-                  <td>
-                        <?= $this->Html->image($image->name, ['width' => '100', 'height' => '100']) ?>
-                    </td>
-                  <td><?= h($image->url) ?></td>
-                  <td><?= $this->Number->format($image->product_id) ?></td>
-                  <td><?= $this->Number->format($image->review_id) ?></td>
-                  <td><?= $this->Number->format($image->image_type_id) ?></td>
-                  <td><?= h($image->created) ?></td>
-                  <td><?= h($image->modified) ?></td>
-                  <td class="actions text-right">
-                      <?= $this->Html->link(__('View'), ['action' => 'view', $image->id], ['class'=>'btn btn-info btn-xs']) ?>
-                      <?= $this->Html->link(__('Edit'), ['action' => 'edit', $image->id], ['class'=>'btn btn-warning btn-xs']) ?>
-                      <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                  <td colspan="9">
+                  <strong>Product: <?= h(!empty($data['product']) ? $data['product']->name : 'No Product Name') ?></strong> <!-- Show product name or 'Unknown' -->
+                  <div class="image-thumbnails">
+                      <?php foreach ($data['images'] as $image): ?>
+                        <div class="thumbnail">
+                          <?= $this->Html->image($image->url, ['width' => '50', 'height' => '50']) ?>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
                   </td>
                 </tr>
+                <?php foreach ($data['images'] as $image): ?>
+                  <tr>
+                    <td><?= $this->Number->format($image->id) ?></td>
+                    <td><?= h($image->name) ?></td>
+                    <!-- <td><?= h($image->url) ?></td> -->
+                    <!-- <td><?= h($data['product']->name) ?></td> Show product name -->
+                    <td><?= $this->Number->format($image->review_id) ?></td>
+                    <td><?= $this->Number->format($image->image_type_id) ?></td>
+                    <td><?= h(Time::parse($image->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($image->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
+                    <td class="actions text-right">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $image->id], ['class'=>'btn btn-info btn-xs']) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $image->id], ['class'=>'btn btn-warning btn-xs']) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
               <?php endforeach; ?>
             </tbody>
           </table>
         </div>
         <!-- /.box-body -->
         <div class="paginator">
-                    <ul class="pagination">
-                        <?= $this->Paginator->first('<< ' . __('first')) ?>
-                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
-                        <?= $this->Paginator->numbers() ?>
-                        <?= $this->Paginator->next(__('next') . ' >') ?>
-                        <?= $this->Paginator->last(__('last') . ' >>') ?>
-                    </ul>
-                    <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-                </div>
+          <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+          </ul>
+          <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+        </div>
       </div>
       <!-- /.box -->
     </div>
   </div>
 </section>
+
+<style>
+  .image-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .thumbnail {
+    margin: 5px;
+  }
+</style>

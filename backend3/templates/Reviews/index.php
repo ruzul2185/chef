@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
@@ -44,8 +48,9 @@
                 <tr>
                   <td><?= $this->Number->format($review->id) ?></td>
                   <td><?= h($review->name) ?></td>
-                  <td><?= h($review->created) ?></td>
-                  <td><?= h($review->modified) ?></td>
+                  <td><?= h(Time::parse($review->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($review->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $review->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $review->id], ['class'=>'btn btn-warning btn-xs']) ?>
