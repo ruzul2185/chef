@@ -1,10 +1,25 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <section class="content-header">
   <h1>
     Product
     <small><?php echo __('View'); ?></small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
+    <!-- Home breadcrumb item -->
+    <li>
+      <a href="<?php echo $this->Url->build(['action' => 'index']); ?>">
+        <i class="fa fa-dashboard"></i> <?php echo __('Home'); ?>
+      </a>
+    </li>
+    <!-- New Image link on the right -->
+    <li class="pull-right">
+      <a href="<?php echo $this->Url->build('/images/add'); ?>?product_id=<?php echo $product->id; ?>" id="newImageLink" class="btn btn-primary" style="color: white;">
+        <i class="fa fa-circle-o"></i> New Image
+      </a>
+    </li>
   </ol>
 </section>
 
@@ -35,9 +50,10 @@
             <dt scope="row"><?= __('Discount') ?></dt>
             <dd><?= $this->Number->format($product->discount) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
-            <dd><?= h($product->created) ?></dd>
+            <dd><?= h(Time::parse($product->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>
-            <dd><?= h($product->modified) ?></dd>
+            <dd><?= h(Time::parse($product->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
+
           </dl>
         </div>
       </div>
@@ -53,7 +69,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <?= $this->Text->autoParagraph($product->description); ?>
+          <?= $this->Text->autoParagraph($product->description); ?>
         </div>
       </div>
     </div>
@@ -68,36 +84,37 @@
         <!-- /.box-header -->
         <div class="box-body">
           <?php if (!empty($product->images)): ?>
-          <table class="table table-hover">
+            <table class="table table-hover">
               <tr>
-                    <th scope="col"><?= __('Id') ?></th>
-                    <th scope="col"><?= __('Name') ?></th>
-                    <th scope="col"><?= __('Url') ?></th>
-                    <th scope="col"><?= __('Product Id') ?></th>
-                    <th scope="col"><?= __('Review Id') ?></th>
-                    <th scope="col"><?= __('Image Type Id') ?></th>
-                    <th scope="col"><?= __('Created') ?></th>
-                    <th scope="col"><?= __('Modified') ?></th>
-                    <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('Url') ?></th>
+                <th scope="col"><?= __('Product Id') ?></th>
+                <th scope="col"><?= __('Review Id') ?></th>
+                <th scope="col"><?= __('Image Type Id') ?></th>
+                <th scope="col"><?= __('Created') ?></th>
+                <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
               </tr>
               <?php foreach ($product->images as $images): ?>
-              <tr>
-                    <td><?= h($images->id) ?></td>
-                    <td><?= h($images->name) ?></td>
-                    <td><?= h($images->url) ?></td>
-                    <td><?= h($images->product_id) ?></td>
-                    <td><?= h($images->review_id) ?></td>
-                    <td><?= h($images->image_type_id) ?></td>
-                    <td><?= h($images->created) ?></td>
-                    <td><?= h($images->modified) ?></td>
-                      <td class="actions text-right">
-                      <?= $this->Html->link(__('View'), ['controller' => 'Images', 'action' => 'view', $images->id], ['class'=>'btn btn-info btn-xs']) ?>
-                      <?= $this->Html->link(__('Edit'), ['controller' => 'Images', 'action' => 'edit', $images->id], ['class'=>'btn btn-warning btn-xs']) ?>
-                      <?= $this->Form->postLink(__('Delete'), ['controller' => 'Images', 'action' => 'delete', $images->id], ['confirm' => __('Are you sure you want to delete # {0}?', $images->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                <tr>
+                  <td><?= h($images->id) ?></td>
+                  <td><?= h($images->name) ?></td>
+                  <td><?= h($images->url) ?></td>
+                  <td><?= h($images->product_id) ?></td>
+                  <td><?= h($images->review_id) ?></td>
+                  <td><?= h($images->image_type_id) ?></td>
+                  <td><?= h(Time::parse($images->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($images->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
+                  <td class="actions text-right">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Images', 'action' => 'view', $images->id], ['class' => 'btn btn-info btn-xs']) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Images', 'action' => 'edit', $images->id], ['class' => 'btn btn-warning btn-xs']) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Images', 'action' => 'delete', $images->id], ['confirm' => __('Are you sure you want to delete # {0}?', $images->id), 'class' => 'btn btn-danger btn-xs']) ?>
                   </td>
-              </tr>
+                </tr>
               <?php endforeach; ?>
-          </table>
+            </table>
           <?php endif; ?>
         </div>
       </div>

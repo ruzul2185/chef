@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <section class="content-header">
   <h1>
     Review
@@ -25,9 +29,10 @@
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($review->id) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
-            <dd><?= h($review->created) ?></dd>
+            <dd><?= h(Time::parse($review->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>
-            <dd><?= h($review->modified) ?></dd>
+            <dd><?= h(Time::parse($review->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
+
           </dl>
         </div>
       </div>
@@ -64,8 +69,9 @@
                     <td><?= h($images->product_id) ?></td>
                     <td><?= h($images->review_id) ?></td>
                     <td><?= h($images->type) ?></td>
-                    <td><?= h($images->created) ?></td>
-                    <td><?= h($images->modified) ?></td>
+                    <td><?= h(Time::parse($images->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($images->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                       <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['controller' => 'Images', 'action' => 'view', $images->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['controller' => 'Images', 'action' => 'edit', $images->id], ['class'=>'btn btn-warning btn-xs']) ?>
