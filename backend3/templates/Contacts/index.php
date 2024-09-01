@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
@@ -50,8 +54,9 @@
                   <td><?= h($contact->email) ?></td>
                   <td><?= h($contact->phone) ?></td>
                   <td><?= h($contact->message) ?></td>
-                  <td><?= h($contact->created) ?></td>
-                  <td><?= h($contact->modified) ?></td>
+                  <td><?= h(Time::parse($contact->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($contact->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $contact->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contact->id], ['class'=>'btn btn-warning btn-xs']) ?>

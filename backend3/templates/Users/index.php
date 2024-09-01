@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
@@ -50,8 +54,9 @@
                   <td><?= h($user->password) ?></td>
                   <td><?= h($user->first_name) ?></td>
                   <td><?= h($user->last_name) ?></td>
-                  <td><?= h($user->created) ?></td>
-                  <td><?= h($user->modified) ?></td>
+                  <td><?= h(Time::parse($user->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($user->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $user->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id], ['class'=>'btn btn-warning btn-xs']) ?>

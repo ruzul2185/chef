@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Image $image
  */
+$selectedProduct = $this->request->getQuery('product_id');
 ?>
 <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -31,7 +32,12 @@
               <?php
                 echo $this->Form->control('image[]', ['type' => 'file', 'multiple' => true,'label'=>'Images']);
                 // echo $this->Form->control('url');
-                echo $this->Form->control('product_id', ['options' => $products, 'empty' => true]);
+                echo $this->Form->control('product_id', [
+                  'options' => $products,
+                  'empty' => true,
+                  'id' => 'productDropdown',
+                  'default' => $selectedProduct // Pre-select the product
+              ]);
                 echo $this->Form->control('review_id', ['options' => $reviews, 'empty' => true]);
                 echo $this->Form->control('image_type_id', ['options' => $imageTypes, 'empty' => true]);
               ?>
