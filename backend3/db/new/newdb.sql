@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2024 at 07:54 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Sep 01, 2024 at 07:05 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `chef`
+-- Database: `chef2`
 --
 
 -- --------------------------------------------------------
@@ -135,7 +135,8 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `message`, `created`, `m
 (1, 'Priya Baniya', 'baniyapriya293@gmail.com', '+917507657122', 'What is the time to visit', '2024-08-22 08:55:47', '2024-08-22 08:58:32'),
 (17, 'amol', 'admin@test.com', '7507657122', 'hhj', '2024-08-22 15:22:08', '2024-08-22 15:22:08'),
 (18, 'aa', 'a@test.com', '917507657122', 'fghjk', '2024-08-22 15:34:48', '2024-08-22 15:34:48'),
-(19, 'test', 't@t.com', '449999999999', '1233333', '2024-08-22 15:40:48', '2024-08-22 15:40:48');
+(19, 'test', 't@t.com', '449999999999', '1233333', '2024-08-22 15:40:48', '2024-08-22 15:40:48'),
+(20, 'Bhoomi', 'bhoomi@gmail.com', '919923258522', 'What is the time to open or closing?', '2024-09-01 06:36:43', '2024-09-01 06:36:43');
 
 -- --------------------------------------------------------
 
@@ -711,7 +712,10 @@ INSERT INTO `images` (`id`, `name`, `url`, `product_id`, `review_id`, `image_typ
 (617, 'Micro-Convection-25L_5-removebg-preview (1).png', 'http://localhost:8765/img/Micro-Convection-25L_5-removebg-preview (1).png', 192, NULL, NULL, '2024-08-31 17:40:06', '2024-08-31 17:40:06'),
 (618, 'Kenstar(2)(1)20-Litres-900W-Grill-Microwave-Oven.png', 'http://localhost:8765/img/Kenstar(2)(1)20-Litres-900W-Grill-Microwave-Oven.png', 193, NULL, 1, '2024-08-31 17:51:34', '2024-08-31 17:51:34'),
 (619, 'Kenstar(2)(2)20-Litres-900W-Grill-Microwave-Oven.png', 'http://localhost:8765/img/Kenstar(2)(2)20-Litres-900W-Grill-Microwave-Oven.png', 193, NULL, NULL, '2024-08-31 17:51:53', '2024-08-31 17:51:53'),
-(620, 'Kenstar(2)(3)20-Litres-900W-Grill-Microwave-Oven.png', 'http://localhost:8765/img/Kenstar(2)(3)20-Litres-900W-Grill-Microwave-Oven.png', 193, NULL, NULL, '2024-08-31 17:51:53', '2024-08-31 17:51:53');
+(620, 'Kenstar(2)(3)20-Litres-900W-Grill-Microwave-Oven.png', 'http://localhost:8765/img/Kenstar(2)(3)20-Litres-900W-Grill-Microwave-Oven.png', 193, NULL, NULL, '2024-08-31 17:51:53', '2024-08-31 17:51:53'),
+(621, 'WhiteimageRegentaCoffeemachine_1200x1200 (2).jpg', 'http://localhost:8765/img/WhiteimageRegentaCoffeemachine_1200x1200 (2).jpg', 144, NULL, 1, '2024-09-01 06:31:30', '2024-09-01 06:31:30'),
+(622, '2nd-RegentaFully-AutomaticCoffeeMakerWithAuto-Frother__1_-removebg-preview.png', 'http://localhost:8765/img/2nd-RegentaFully-AutomaticCoffeeMakerWithAuto-Frother__1_-removebg-preview.png', 144, NULL, NULL, '2024-09-01 06:32:15', '2024-09-01 06:32:15'),
+(623, '6thbannerRegentaFullyAutomaticCoffeeMachine-removebg-preview.png', 'http://localhost:8765/img/6thbannerRegentaFullyAutomaticCoffeeMachine-removebg-preview.png', 144, NULL, NULL, '2024-09-01 06:32:15', '2024-09-01 06:32:15');
 
 -- --------------------------------------------------------
 
@@ -1089,13 +1093,13 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=621;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=624;
 
 --
 -- AUTO_INCREMENT for table `image_types`
