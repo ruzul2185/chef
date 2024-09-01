@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <section class="content-header">
   <h1>
     User
@@ -31,9 +35,10 @@
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($user->id) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
-            <dd><?= h($user->created) ?></dd>
+            <dd><?= h(Time::parse($user->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>
-            <dd><?= h($user->modified) ?></dd>
+            <dd><?= h(Time::parse($user->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
+
           </dl>
         </div>
       </div>

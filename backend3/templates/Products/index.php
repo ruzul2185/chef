@@ -1,9 +1,13 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
     Products
 
-    <div class="pull-right"><?php echo $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+    <div class="pull-right"><?php echo $this->Html->link(__('New'), ['action' => 'add'], ['class' => 'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
 
@@ -32,17 +36,17 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                  <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('original_price') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('offer_price') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('descripiton') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('company_id') ?></th>
-                  <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('original_price') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('offer_price') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('discount') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('descripiton') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('category_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('company_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
               </tr>
             </thead>
             <tbody>
@@ -53,16 +57,18 @@
                   <td><?= $this->Number->format($product->original_price) ?></td>
                   <td><?= $this->Number->format($product->offer_price) ?></td>
                   <td><?= $this->Number->format($product->discount) ?></td>
-                  <td><?= h($product->description) ?></td>
-                  <td><?= h($product->created) ?></td>
-                  <td><?= h($product->modified) ?></td>
+                  <td>
+                    <?= h(strlen($product->description) > 20 ? substr($product->description, 0, 150) . '...' : $product->description) ?>
+                  </td>
                   <td><?= $product->category ? h($product->category->name) : 'No Category' ?></td>
-                <td><?= $product->company ? h($product->company->name) : 'No Company Selected' ?></td>
-                
+                  <td><?= $product->company ? h($product->company->name) : 'No Company Selected' ?></td>
+                  <td><?= h(Time::parse($product->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($product->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                   <td class="actions text-right">
-                      <?= $this->Html->link(__('View'), ['action' => 'view', $product->id], ['class'=>'btn btn-info btn-xs']) ?>
-                      <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id], ['class'=>'btn btn-warning btn-xs']) ?>
-                      <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete # {0}?', $product->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $product->id], ['class' => 'btn btn-info btn-xs']) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id], ['class' => 'btn btn-warning btn-xs']) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete # {0}?', $product->id), 'class' => 'btn btn-danger btn-xs']) ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -71,15 +77,15 @@
         </div>
         <!-- /.box-body -->
         <div class="paginator">
-                    <ul class="pagination">
-                        <?= $this->Paginator->first('<< ' . __('first')) ?>
-                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
-                        <?= $this->Paginator->numbers() ?>
-                        <?= $this->Paginator->next(__('next') . ' >') ?>
-                        <?= $this->Paginator->last(__('last') . ' >>') ?>
-                    </ul>
-                    <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
-                </div>
+          <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+          </ul>
+          <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+        </div>
       </div>
       <!-- /.box -->
     </div>

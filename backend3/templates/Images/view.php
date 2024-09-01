@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <section class="content-header">
   <h1>
     Image
@@ -34,9 +38,10 @@
             <dt scope="row"><?= __('Id') ?></dt>
             <dd><?= $this->Number->format($image->id) ?></dd>
             <dt scope="row"><?= __('Created') ?></dt>
-            <dd><?= h($image->created) ?></dd>
+            <dd><?= h(Time::parse($image->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
             <dt scope="row"><?= __('Modified') ?></dt>
-            <dd><?= h($image->modified) ?></dd>
+            <dd><?= h(Time::parse($image->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></dd>
+
           </dl>
         </div>
       </div>

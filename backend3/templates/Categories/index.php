@@ -1,3 +1,7 @@
+<?php
+
+use Cake\I18n\Time;
+?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
@@ -34,9 +38,9 @@
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('parent_name') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('parent_name') ?></th>
                   <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
               </tr>
             </thead>
@@ -45,9 +49,10 @@
                 <tr>
                   <td><?= $this->Number->format($category->id) ?></td>
                   <td><?= h($category->name) ?></td>
-                  <td><?= h($category->created) ?></td>
-                  <td><?= h($category->modified) ?></td>
                   <td><?= h($category->parent_name) ?></td>
+                  <td><?= h(Time::parse($category->created)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+                  <td><?= h(Time::parse($category->modified)->timezone('Asia/Kolkata')->i18nFormat('dd-MMM-yyyy hh:mm a')) ?></td>
+
                   <td class="actions text-right">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $category->id], ['class'=>'btn btn-info btn-xs']) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $category->id], ['class'=>'btn btn-warning btn-xs']) ?>
