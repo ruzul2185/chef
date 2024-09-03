@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2024 at 11:42 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Sep 03, 2024 at 02:13 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `chef`
+-- Database: `chef2`
 --
 
 -- --------------------------------------------------------
@@ -136,7 +136,8 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `message`, `created`, `m
 (17, 'amol', 'admin@test.com', '7507657122', 'hhj', '2024-08-22 15:22:08', '2024-08-22 15:22:08'),
 (18, 'aa', 'a@test.com', '917507657122', 'fghjk', '2024-08-22 15:34:48', '2024-08-22 15:34:48'),
 (19, 'test', 't@t.com', '449999999999', '1233333', '2024-08-22 15:40:48', '2024-08-22 15:40:48'),
-(20, 'Bhoomi', 'bhoomi@gmail.com', '919923258522', 'What is the time to open or closing?', '2024-09-01 06:36:43', '2024-09-01 06:36:43');
+(20, 'Bhoomi', 'bhoomi@gmail.com', '919923258522', 'What is the time to open or closing?', '2024-09-01 06:36:43', '2024-09-01 06:36:43'),
+(21, 'Dineshwari', 'deena@gmail.com', '919922468135', 'LG oven details', '2024-09-03 11:48:01', '2024-09-03 11:48:01');
 
 -- --------------------------------------------------------
 
@@ -818,7 +819,14 @@ INSERT INTO `images` (`id`, `name`, `url`, `product_id`, `review_id`, `image_typ
 (723, 'HL7505_1.jfif', 'http://localhost:8765/img/HL7505_1.jfif', 223, NULL, 1, '2024-09-02 17:42:17', '2024-09-02 17:42:17'),
 (724, 'HL7505_2.jfif', 'http://localhost:8765/img/HL7505_2.jfif', 223, NULL, NULL, '2024-09-02 17:42:50', '2024-09-02 17:42:50'),
 (725, 'HL7505_3.jfif', 'http://localhost:8765/img/HL7505_3.jfif', 223, NULL, NULL, '2024-09-02 17:42:51', '2024-09-02 17:42:51'),
-(726, 'Stable-operations-even-when-grinding-tough-ingredients.jfif', 'http://localhost:8765/img/Stable-operations-even-when-grinding-tough-ingredients.jfif', 223, NULL, NULL, '2024-09-02 17:42:51', '2024-09-02 17:42:51');
+(726, 'Stable-operations-even-when-grinding-tough-ingredients.jfif', 'http://localhost:8765/img/Stable-operations-even-when-grinding-tough-ingredients.jfif', 223, NULL, NULL, '2024-09-02 17:42:51', '2024-09-02 17:42:51'),
+(727, '71aWwkETYaL._SL1500_-removebg-preview.png', 'http://localhost:8765/img/71aWwkETYaL._SL1500_-removebg-preview.png', 224, NULL, 1, '2024-09-03 10:56:36', '2024-09-03 10:56:36'),
+(728, '81cyZMXQBqL._SL1500_-removebg-preview.png', 'http://localhost:8765/img/81cyZMXQBqL._SL1500_-removebg-preview.png', 224, NULL, NULL, '2024-09-03 10:57:12', '2024-09-03 10:57:12'),
+(729, '817aPfnhc0L._SL1500_-removebg-preview.png', 'http://localhost:8765/img/817aPfnhc0L._SL1500_-removebg-preview.png', 224, NULL, NULL, '2024-09-03 10:57:12', '2024-09-03 10:57:12'),
+(730, '71o2y8SKPCL._SL1500_-removebg-preview.png', 'http://localhost:8765/img/71o2y8SKPCL._SL1500_-removebg-preview.png', 225, NULL, 1, '2024-09-03 11:14:09', '2024-09-03 11:14:09'),
+(731, '81uFpE2RcFL._SX522_-removebg-preview.png', 'http://localhost:8765/img/81uFpE2RcFL._SX522_-removebg-preview.png', 225, NULL, NULL, '2024-09-03 11:14:49', '2024-09-03 11:14:49'),
+(732, '81ctTqPuLwL._SX569_-removebg-preview.png', 'http://localhost:8765/img/81ctTqPuLwL._SX569_-removebg-preview.png', 225, NULL, NULL, '2024-09-03 11:14:49', '2024-09-03 11:14:49'),
+(733, '81et-ZTGBfL._SX679_-removebg-preview.png', 'http://localhost:8765/img/81et-ZTGBfL._SX679_-removebg-preview.png', 225, NULL, NULL, '2024-09-03 11:15:58', '2024-09-03 11:15:58');
 
 -- --------------------------------------------------------
 
@@ -1110,7 +1118,9 @@ INSERT INTO `products` (`id`, `name`, `original_price`, `offer_price`, `discount
 (220, 'Philips Mixer Grinder with Food Processor Jar 750W White - HL7763/00', 8995, 5495, NULL, 'The Philips Mixer Grinder with Food Processor Jar 750W White (HL7763/00) is designed to make your kitchen tasks effortless. With a powerful 750W turbo motor and gear drive technology, it handles even tough grinding, chopping, kneading, and juicing with ease. Featuring 4 jars, including a food processor jar, this versatile mixer grinder offers multiple speed settings, Power Chop technology for superior chopping, and dishwasher-safe components for easy cleaning. Its leak-proof design ensures mess-free operation, while the overload protection enhances safety. Perfect for preparing delicious meals quickly, this mixer grinder is your all-in-one solution for a hassle-free cooking experience.', '2024-09-02 17:31:19', '2024-09-02 17:31:19', 22, 5),
 (221, 'Philips 1000W Mixer Grinder HL7703/00 - Powerful, Durable, and Efficient Kitchen Appliance', 8595, 6499, NULL, 'Discover the Philips 1000 Watt Mixer Grinder (HL7703/00) that delivers powerful performance with a robust 1000W motor for fast and efficient grinding, blending, and mixing. Its leak-proof jars and advanced blades handle even the toughest ingredients with ease, ensuring no lumps or spills. Ideal for making smooth batters, fine spice powders, and fresh juices with its unique fruit filter. With three sturdy jars, a durable ABS body, and suction feet for stability, this mixer grinder offers superior quality and reliability. Perfect for Indian kitchens, it provides noiseless operation, easy cleaning, and a stylish design that complements any kitchen decor.', '2024-09-02 17:34:43', '2024-09-02 17:34:43', 22, 5),
 (222, 'Philips 500W 2 Jar Mixer Grinder HL7506/00 - Compact and Powerful Kitchen Appliance', 3595, 2995, NULL, 'Introducing the Philips 500 Watt 2 Jar Mixer Grinder (HL7506/00), a compact and efficient kitchen appliance designed to handle everyday cooking needs. Equipped with a powerful 500W motor, this mixer grinder effortlessly grinds and blends tough ingredients like spices, chutneys, and purees. Its two stainless steel jars ensure durability and easy maintenance, while the large, easy-to-use switch knobs provide control over multiple speeds. The non-slip feet offer stability during operation, and its ergonomic design makes storage simple. Perfect for small to medium-sized kitchens, this mixer grinder is your reliable companion for hassle-free meal preparation.', '2024-09-02 17:38:23', '2024-09-02 17:38:23', 22, 5),
-(223, 'Philips 500W Mixer Grinder with 3 Jars HL7505/00 – Powerful, Efficient, and User-Friendly Kitchen Appliance', 4095, 2995, NULL, 'The Philips 500W Powerful and Efficient Mixer Grinder with 3 Jars (HL7505/00) is the perfect kitchen companion for all your grinding and blending needs. Featuring a robust 500-watt motor, it effortlessly grinds tough ingredients like spices, chutneys, and purees with ease. The short-armed mixer blades ensure precise mixing, while the leak-proof jars provide mess-free operations. Designed with large switch knobs for easy speed control, this mixer grinder offers stability even when grinding the toughest ingredients. Compact and easy to store, it\'s ideal for any kitchen space. Enjoy a 2-year warranty, sustainable packaging, and a user-friendly design for everyday use.', '2024-09-02 17:42:01', '2024-09-02 17:42:01', 22, 5);
+(223, 'Philips 500W Mixer Grinder with 3 Jars HL7505/00 – Powerful, Efficient, and User-Friendly Kitchen Appliance', 4095, 2995, NULL, 'The Philips 500W Powerful and Efficient Mixer Grinder with 3 Jars (HL7505/00) is the perfect kitchen companion for all your grinding and blending needs. Featuring a robust 500-watt motor, it effortlessly grinds tough ingredients like spices, chutneys, and purees with ease. The short-armed mixer blades ensure precise mixing, while the leak-proof jars provide mess-free operations. Designed with large switch knobs for easy speed control, this mixer grinder offers stability even when grinding the toughest ingredients. Compact and easy to store, it\'s ideal for any kitchen space. Enjoy a 2-year warranty, sustainable packaging, and a user-friendly design for everyday use.', '2024-09-02 17:42:01', '2024-09-02 17:42:01', 22, 5),
+(224, 'LG 21 L Convection Microwave Oven (MC2146BV, Black, With Heathplus menu & Quartz Heater)', NULL, 0, NULL, 'This 21-litre microwave oven is ideal for small families, couples, or singles, providing versatile functionality for baking, grilling, reheating, defrosting, and cooking at maximum temperature. It features multiple programs including Microwave, Grill, Convection, and Combination modes, along with specialized Indian cuisine settings like Tandoor, Tea/Dairy Delight, Low Calorie, Kids Delight, and Steam Cook. The appliance is also equipped with convenient functions such as Stop/Clear and Start. \r\n\r\nThe oven consumes 1150 W for grilling, 1860 W for convection, and offers five microwave power levels with an 800 W power output. It includes 151 auto-cook menus under the Healthplus menu, offering healthy recipes for breakfast, lunch, snacks, and dinner. For example, you can prepare Wheat Rava Idli, Chana Dal Pancake, and Moong Dal Chilla for breakfast, and dishes like Methi Missi Roti and Grilled Veggies for lunch.\r\n\r\nSpecial features include a quartz heater for concealed and safer cooking, a stainless steel cavity for enhanced hygiene and durability, a completion beeper, child lock, keep warm function, and a membrane control panel that is sensitive to touch and easy to clean. Additional features such as Timed Cook, Defrost, Programmable Timer, Energy Saving Mode, and Dehumidification help keep foods like biscuits and chips crisp and fresh.\r\n\r\nThe microwave’s dimensions are 47.5 cm x 28.5 cm x 46 cm (W x H x D), with an inner stainless steel cavity and a turntable diameter of 9.64 inches. Included in the box are a glass tray, a rotating ring, and a user manual. This product comes with a 1-year manufacturer warranty from the date of purchase. Please note that the brand does not provide a starter kit with this product.', '2024-09-03 10:55:38', '2024-09-03 10:55:38', 18, 14),
+(225, 'LG 28 L Charcoal Convection Microwave Oven (MJ2887BFUM, Black, with 360° Motorised Rotisserie & Charcoal Lighting Heater with 10 years warranty)', NULL, 0, NULL, 'This 28-litre charcoal convection microwave oven is designed for families of 4-6 members, offering diverse cooking options such as baking, grilling, reheating, defrosting, and more at maximum temperature. The oven features multiple cooking modes, including Micro, Grill, Combination, and Convection, with specialized programs like Healthy Heart, Charcoal/Indian Cuisine, Roti Basket, Ghee, Diet Fry, Low Calorie, Pasteurized Milk, Kid\'s Delight, Tea/Dairy Delight, Cooking Aid, and Steam Clean. The intuitive control panel includes Start, Stop, and Clear buttons for easy operation.\r\n\r\nWith a convection power consumption of 1950 W, grill power consumption of 1200 W, and five microwave power levels, the oven is efficient and versatile. It comes with 301 auto-cook menus featuring delicious and healthy recipes, including Wheat Rava Idli, Spinach and Tofu Toast, Healthy Ragi Pizza, Murg Tandoori, Fish Tandoori, Kadhai Chicken, Baigan Ka Barta, Suji Halwa, and many more.\r\n\r\nSpecial features of the microwave include a Charcoal Lighting Heater that enhances natural flavors, making dishes crispy on the outside and juicy inside. It offers 30 heart-friendly recipes, a 360° motorized rotisserie for barbecuing at home, and a Diet Fry function that enables cooking with minimal oil. The stainless steel cavity is more hygienic and durable, and the pasteurized milk feature retains nutrition while removing bacteria.\r\n\r\nAdditional features include defrost, programmable cooking, child lock for safety, an interior light, a side swing door, a completion beeper, and timed cook options. The control type is a tactile dial for precise settings. The oven\'s dimensions are 51 cm x 31 cm x 52 cm (W x H x D), with a stainless steel inner cavity and a turntable diameter of 12.59 inches.\r\n\r\nIncluded in the box are a glass tray, rotating ring, MC tawa, high rack, low rack, rotisserie bar and handle, and a pasteurized milk kit. The product comes with a 1-year warranty on the microwave oven and a 10-year warranty on the charcoal heater parts (terms and conditions apply). Note that a starter kit is not provided with this product.', '2024-09-03 11:13:25', '2024-09-03 11:13:25', 18, 14);
 
 -- --------------------------------------------------------
 
@@ -1227,13 +1237,13 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=727;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=734;
 
 --
 -- AUTO_INCREMENT for table `image_types`
@@ -1251,7 +1261,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
 
 --
 -- AUTO_INCREMENT for table `reviews`
