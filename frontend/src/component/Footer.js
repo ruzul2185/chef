@@ -38,12 +38,16 @@ const Footer = () => {
       <div className={styles.section}>
         <div className={styles.heading}>Contact Us</div>
         <div className={styles.contactDetails}>
-          <a href="tel:+917122533308" className={styles.anchor}>
-            +917122533308
+          <a href="tel:+919766637677" className={styles.anchor}>
+            +919766637677
           </a>
           <br />
-          <a href="mailto:sathemetalwares@gmail.com" className={styles.anchor}>
-            sathemetalwares@gmail.com
+          <a href="tel:+919823034477" className={styles.anchor}>
+            +919823034477
+          </a>
+          <br />
+          <a href="mailto:pradeepsathe.ps@gmail.com" className={styles.anchor}>
+          pradeepsathe.ps@gmail.com
           </a>
         </div>
       </div>

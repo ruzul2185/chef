@@ -228,9 +228,9 @@ const Header = () => {
                             </li>
                             <li className="navUser-item navUser-phone">
                                 <FontAwesomeIcon icon={faPhoneAlt} />
-                                <a className="navUser-action icon-text" href="tel:1860 266 0788"
+                                <a className="navUser-action icon-text" href="tel:9766637677"
                                    aria-describedby="a11y-external-message">
-                                    07122533308
+                                    9766637677
                                 </a>
                             </li>
                         </ul>
