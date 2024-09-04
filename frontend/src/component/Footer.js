@@ -3,9 +3,9 @@ import styles from "./Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
+  // faTwitter,
   faInstagram,
-  faLinkedin,
+  // faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
@@ -64,15 +64,15 @@ const Footer = () => {
           <a href="#" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faFacebook} />
           </a>
-          <a href="#" className={styles.socialIcon}>
+          {/* <a href="#" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faTwitter} />
-          </a>
+          </a> */}
           <a href="#" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="#" className={styles.socialIcon}>
+          {/* <a href="#" className={styles.socialIcon}>
             <FontAwesomeIcon icon={faLinkedin} />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className={styles.footerBottom}>

@@ -72,7 +72,7 @@ class ConsoleCommand extends Command
      */
     public function buildOptionParser(ConsoleOptionParser $parser): ConsoleOptionParser
     {
-        $parser->setDescription(
+        $parser->set(
             'This shell provides a REPL that you can use to interact with ' .
             'your application in a command line designed to run PHP code. ' .
             'You can use it to run adhoc queries with your models, or ' .
