@@ -116,9 +116,10 @@ const Header = () => {
 </div>
 
                     <div className="sidebar-menu text-right">
+                        <div style={{marginRight:"20px"}}>
+                            {/* <Cart/> */}
                         <LoginMenu/>
-                        <div style={{marginTop:"5px"}}>
-                            <Cart/>
+
                         </div>
                     </div>
                 </div>
@@ -210,20 +211,33 @@ const Header = () => {
                                     </div>
                                 )}
                             </div>
-                            <span className="navUser-or">&nbsp;or&nbsp;</span>
+                            {/* <span className="navUser-or">&nbsp;or&nbsp;</span>
                             <div className="navUser-action" id="customer_register_link" style={{minWidth:"108px", cursor:"pointer"}}>
                                 Create an account
-                            </div>
+                            </div> */}
                             <li className="navUser-item icon-border">
                                 <span className="navUser-text">
-                                    <a href="/" /*target="_blank"*/
-                                       aria-describedby="a11y-new-window-external-message" rel="noopener">
-                                        <FontAwesomeIcon icon={faFacebookSquare} color={"#383e47"}/>
-                                        <b className="icon-text">1.16M</b> </a>&nbsp;<a
-                                    href="/" /*target="_blank"*/
-                                    aria-describedby="a11y-new-window-external-message" rel="noopener">&nbsp;
-                                    <FontAwesomeIcon icon={faInstagram} color={"#383e47"}/>
-                                    <b className="icon-text">510k</b></a>
+                                    {/* Facebook Link */}
+                                    <a 
+                                        href="/"  // Replace with your actual Facebook URL
+                                        // target="_blank" 
+                                        aria-label="Visit our Facebook page" 
+                                        rel="noopener noreferrer"
+                                        style={{ fontSize: '15px', marginRight: '12px' }} // Increase font size and add right margin
+                                    >
+                                        <FontAwesomeIcon icon={faFacebookSquare} color="#383e47" />
+                                    </a>
+                                    
+                                    {/* Instagram Link */}
+                                    <a 
+                                        href="/"  // Replace with your actual Instagram URL
+                                        // target="_blank" 
+                                        aria-label="Visit our Instagram page" 
+                                        rel="noopener noreferrer"
+                                        style={{ fontSize: '15px' }} // Increase font size
+                                    >
+                                        <FontAwesomeIcon icon={faInstagram} color="#383e47" />
+                                    </a>
                                 </span>
                             </li>
                             <li className="navUser-item navUser-phone">
@@ -284,14 +298,14 @@ const Header = () => {
                         </button>
                     </div>
                 </form>
-                <Cart/>
+                {/* <Cart/> */}
             </div>
         </div>
             <div className="header-bottom">
                 <div className="bottom-container">
-                    <NavDropdown className="header-bottom-item" title="AIR FRYER" list={categoryList.length>0 ? itemsFilter(categoryList,"Airfryer"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="AIR FRYER" list={categoryList.length>0 ? itemsFilter(categoryList,"Air Fryer"):[]}/>
                     <NavDropdown className="header-bottom-item" title="COOKERS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cookers"):[]}/>
-                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={categoryList.length>0 ? itemsFilter(categoryList,"Cooktop"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="COOKTOPS" list={categoryList.length>0 ? itemsFilter(categoryList,"cooktops"):[]}/>
                     <NavDropdown className="header-bottom-item" title="INDUCTION" list={categoryList.length>0 ? itemsFilter(categoryList,"Induction"):[]}/>
                     {/* <li className="header-bottom-item">
                                 <NavDropdown title="COOKWARE" id="cookware-nav-dropdown" items={cookwareItems} /> */}

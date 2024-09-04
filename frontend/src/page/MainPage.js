@@ -46,28 +46,28 @@ const MainPage = () => {
                         image={bestSellers} 
                         title="BEST SELLERS" 
                         categoryList={categoryList}
-                        noDataMessage="No data found. Please add some data in BEST SELLERS."
+                        noDataMessage="Oops! No Product found in BEST SELLERS. Please wait... or Please contact us or visit our store."
                     />
                         <HaloSection 
                             link="/category/cookware" 
                             image={cookware} 
                             title="COOKWARE" 
                             categoryList={categoryList}
-                            noDataMessage="No data found. Please add some data in COOKWARE."
+                            noDataMessage="Oops! No Product found in COOKWARE. Please wait... or Please contact us or visit our store."
                         />
                         <HaloSection 
                             link="/category/Kitchen Appliance" 
                             image={applicance} 
                             title="APPLIANCES" 
                             categoryList={categoryList}
-                            noDataMessage="No data found. Please add some data in APPLIANCES."
+                            noDataMessage="Oops! No Product found in APPLIANCES. Please wait... or Please contact us or visit our store."
                         />
                         <HaloSection 
                             link="/all-products" 
                             image={newArrival} 
                             title="NEW ARRIVALS" 
                             categoryList={categoryList}
-                            noDataMessage="No data found. Please add some data in NEW ARRIVALS."
+                            noDataMessage="Oops! No Product found in NEW ARRIVALS. Please wait... or Please contact us or visit our store."
                         />
                     </div>
                 </div>
