@@ -21,7 +21,7 @@ const CategoryPage = () => {
         <div className={classes.outerContainer}>
             {data.length === 0 ? (
                 <p className={classes.noDataMessage}>
-                No data found. Please wait... or add some data in <strong className={classes.uppercase}>{categoryName}</strong>.
+                Oops! No Product found in <strong className={classes.uppercase}>{categoryName}</strong>.<br/> Please wait... or Please contact us or visit our store.
                 </p>
             ) : (
                 <div className={classes.gridContainer}>
@@ -45,9 +45,9 @@ const CategoryPage = () => {
                                     <h5 className={classes.cardTitle} style={{ cursor: 'pointer' }} onClick={() => {
                                         navigate(`/products/${item.id}`); // Use an absolute path
                                     }}>{item.name}</h5>
-                                    <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
+                                    {/* <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
                                     <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
-                                    <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5>
+                                    <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
                                     </div>
                                 <a href="#" className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                     <p className={classes.button}>
