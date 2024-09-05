@@ -33,14 +33,24 @@ const HamburgerMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    const toggleDropdown = (dropdown) => {
-        setDropdownState(prevState => ({ ...prevState, [dropdown]: !prevState[dropdown] }));
-    };
+    // const toggleDropdown = (dropdown) => {
+    //     setDropdownState(prevState => ({ ...prevState, [dropdown]: !prevState[dropdown] }));
+    // };
 
     const handleNavigation = (category) => {
         navigate(`/category/${category}`);
         window.scrollTo(0, 0);
     };
+// Modify the `toggleDropdown` function
+const toggleDropdown = (dropdownName) => {
+    setDropdownState((prevState) => {
+        const newState = {};
+        Object.keys(prevState).forEach((key) => {
+            newState[key] = key === dropdownName ? !prevState[key] : false;
+        });
+        return newState;
+    });
+};
 
     return (
         <React.Fragment>
@@ -49,99 +59,44 @@ const HamburgerMenu = () => {
                 <div className={styles.closedBar}></div>
                 <div className={styles.closedBar}></div>
             </div>
-            <div className={`${styles.hamburgerMenu} ${isOpen ? styles.open : ''}`}>
-                <div className={styles.hamburgerIcon} onClick={toggleMenu}>
-                    <div className={styles.closeIcon}>
-                        <FontAwesomeIcon icon={faXmark} color={"#FFFFFF"} />
-                    </div>
+            
+<div className={`${styles.hamburgerMenu} ${isOpen ? styles.open : ''}`}>
+    <div className={styles.hamburgerIcon} onClick={toggleMenu}>
+        <div className={styles.closeIcon}>
+            <FontAwesomeIcon icon={faXmark} color={"#FFFFFF"} />
+        </div>
+    </div>
+    <div className={styles.menuItems}>
+        {[
+            { name: 'Airfryer', label: 'AIRFRYER', category: 'Air Fryer' },
+            { name: 'Cooker', label: 'COOKER', category: 'Cookers' },
+            { name: 'Cooktop', label: 'COOKTOPS', category: 'cooktops' },
+            { name: 'Induction', label: 'INDUCTION', category: 'Induction' },
+            { name: 'Cookware', label: 'COOKWARE', category: 'Cookware' },
+            { name: 'Cooking_Appliances', label: 'Cooking Appliance', category: 'Cooking Appliance' },
+            { name: 'Kitchen_Appliances', label: 'Kitchen Appliance', category: 'Kitchen Appliance' },
+            { name: 'Beverage', label: 'Beverage', category: 'Beverage' },
+            { name: 'Breakfast_and_Snacks', label: 'Breakfast and Snack', category: 'Breakfast and Snack' },
+            { name: 'Iron', label: 'IRON', category: 'Iron' },
+        ].map(({ name, label, category }) => (
+            <React.Fragment key={name}>
+                <div className={styles.menuContent} onClick={() => { toggleDropdown(name); handleNavigation(category.toLowerCase()); }}>
+                    {label}
                 </div>
-                <div className={styles.menuItems}>
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Airfryer'); handleNavigation('air fryer'); }}>
-                        AIRFRYER
+                {dropdownState[name] && (
+                    <div className={`${styles.dropdown} ${styles.dropdownAnimation}`}>
+                        <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, category) : []} />
                     </div>
-                    {dropdownState.Airfryer && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Airfryer") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Cooker'); handleNavigation('cookers'); }}>
-                        COOKER
-                    </div>
-                    {dropdownState.Cooker && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cooker") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Cooktop'); handleNavigation('cooktops'); }}>
-                        COOKTOPS
-                    </div>
-                    {dropdownState.Cooktop && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cooktop") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Induction'); handleNavigation('induction'); }}>
-                        INDUCTION
-                    </div>
-                    {dropdownState.Induction && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Induction") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Cookware'); handleNavigation('cookware'); }}>
-                        COOKWARE
-                    </div>
-                    {dropdownState.Cookware && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cookware") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Cooking_Appliances'); handleNavigation('cooking appliance'); }}>
-                        Cooking Appliance
-                    </div>
-                    {dropdownState.Cooking_Appliances && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Cooking Appliance") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Kitchen_Appliance'); handleNavigation('kitchen appliance'); }}>
-                        Kitchen Appliance
-                    </div>
-                    {dropdownState.Kitchen_Appliances && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Kitchen Appliance") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Beverage'); handleNavigation('Beverage'); }}>
-                        Beverage
-                    </div>
-                    {dropdownState.Beverage && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Beverage") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Breakfast_and_Snacks'); handleNavigation('Breakfast and Snack'); }}>
-                        Breakfast and Snack
-                    </div>
-                    {dropdownState.Breakfast_and_Snacks && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Breakfast and Snack") : []} />
-                        </div>
-                    )}
-                    <div className={styles.menuContent} onClick={() => { toggleDropdown('Iron'); handleNavigation('iron'); }}>
-                        IRON
-                    </div>
-                    {dropdownState.Iron && (
-                        <div className={styles.dropdown}>
-                            <HamDropdown styling={styles.dropdownItem} list={categoryList.length > 0 ? itemsFilter(categoryList, "Iron") : []} />
-                        </div>
-                    )}
-                </div>
-                <div style={{ marginTop: "20px" }}>
-                    <a className={styles.menuContent} href="../pages/about-us">ABOUT US</a>
-                    <a className={styles.menuContent} href="../pages/contact-us">CONTACT US</a>
-                </div>
-            </div>
+                )}
+            </React.Fragment>
+        ))}
+    </div>
+    <div style={{ marginTop: "20px" }}>
+        <a className={styles.menuContent} href="../pages/about-us">ABOUT US</a>
+        <a className={styles.menuContent} href="../pages/contact-us">CONTACT US</a>
+    </div>
+</div>
+
         </React.Fragment>
     );
 };

@@ -160,19 +160,24 @@ const ProductPage = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={classes.originalPrice}>MRP: {data.original_price !==' ' ? data.original_price:' '}/-</div>
+                    {/* <div className={classes.originalPrice}>MRP: {data.original_price !==' ' ? data.original_price:' '}/-</div>
                     <div className={classes.offerPrice}>OFFER PRICE: {data.offer_price !==' ' ? data.offer_price:' '}/-</div>
-                    <div className={classes.discount}>You save Rs.{data.discount && data.discount !== '' && data.discount !== null  ? data.discount : (data.original_price - data.offer_price)}/-</div>
+                    <div className={classes.discount}>You save Rs.{data.discount && data.discount !== '' && data.discount !== null  ? data.discount : (data.original_price - data.offer_price)}/-</div> */}
                     <div className={classes.offerPrice}>Colour & Size: Different Colors and Sizes are available asper your requirement. Please contact us for more detail.</div>
                     <div className={classes.aboutProduct}>
-                        About the Product
-                        <div className={`${classes.description} ${showMore ? classes.showMore : ''}`}>
-                            {showMore ? data.description : data.description.split(' ').slice(0, 30).join(' ') + '...'}
-                        </div>
-                        <button className={classes.showMoreButton} onClick={toggleShowMore}>
-                            <FontAwesomeIcon icon={showMore ? faChevronUp : faChevronDown} /> {showMore ? 'Show Less' : 'Show More'}
-                        </button>
-                    </div>
+                    About the Product
+                    <div 
+                        className={`${classes.description} ${showMore ? classes.showMore : ''}`}
+                        dangerouslySetInnerHTML={{
+                            __html: showMore
+                                ? data.description.replace(/\n/g, '<br />')
+                                : data.description.split(' ').slice(0, 30).join(' ') + '...'
+                        }}
+                    />
+                    <button className={classes.showMoreButton} onClick={toggleShowMore}>
+                        <FontAwesomeIcon icon={showMore ? faChevronUp : faChevronDown} /> {showMore ? 'Show Less' : 'Show More'}
+                    </button>
+                </div>
                 </div>}
             </div>
             </LoadingOverlay>

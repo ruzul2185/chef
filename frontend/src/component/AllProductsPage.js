@@ -43,9 +43,9 @@ const AllProductsPage = () => {
                                         <h5 className="card-title" onClick={() => {
                                             navigate(`/products/${item.id}`); // Navigate to the product details page
                                         }}>{item.name}</h5>
-                                        <h5 className="card-subtitle">MRP: {item.original_price}</h5>
-                                        <h5 className="card-offer">OFFER PRICE: {item.offer_price}</h5>
-                                        <h5 className="card-discount">You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5>
+                                        {/* <h5 className="card-subtitle">MRP: {item.original_price}</h5>
+                                        <h5 className="card-offer">OFFER PRICE: {item.offer_price}</h5> */}
+                                        {/* <h5 className="card-discount">You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
                                     </div>
                                     <a href="#" className="btn btn-primary cart-button">ADD TO CART</a>
                                 </div>

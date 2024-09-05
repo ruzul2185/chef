@@ -13,7 +13,7 @@ const HaloSection = (props) => {
         <div className={classes.logoItem} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: 'center' }}>
             {/* {props.categoryList.length === 0 ? (
                 <p className={classes.noDataMessage}>
-                    No data found. Please add some data in <strong className={classes.uppercase}>{props.title}</strong>.
+                    No Product found. Please wait... or Please contact us or visit our store <strong className={classes.uppercase}>{props.title}</strong>.
                 </p>
             ) : ( */}
                 <>
