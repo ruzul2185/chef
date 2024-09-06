@@ -116,9 +116,9 @@ const Header = () => {
 </div>
 
                     <div className="sidebar-menu text-right">
-                        <div style={{marginRight:"20px"}}>
+                        <div style={{marginRight:"85px"}}>
                             {/* <Cart/> */}
-                        <LoginMenu/>
+                        {/* <LoginMenu/> */}
 
                         </div>
                     </div>
