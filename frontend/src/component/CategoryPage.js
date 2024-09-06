@@ -42,9 +42,9 @@ const CategoryPage = () => {
                             </div>
                             <div className={classes.cardBody}>
                                 <div className="card-body-text">
-                                    <h5 className={classes.cardTitle} style={{ cursor: 'pointer' }} onClick={() => {
+                                    <h2 className={classes.cardTitle} style={{ cursor: 'pointer' }} onClick={() => {
                                         navigate(`/products/${item.id}`); // Use an absolute path
-                                    }}>{item.name}</h5>
+                                    }}>{item.name}</h2>
                                     {/* <h5 className={classes.subtitle}>MRP: {item.original_price}</h5>
                                     <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
                                     <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
