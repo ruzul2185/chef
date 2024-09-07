@@ -61,7 +61,15 @@ const Product = (props) => {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = categoryList.length > 0 ? categoryList.slice(indexOfFirstItem, indexOfLastItem) : [];
+
+    // Conditionally slice the products based on the title
+    let currentItems;
+
+    if (props.title === "OUR BEST SELLERS") {
+        currentItems = categoryList.length > 0 ? categoryList.slice(3, 6) : []; // Show the next 3 products (index 3 to 5)
+    } else {
+        currentItems = categoryList.length > 0 ? categoryList.slice(indexOfFirstItem, indexOfLastItem) : [];
+    }
 
     const handleViewAllClick = () => {
         window.scrollTo(0, 0); // Scroll to the top of the page

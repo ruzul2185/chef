@@ -9,46 +9,49 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import {A11y, Navigation, Pagination, Scrollbar, Autoplay} from "swiper/modules";
-
+import review1 from '../asset/review1.png';
+import review2 from '../asset/review2.png';
+import review3 from '../asset/review3.png';
+import review4 from '../asset/review4.png';
 const Review = (props) => {
 
     const list = [
         {
           id:1,
-          image:'//www.wonderchef.com/cdn/shop/files/final-edited-pan_1000x1000_ba6379f7-3eb1-4f4b-b817-82a6bf79f00b_1000x1000.jpg?v=1698759217',
-          desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-          address:'Sunita Mehta, Jaipur',
+          image:review1,
+          desc:"I recently purchased a non-stick tawa from Sathematels, and I couldn't be happier with my choice! The tawa heats up quickly and evenly, making it perfect for everything from dosas to chapatis. Overall, I highly recommend Sathematels for anyone looking for quality kitchen appliances.",
+        //   address:'Sunita Mehta, Jaipur',
         },
         {
             id:2,
-            image:'//www.wonderchef.com/cdn/shop/files/final-edited-soupmaker_1000x1000_7a87ad09-4118-4e72-b874-b6eb3d8832ff_1000x1000.jpg?v=1698759216',
-            desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-            address:'Savita Dhawle, Nagpur',
+            image:review2,
+            desc:"I recently upgraded my kitchen with a new gas stove cooktop from Sathematels, and it has been a game-changer! The cooktop heats food faster and more efficiently, saving both time and energy. With its sleek design and easy-to-use controls, it adds a modern touch to my kitchen.",
+            // address:'Savita Dhawle, Nagpur',
         },
         {
             id:3,
-            image:'//www.wonderchef.com/cdn/shop/files/final-edited-15-bar-coffe-maker_1000x1000_f7f78059-e815-49c3-b364-0b2e8a014b3c_1000x1000.jpg?v=1698759217',
-            desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-            address:'Nirja Singh, Mumbai',
+            image:review3,
+            desc:"The air fryer I bought from Sathematels has been perfect for preparing healthy and delicious meals. It cooks everything to perfection with minimal oil, making it ideal for guilt-free snacking. The compact design fits perfectly on my counter, and it's incredibly easy to clean after use.",
+            // address:'Nirja Singh, Mumbai',
         },
         {
             id:4,
-            image:'//www.wonderchef.com/cdn/shop/files/final-edited-15-bar-coffe-maker_1000x1000_f7f78059-e815-49c3-b364-0b2e8a014b3c_1000x1000.jpg?v=1698759217',
-            desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-            address:'Nirja Singh, Mumbai',
+            image:review4,
+            desc:"I found the perfect oven at Sathematels, and it has completely transformed my mornings! The rich aroma and flavor of freshly brewed coffee are now just a button away, and the machine's stylish design adds a sophisticated touch to my kitchen decor.",
+            // address:'Nirja Singh, Mumbai',
         },
-        {
-            id:5,
-            image:'//www.wonderchef.com/cdn/shop/files/final-edited-forza_1000x1000_55f77052-4e15-4c95-a1b3-5628fe754749_1000x1000.jpg?v=1698759216',
-            desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-            address:'Madhuri Gujarathi, Hyderabad',
-        },
-        {
-            id:6,
-            image:'//www.wonderchef.com/cdn/shop/files/final-edited-NB-Smart_1000x1000_6f2f8830-315b-4d89-a210-c830236410e0_1000x1000.jpg?v=1698759217',
-            desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
-            address:'Anil Patel, Delhi',
-        },
+        // {
+        //     id:5,
+        //     image:'//www.wonderchef.com/cdn/shop/files/final-edited-forza_1000x1000_55f77052-4e15-4c95-a1b3-5628fe754749_1000x1000.jpg?v=1698759216',
+        //     desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
+        //     address:'Madhuri Gujarathi, Hyderabad',
+        // },
+        // {
+        //     id:6,
+        //     image:'//www.wonderchef.com/cdn/shop/files/final-edited-NB-Smart_1000x1000_6f2f8830-315b-4d89-a210-c830236410e0_1000x1000.jpg?v=1698759217',
+        //     desc:'I must say that it is the queen among all the utensils - beautiful pan. I use it to do all my tadka, eggs, and paneer dishes because better material doesn\'t burn my stuff and uses less oil. Even the handle doesn\'t get hot. Really appreciate the effort of making this product wonderful.',
+        //     address:'Anil Patel, Delhi',
+        // },
     ];
 
     return (
