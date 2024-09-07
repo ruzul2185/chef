@@ -114,7 +114,8 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        Created By Priya Baniya | All Rights Reserved!
+© 2024 Sathe Metalwares. All rights reserved.  
+Website designed by Ganesh Technology Solutions (GTech Solutions).
       </div>
     </div>
   );
