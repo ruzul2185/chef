@@ -9,5 +9,5 @@ export const GET_LATEST_PRODUCTS = BASE_URL + '/api/Products/getLatestProducts';
 export const GET_ALL_PRODUCTS = BASE_URL + '/api/Products/getAllProduct';
 export const GET_MIX_DATA = BASE_URL + '/api/Products/getMixData';
 export const ADD_CONTACT = BASE_URL + '/api/Contacts/contact';
-export const URL = 'https://admin.sathemetalwares.com';
+export const URL = 'https://sathemetalwares.com';
 

@@ -4,6 +4,7 @@ import classes from "./SearchResult.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductList } from '../stores/actions/auth';
 import { useLocation } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 const SearchResult = () => {
 
@@ -25,6 +26,10 @@ const SearchResult = () => {
 
     return (
         <React.Fragment>
+            <HelmetProvider>
+        <title>Sathe Metals - Kitchen Appliances on Nagpur</title>
+        <meta name="description" content="Kitchen Appliances on Sathe Metals or Sathe Metalwares" />
+        <link rel = "canonical" href="/collection/:task"/>
             <div className={classes.outerContainer}>
                 {data.length === 0 ? (
                     <p className={classes.noDataMessage}>
@@ -56,17 +61,20 @@ const SearchResult = () => {
                                         <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
                                         <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
                                     </div>
-                                    <a href="#" className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
+                                    <div onClick={() => {
+                                            navigate(`./products/${item.id}`);
+                                        }} className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                         <p className={classes.button}>
                                             ADD TO CART
                                         </p>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
+            </HelmetProvider>
         </React.Fragment>
     );
 };

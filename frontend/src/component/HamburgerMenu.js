@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import HamDropdown from './HamDropdown';
+import { URL } from '../constants/URLConstant';
 
 const HamburgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -108,8 +109,8 @@ const HamburgerMenu = () => {
                     ))}
                 </div>
                 <div style={{ marginTop: "20px" }}>
-                    <a className={styles.menuContent} href="../pages/about-us">ABOUT US</a>
-                    <a className={styles.menuContent} href="../pages/contact-us">CONTACT US</a>
+                    <a className={styles.menuContent} href={`${URL}/pages/about-us`}>ABOUT US</a>
+                    <a className={styles.menuContent} href={`${URL}/pages/contact-us`}>CONTACT US</a>
                 </div>
             </div>
         </React.Fragment>

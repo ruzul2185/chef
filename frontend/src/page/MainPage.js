@@ -18,6 +18,7 @@ import Footer from "../component/Footer";
 import LoadingOverlay from 'react-loading-overlay';
 import PacmanLoader from 'react-spinners/PacmanLoader';
 import { getLatestProducts } from '../stores/actions/auth'; // Assuming this action fetches the products
+import { HelmetProvider } from 'react-helmet-async';
 
 const MainPage = () => {
     const [isActive, setIsActive] = useState(false);
@@ -33,6 +34,10 @@ const MainPage = () => {
 
     return (
         <div>
+            <HelmetProvider>
+        <title>Sathe Metals - Kitchen Appliances</title>
+        <meta name="description" content="Kitchen Appliances on Sathe Metals or Sathe Metalwares" />
+        <link rel = "canonical" href="/"/>
             <LoadingOverlay
                 active={isActive}
                 spinner={<PacmanLoader />}
@@ -114,6 +119,7 @@ const MainPage = () => {
                     <OutletBanner title="AVAILABLE AT TWO STORES AS SATHE METALWARES AND SATHE EXCLUSIVE" />
                 </div>
             </LoadingOverlay>
+            </HelmetProvider>
         </div>
     );
 };

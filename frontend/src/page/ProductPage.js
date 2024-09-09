@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductDetail } from '../stores/actions/auth';
 import LoadingOverlay from 'react-loading-overlay';
 import PacmanLoader from 'react-spinners/PacmanLoader'
+import { HelmetProvider } from 'react-helmet-async';
 
 const product = {
     id: 1,
@@ -108,6 +109,10 @@ const ProductPage = () => {
 
     return (
         <React.Fragment>
+            <HelmetProvider>
+        <title>Sathe Metals - Kitchen Appliances on Nagpur</title>
+        <meta name="description" content="Kitchen Appliances on Sathe Metals or Sathe Metalwares" />
+        <link rel = "canonical" href="/products/:id"/>
             <LoadingOverlay
                 active={isActive}
                 spinner={<PacmanLoader />}
@@ -181,6 +186,7 @@ const ProductPage = () => {
                 </div>}
             </div>
             </LoadingOverlay>
+            </HelmetProvider>
         </React.Fragment>
     );
 };

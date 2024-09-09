@@ -4,6 +4,7 @@ import styles from "./Footer.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { addContact } from "../stores/actions/auth"; // Import your action
+import { URL } from "../constants/URLConstant";
 
 const Footer = () => {
   const [email, setEmail] = useState(""); // State to hold email for subscription
@@ -100,7 +101,7 @@ const Footer = () => {
         <div className={styles.address}>
           Established in 1974 by Chintamani Sathe and now led by Pardeep S.
           Sathe....
-          <a href="../pages/about-us" className={styles.anchor}>
+          <a href={`${URL}/pages/about-us`} className={styles.anchor}>
             Read More
           </a>
         </div>

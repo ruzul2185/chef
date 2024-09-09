@@ -49,11 +49,13 @@ const CategoryPage = () => {
                                     <h5 className={classes.cardPrice}>OFFER PRICE: {item.offer_price}</h5>
                                     <h5 className={classes.cardDiscount}>You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
                                     </div>
-                                <a href="#" className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
+                                <div onClick={() => {
+                                        navigate(`/products/${item.id}`); // Use an absolute path
+                                    }} className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                     <p className={classes.button}>
                                         ADD TO CART
                                     </p>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     ))}
