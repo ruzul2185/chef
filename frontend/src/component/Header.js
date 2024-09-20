@@ -17,9 +17,10 @@ import {
 } from "../constants/WebConstant";
 import { useDispatch, useSelector } from 'react-redux';
 import { authenticate, getCategoryList, getLoginDetail, getProductList } from '../stores/actions/auth';
-import { redirect, useNavigate, useParams } from 'react-router-dom';
+import { redirect, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { URL } from '../constants/URLConstant';
-
+import BackButton from './BackButton'; 
+import BackButton2 from './BackButton2';
 
 const Header = () => {
 
@@ -34,6 +35,7 @@ const Header = () => {
     const params = useParams();
     const navigate = useNavigate();
     // const navigate = useNavigate();
+    const location = useLocation(); // Get the current location object
     const categoryList = useSelector(state => state.auth.categoryList); // Access categoryList from Redux state
         // console.log("params");
         // console.log(categoryList);
@@ -74,6 +76,11 @@ const Header = () => {
         }
     };
 
+ useEffect(() => {
+        // Clear the search term when the route changes
+        setSearchTerm('');
+    }, [location]);
+    
     const toggleLoginDropdown = () => {
         setLoginIsOpen(!loginIsOpen);
     };
@@ -97,6 +104,7 @@ const Header = () => {
                     </div>
                     <div className="header-Mobile-item text-center">
     <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization" style={{ display: 'flex', alignItems: 'center' }}>
+        <BackButton2 />
         <a href="/" className="site-header__logo-image" style={{ display: 'flex', alignItems: 'center' }}>
             <FontAwesomeIcon 
                 icon={faHome} 
@@ -273,6 +281,7 @@ const Header = () => {
                     <HamburgerMenu />
                 </div>}
                 <div className="logo-wrapper" itemScope="" itemType="http://schema.org/Organization">
+            <BackButton />
                 <a className="navUser-action" href="/"><FontAwesomeIcon icon={faHome} color={"red"} style={{ height: '33px' }} className="home-icon" />
                 </a>
                     <a href="/" className="site-header__logo-image" style={{width:"130px"}}>

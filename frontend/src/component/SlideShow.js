@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './SlideShow.css';
 
 // Import both desktop and mobile images
-import slider1 from '../asset/slider1.png';
-import slider1M from '../asset/slider1(M).png';
+import slider1 from '../asset/slider1(2).png';
+import slider1M from '../asset/slider1(M)(2).png';
 import slider2 from '../asset/slider2.png';
 import slider2M from '../asset/slider2(M).png';
 import slider3 from '../asset/slider3.png';

@@ -65,7 +65,7 @@ const SearchResult = () => {
                                             navigate(`./products/${item.id}`);
                                         }} className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                         <p className={classes.button}>
-                                            ADD TO CART
+                                            VIEW DETAIL
                                         </p>
                                     </div>
                                 </div>

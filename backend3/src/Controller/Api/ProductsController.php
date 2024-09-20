@@ -25,6 +25,7 @@ class ProductsController extends AppController
     }
     //api url : http://localhost:8765/api/Items/getProducts
 
+    //this api uses as search api in react
     public function getProductLists()
 {
     if ($this->request->is('post')) {
@@ -34,15 +35,24 @@ class ProductsController extends AppController
 
         $this->loadModel('Categories');
         $this->loadModel('Products');
+        $this->loadModel('Companies'); // Load Companies model if not already loaded
 
         if ($categoryName == 'search') {
-            // Perform search based on product name
+            // Perform search based on product name or company name
             $products = $this->Products->find()
-                ->where(['Products.name LIKE' => '%' . $query . '%'])
                 ->contain([
                     'Images' => function ($q) {
                         return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                    },
+                    'Companies' => function ($q) {
+                        return $q->select(['Companies.id', 'Companies.name']);
                     }
+                ])
+                ->where([
+                    'OR' => [
+                        'Products.name LIKE' => '%' . $query . '%',
+                        'Companies.name LIKE' => '%' . $query . '%'
+                    ]
                 ])
                 ->all(); // Fetch all matching products
 
@@ -67,6 +77,9 @@ class ProductsController extends AppController
                     ->contain([
                         'Images' => function ($q) {
                             return $q->select(['product_id', 'url'])->where(['image_type_id' => 1]);
+                        },
+                        'Companies' => function ($q) {
+                            return $q->select(['Companies.id', 'Companies.name']);
                         }
                     ])
                     ->all();

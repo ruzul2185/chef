@@ -33,8 +33,8 @@
                         <select name="parent_name" class="form-control" id="parent_name">
                             <option value="">--Select Category--</option>
                             <option value="Airfryer">Airfryer</option>
-                            <option value="Cooker">Cooker</option>
-                            <option value="Cooktop">Cooktop</option>
+                            <option value="Cookers">Cookers</option>
+                            <option value="cooktops">Cooktop</option>
                             <option value="Induction">Induction</option>
                             <option value="Cookware">Cookware</option>
                             <option value="Cooking Appliance">Cooking Appliance</option>

@@ -13,6 +13,9 @@ import Sujata from '../asset/sujata-new.png';
 import Havells from '../asset/havells-new.png';
 import phillips from '../asset/philips-icon.png';
 import Tramontina from '../asset/Tramontina_icon.png';
+import Pnb from '../asset/pnb.png';
+import Bhalaria from '../asset/bhalaria.png';
+import Mirror from '../asset/mirror.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -72,6 +75,18 @@ const OutletBanner = (props) => {
         {
             id:12,
             image:Tramontina,
+        },
+        {
+            id:13,
+            image:Pnb,
+        },
+        {
+            id:14,
+            image:Bhalaria,
+        },
+        {
+            id:15,
+            image:Mirror,
         },
     ];
 

@@ -53,7 +53,7 @@ const CategoryPage = () => {
                                         navigate(`/products/${item.id}`); // Use an absolute path
                                     }} className="btn btn-primary cart-button" style={{ width: "100%", borderRadius: "0" }}>
                                     <p className={classes.button}>
-                                        ADD TO CART
+                                        VIEW DETAIL
                                     </p>
                                 </div>
                             </div>

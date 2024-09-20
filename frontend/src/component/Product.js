@@ -145,7 +145,7 @@ const Product = (props) => {
                                     </div>
                                     <div onClick={() => {
                                     navigate(`./products/${item.id}`);
-                                }} className="btn btn-primary cart-button">ADD TO CART</div>
+                                }} className="btn btn-primary cart-button">VIEW DETAIL</div>
                                 </div>
                             </div>
                         </CSSTransition>
