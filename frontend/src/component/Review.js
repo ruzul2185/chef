@@ -19,25 +19,25 @@ const Review = (props) => {
         {
           id:1,
           image:review1,
-          desc:"I recently purchased a non-stick tawa from Sathematels, and I couldn't be happier with my choice! The tawa heats up quickly and evenly, making it perfect for everything from dosas to chapatis. Overall, I highly recommend Sathematels for anyone looking for quality kitchen appliances.",
+          desc:"I recently purchased a non-stick tawa from Sathe Metalwares, and I couldn't be happier with my choice! The tawa heats up quickly and evenly, making it perfect for everything from dosas to chapatis. Overall, I highly recommend Sathe Metalwares for anyone looking for quality kitchen appliances.",
         //   address:'Sunita Mehta, Jaipur',
         },
         {
             id:2,
             image:review2,
-            desc:"I recently upgraded my kitchen with a new gas stove cooktop from Sathematels, and it has been a game-changer! The cooktop heats food faster and more efficiently, saving both time and energy. With its sleek design and easy-to-use controls, it adds a modern touch to my kitchen.",
+            desc:"I recently upgraded my kitchen with a new gas stove cooktop from Sathe Metalwares, and it has been a game-changer! The cooktop heats food faster and more efficiently, saving both time and energy. With its sleek design and easy-to-use controls, it adds a modern touch to my kitchen.",
             // address:'Savita Dhawle, Nagpur',
         },
         {
             id:3,
             image:review3,
-            desc:"The air fryer I bought from Sathematels has been perfect for preparing healthy and delicious meals. It cooks everything to perfection with minimal oil, making it ideal for guilt-free snacking. The compact design fits perfectly on my counter, and it's incredibly easy to clean after use.",
+            desc:"The air fryer I bought from Sathe Metalwares has been perfect for preparing healthy and delicious meals. It cooks everything to perfection with minimal oil, making it ideal for guilt-free snacking. The compact design fits perfectly on my counter, and it's incredibly easy to clean after use.",
             // address:'Nirja Singh, Mumbai',
         },
         {
             id:4,
             image:review4,
-            desc:"I found the perfect oven at Sathematels, and it has completely transformed my mornings! The rich aroma and flavor of freshly brewed coffee are now just a button away, and the machine's stylish design adds a sophisticated touch to my kitchen decor.",
+            desc:"I found the perfect oven at Sathe Metalwares, and it has completely transformed my mornings! The rich aroma and flavor of freshly brewed coffee are now just a button away, and the machine's stylish design adds a sophisticated touch to my kitchen decor.",
             // address:'Nirja Singh, Mumbai',
         },
         // {
@@ -67,6 +67,8 @@ const Review = (props) => {
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
+                    loop={true}
+                    autoplay={true}
                     
                     style={{
                         '--swiper-navigation-color': 'red', // Change arrow color to red
@@ -82,7 +84,7 @@ const Review = (props) => {
                             slidesPerView: 3,
                         },
                     }}
-                    autoplay={true}
+                    // autoplay={true}
                 >
                     {list.map((item)=>(
                         <SwiperSlide className={styles.container} key={item.id}>

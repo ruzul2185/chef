@@ -94,7 +94,7 @@ const HamburgerMenu = () => {
                         { name: 'Kitchen_Appliances', label: 'Kitchen Appliance', category: 'Kitchen Appliance' },
                         { name: 'Beverage', label: 'Beverage', category: 'Beverage' },
                         { name: 'Breakfast_and_Snacks', label: 'Breakfast and Snack', category: 'Breakfast and Snack' },
-                        { name: 'Iron', label: 'IRON', category: 'Iron' },
+                        { name: 'Others', label: 'Others', category: 'Others' },
                     ].map(({ name, label, category }) => (
                         <React.Fragment key={name}>
                             <div className={styles.menuContent} onClick={() => { toggleDropdown(name); handleNavigation(category.toLowerCase()); }}>

@@ -93,7 +93,14 @@ const OutletBanner = (props) => {
     return (
         <div className={styles.sliderContainer}>
             <div className={styles.titleContainer}>
-                {props.title}
+            <h1 style={{
+                fontSize: '40px',
+                color: '#000000',
+                fontFamily: '"Rajdhani", sans-serif',
+                fontWeight: 'bold'
+                }}>
+                    {props.title}
+            </h1>
             </div>
             <Swiper
                 // install Swiper modules

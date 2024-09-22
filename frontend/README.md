@@ -78,3 +78,8 @@ RewriteRule ^ index.html [L]
 
 2. google console dns verify
 3. sitemap settings -->
+
+### if logo not update in google search bar then run this below two command and open your server then after few minute the logo got updated
+
+npm i -g serve
+serve ./build

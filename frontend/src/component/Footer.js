@@ -116,7 +116,7 @@ const Footer = () => {
       </div>
       <div className={styles.footerBottom}>
 © 2024 Sathe Metalwares. All rights reserved.  
-<br/>Website designed by Ganesh Technology Solutions (GTech Solutions).
+<br/><a href="https://ganeshtechnologysolutions.com/">Website designed by Ganesh Technology Solutions (GTech Solutions).</a>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Product.css';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classes from "../page/SearchResult.module.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getLatestProducts } from '../stores/actions/auth';
 
@@ -13,9 +13,11 @@ const Product = (props) => {
     const [itemsPerPage, setItemsPerPage] = useState(3);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+const pathname = useLocation();
     const categoryList = useSelector(state => state.auth.LatestProducts); // Access categoryList from Redux state
-
+    useLayoutEffect(()=>{
+        window.scrollTo({top:0, behaviour:"auto"});
+    },[pathname]);
     // Fetch category list on component mount
     useEffect(() => {
         dispatch(getLatestProducts());
@@ -72,7 +74,7 @@ const Product = (props) => {
     }
 
     const handleViewAllClick = () => {
-        window.scrollTo(0, 0); // Scroll to the top of the page
+        window.scrollTo({top:0, behaviour:"auto"}); // Scroll to the top of the page
         navigate('/all-products', { state: { categoryList } }); // Adjust the path to where your all products page is located
     };
 
@@ -94,7 +96,7 @@ const Product = (props) => {
                     className="prevButton" 
                     style={buttonStyles.prevButton}
                 >
-                    <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '48px' }} />
+                    <FontAwesomeIcon icon={faChevronLeft} color={"#232323"} style={{ fontSize: '35px' }} />
                 </button>
                 <div className="indicator-container">
                     <p className="product-carousel-title">
@@ -107,7 +109,7 @@ const Product = (props) => {
                     className="nextButton" 
                     style={buttonStyles.nextButton}
                 >
-                    <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '48px' }} />
+                    <FontAwesomeIcon icon={faChevronRight} color={"#232323"} style={{ fontSize: '35px' }} />
                 </button>
             </div>
             <div className="product-container">
@@ -128,6 +130,7 @@ const Product = (props) => {
                         >
                             <div className="card responsive" >
                                 <div className={classes.imageContainer} onClick={() => {
+                                    window.scrollTo({top:0, behaviour:"auto"});
                                     navigate(`./products/${item.id}`);
                                 }}>
                                     <img src={item.url !== null ? item.url : 'default-image-url.png'} className={classes.cardImgTop} alt={item.name} style={{ objectFit: 'contain', height: '400px' }} />
@@ -144,6 +147,7 @@ const Product = (props) => {
                                         You save Rs.{item.discount && item.discount !== '' && item.discount !==null ? item.discount : (item.original_price - item.offer_price)}/-</h5> */}
                                     </div>
                                     <div onClick={() => {
+                                        window.scrollTo({top:0, behaviour:"auto"});
                                     navigate(`./products/${item.id}`);
                                 }} className="btn btn-primary cart-button">VIEW DETAIL</div>
                                 </div>

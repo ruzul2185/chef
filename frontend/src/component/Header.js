@@ -115,7 +115,7 @@ const Header = () => {
             <img 
                 itemProp="logo"
                 src={require("../asset/logo.png")}
-                alt="Wonderchef"
+                alt="Sathe Metalwares"
                 className="logoMobileView"
                 style={{ marginLeft: '10px' }} /* Adjust margin as needed */
             />
@@ -326,7 +326,7 @@ const Header = () => {
                     
                     <NavDropdown className="header-bottom-item" title="Breakfast and Snack" list={categoryList.length>0 ? itemsFilter(categoryList,"Breakfast and Snack"):[]}/>
 
-                    <NavDropdown className="header-bottom-item" title="IRON" list={categoryList.length>0 ? itemsFilter(categoryList,"Iron"):[]}/>
+                    <NavDropdown className="header-bottom-item" title="OTHERS" list={categoryList.length>0 ? itemsFilter(categoryList,"Others"):[]}/>
                 </div>
             </div>
         </React.Fragment>
