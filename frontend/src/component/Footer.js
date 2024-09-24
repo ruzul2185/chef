@@ -102,6 +102,7 @@ const Footer = () => {
           Established in 1974 by Chintamani Sathe and now led by Pardeep S.
           Sathe....
           <a href={`${URL}/pages/about-us`} className={styles.anchor}>
+          {/* <a href="../pages/about-us"  className={styles.anchor}> */}
             Read More
           </a>
         </div>

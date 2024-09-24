@@ -31,6 +31,8 @@ const NavDropdown = (props) => {
             if (dropdownRect.right > viewportWidth) {
                 dropdownRef.current.style.left = `${viewportWidth - dropdownRect.width}px`;
                 dropdownRef.current.style.transform = 'none';
+                dropdownRef.current.style.right = '0';  // Stick to the right edge
+                dropdownRef.current.style.left = 'auto';
             } else {
                 dropdownRef.current.style.left = '50%';
                 dropdownRef.current.style.transform = 'translateX(-50%)';

@@ -35,8 +35,8 @@ const MainPage = () => {
     return (
         <div>
             <HelmetProvider>
-        <title><h1>Sathe Metalwares - All Kitchen Appliances</h1></title>
-        <meta name="description" content="Kitchen Appliances on Sathe Metals or Sathe Metalwares" />
+        <title><h1>Sathe Metalwares - All Kitchen Appliances, Home applian, Best brand for home appliancesces</h1></title>
+        <meta name="description" content="Kitchen Appliances on Sathe Metals or Sathe Metalwares, Home appliances" />
         <link rel = "canonical" href="/"/>
             <LoadingOverlay
                 active={isActive}

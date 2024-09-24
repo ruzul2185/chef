@@ -19,7 +19,7 @@ const HamburgerMenu = () => {
         Kitchen_Appliances: false,
         Beverage: false,
         Breakfast_and_Snacks: false,
-        Iron: false
+        Others: false
     });
 
     const categoryList = useSelector(state => state.auth.categoryList);
@@ -94,7 +94,7 @@ const HamburgerMenu = () => {
                         { name: 'Kitchen_Appliances', label: 'Kitchen Appliance', category: 'Kitchen Appliance' },
                         { name: 'Beverage', label: 'Beverage', category: 'Beverage' },
                         { name: 'Breakfast_and_Snacks', label: 'Breakfast and Snack', category: 'Breakfast and Snack' },
-                        { name: 'Others', label: 'Others', category: 'Others' },
+                        { name: 'Others', label: 'OTHERS', category: 'Others' },
                     ].map(({ name, label, category }) => (
                         <React.Fragment key={name}>
                             <div className={styles.menuContent} onClick={() => { toggleDropdown(name); handleNavigation(category.toLowerCase()); }}>

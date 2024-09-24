@@ -125,7 +125,7 @@ const ProductPage = () => {
                     <div className={classes.carouselSpecial}>
                         <div className="container">
                             <div className={`main-image mb-3 ${classes.mainImageContainer}`}>
-                                {<img src={selectedImage} className={`d-block w-100 ${classes.mainImage}`} alt="Sathe Metalware Nagpur" />}
+                                {<img src={selectedImage} className={`d-block w-100 ${classes.mainImage}`} alt="Sathe Metalware Nagpur,best brand for home appliances" />}
                             </div>
                             <div className="thumbnail-carousel">
                                 <Slider {...settings}>

@@ -68,8 +68,9 @@ const pathname = useLocation();
     let currentItems;
 
     if (props.title === "OUR BEST SELLERS") {
-        currentItems = categoryList.length > 0 ? categoryList.slice(3, 6) : []; // Show the next 3 products (index 3 to 5)
-    } else {
+        const reversedList = categoryList.length > 0 ? [...categoryList].reverse() : [];
+        currentItems = reversedList.slice(indexOfFirstItem, indexOfLastItem); 
+        } else {
         currentItems = categoryList.length > 0 ? categoryList.slice(indexOfFirstItem, indexOfLastItem) : [];
     }
 
