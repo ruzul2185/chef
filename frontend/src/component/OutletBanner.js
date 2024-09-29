@@ -16,6 +16,8 @@ import Tramontina from '../asset/Tramontina_icon.png';
 import Pnb from '../asset/pnb.png';
 import Bhalaria from '../asset/bhalaria.png';
 import Mirror from '../asset/mirror.png';
+import Ramson from '../asset/ramson.png';
+import Kishco from '../asset/kishco.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -88,6 +90,14 @@ const OutletBanner = (props) => {
             id:15,
             image:Mirror,
         },
+        {
+            id:16,
+            image:Ramson,
+        },
+        {
+            id:17,
+            image:Kishco,
+        }
     ];
 
     return (

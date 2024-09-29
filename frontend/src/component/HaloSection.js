@@ -22,7 +22,7 @@ const HaloSection = (props) => {
                             <img className="lazyloaded"
                                 src={props.image}
                                 data-src={props.image}
-                                alt="" data-image="" />
+                                alt="Sathe Metalwares" data-image="" />
                         </span>
                     </a>
                     <a onClick={handleViewAllClick} className={classes.title} tabIndex="0">

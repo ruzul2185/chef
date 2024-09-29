@@ -53,10 +53,10 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <header>
         <div class="container text-center">
             <a href="https://cakephp.org/" target="_blank" rel="noopener">
-                <img alt="CakePHP" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
+                <img alt="Sathe Metalwares" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
             </a>
             <h1>
-                Welcome to CakePHP <?php echo Configure::version() ?> Strawberry (🍓)
+                Welcome to Sathe Metalwares <?php echo Configure::version() ?> Strawberry (🍓)
             </h1>
         </div>
     </header>

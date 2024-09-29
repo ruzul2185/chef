@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {HelmetProvider} from 'react-helmet-async';
-
+import logo from '../src/asset/favicon.ico';
 const rootElement = document.getElementById('root');
 
 if (rootElement.hasChildNodes()) {

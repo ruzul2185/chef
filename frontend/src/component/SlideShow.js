@@ -29,19 +29,19 @@ const SlideShow = () => {
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="2000">
-                        <img src={isMobile ? slider1M : slider1} className="d-block w-100" alt="Slide 1" />
+                        <img src={isMobile ? slider1M : slider1} className="d-block w-100" alt="Sathe's Metalwares - All Kitchen Appliances, Home appliances, Best kitchen appliances in Nagpur,Best kitchen appliances in India" />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
-                        <img src={isMobile ? slider2M : slider2} className="d-block w-100" alt="Slide 2" />
+                        <img src={isMobile ? slider2M : slider2} className="d-block w-100" alt="Sathe's Metalwares - All Kitchen Appliances, Home appliances, Best kitchen appliances in Nagpur,Best kitchen appliances in India" />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
-                        <img src={isMobile ? slider3M : slider3} className="d-block w-100" alt="Slide 3" />
+                        <img src={isMobile ? slider3M : slider3} className="d-block w-100" alt="Sathe's Metalwares - All Kitchen Appliances, Home appliances, Best kitchen appliances in Nagpur,Best kitchen appliances in India" />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
-                        <img src={isMobile ? slider4M : slider4} className="d-block w-100" alt="Slide 4" />
+                        <img src={isMobile ? slider4M : slider4} className="d-block w-100" alt="all Kitchen Appliances,Home appliances, kitchen appliances gift, best kitchen appliances company in indias, kitchen appliances gas stove, best high end kitchen appliances, home appliances for gift, home appliances electrical" />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
-                        <img src={isMobile ? slider5M : slider5} className="d-block w-100" alt="Slide 5" />
+                        <img src={isMobile ? slider5M : slider5} className="d-block w-100" alt="all Kitchen Appliances,Home appliances, kitchen appliances gift, best kitchen appliances company in indias, kitchen appliances gas stove, best high end kitchen appliances, home appliances for gift, home appliances electrical" />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"

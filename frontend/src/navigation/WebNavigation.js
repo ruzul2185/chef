@@ -13,6 +13,7 @@ import AllProductsPage from '../component/AllProductsPage';
 import CategoryPage from '../component/CategoryPage';
 import MixData from '../component/MixData';
 import CategoryComponent from '../component/CategoryComponent';
+import logo from '../asset/favicon.ico';
 
 const router = createBrowserRouter([
     {

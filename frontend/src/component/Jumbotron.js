@@ -6,7 +6,7 @@ const Jumbotron = () => {
         <React.Fragment>
             <div className={styles.jumbotron}>
                 <a href="//www.wonderchef.com">
-                    <img src="//www.wonderchef.com/cdn/shop/files/fin_d.jpg?v=1709626739" alt="Wonderchef Promotion" />
+                    <img src="//www.wonderchef.com/cdn/shop/files/fin_d.jpg?v=1709626739" alt="Sathe Metalwares" />
                 </a>
             </div>
         </React.Fragment>
