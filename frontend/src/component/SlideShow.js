@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './SlideShow.css';
 
 // Import both desktop and mobile images
+import sliderAnniversary from '../asset/50th_anniversary_invitation.png';
+import sliderAnniversaryM from '../asset/50th_anniversary_invitation(M).png';
 import slider1 from '../asset/slider1(2).png';
 import slider1M from '../asset/slider1(M)(2).png';
 import slider2 from '../asset/slider2.png';
@@ -28,7 +30,10 @@ const SlideShow = () => {
         <React.Fragment>
             <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                    <div className="carousel-item active" data-bs-interval="2000">
+                    <div className="carousel-item active" data-bs-interval="6000">
+                        <img src={isMobile ? sliderAnniversaryM : sliderAnniversary} className="d-block w-100" alt="Sathe's Metalwares - 50th Anniversary of Sathe Metalwares, Offers and Discounts Available in Sathe Metals " />
+                    </div>
+                    <div className="carousel-item" data-bs-interval="2000">
                         <img src={isMobile ? slider1M : slider1} className="d-block w-100" alt="Sathe's Metalwares - All Kitchen Appliances, Home appliances, Best kitchen appliances in Nagpur,Best kitchen appliances in India" />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
